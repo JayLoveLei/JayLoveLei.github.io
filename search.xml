@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode-461.汉明距离</title>
+    <url>/2020/04/29/LeetCode-461/</url>
+    <content><![CDATA[<h1 id="LeetCode-461-汉明距离"><a href="#LeetCode-461-汉明距离" class="headerlink" title="LeetCode-461.汉明距离"></a>LeetCode-461.汉明距离</h1><p>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。</p>
+<p>给出两个整数 x 和 y，计算它们之间的汉明距离。</p>
+<p>注意：<br>0 ≤ x, y &lt; $2^{31}$.</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: x &#x3D; 1, y &#x3D; 4</span><br><span class="line"></span><br><span class="line">输出: 2</span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">1   (0 0 0 1)</span><br><span class="line">4   (0 1 0 0)</span><br><span class="line">       ↑   ↑</span><br><span class="line"></span><br><span class="line">上面的箭头指出了对应二进制位不同的位置。</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这题熟悉C++位运算即可。我们通过异或可以将两个数字中不同的位置1，然后计算不同的位的个数即可。</p>
+<h2 id="位运算符简介："><a href="#位运算符简介：" class="headerlink" title="位运算符简介："></a>位运算符简介：</h2><p>位逻辑运算符：</p>
+<p>​    &amp; （位   “与”）    and<br>​    ^ （位   “异或”）<br>​    | （位    “或”）   or<br>​    ~ （位   “取反”）<br>移位运算符：<br>​      &lt;&lt;（左移）<br>​      &gt;&gt;（右移）</p>
+<p>优先级<br>位“与”、位“或”和位“异或”运算符都是双目运算符，其结合性都是从左向右的，优先级高于逻辑运算符，低于比较运算符，且从高到低依次为&amp;、^、| </p>
+<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = x ^ y;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>,i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i != <span class="number">32</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans &amp; <span class="number">1</span>)</span><br><span class="line">        	++count;</span><br><span class="line">        ans &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-226.翻转二叉树</title>
+    <url>/2020/04/30/LeetCode-226/</url>
+    <content><![CDATA[<h1 id="LeetCode-226-翻转二叉树"><a href="#LeetCode-226-翻转二叉树" class="headerlink" title="LeetCode-226.翻转二叉树"></a>LeetCode-226.翻转二叉树</h1><p>翻转一棵二叉树。</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><p>输入：</p>
+<pre><code>      4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+</code></pre><p>输出：</p>
+<pre><code>     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+</code></pre><h2 id="思路解析："><a href="#思路解析：" class="headerlink" title="思路解析："></a>思路解析：</h2><p>这题就是交换二叉树的左右节点。因为你交换二叉树的左右节点，是不会影响到父节点和子节点的。即交换完，你的父节点还是你的父节点，你的子节点还是你的子节点。</p>
+<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        TreeNode *tmp = <span class="literal">nullptr</span>,*tmp2 = <span class="literal">nullptr</span>;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            tmp2 = q.front();</span><br><span class="line">            tmp = tmp2-&gt;left;</span><br><span class="line">            tmp2-&gt;left = tmp2-&gt;right;</span><br><span class="line">            tmp2-&gt;right = tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;left)</span><br><span class="line">                q.push(tmp2-&gt;left);</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;right)</span><br><span class="line">                q.push(tmp2-&gt;right);</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GPt-SNE</title>
     <url>/2020/04/27/GPt-SNE/</url>
-    <content><![CDATA[<h1 id="GPt-SNE-论文重构与分析"><a href="#GPt-SNE-论文重构与分析" class="headerlink" title="GPt-SNE 论文重构与分析"></a>GPt-SNE 论文重构与分析</h1><h2 id="1-Introduction："><a href="#1-Introduction：" class="headerlink" title="1.Introduction："></a>1.Introduction：</h2><ul>
+    <content><![CDATA[<h1 id="GPt-SNE-论文重构与分析"><a href="#GPt-SNE-论文重构与分析" class="headerlink" title="GPt-SNE 论文重构与分析"></a>GPt-SNE 论文重构与分析</h1><h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><ul>
 <li>首先直接指出目前的可视化的作用和目前可视化方法的痛点<ul>
 <li>痛点：<ul>
 <li>最先进的可视化方法往往是黑盒方法，无法洞察可视化如何编码数据的原始特征</li>
@@ -42,7 +88,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-BackGround"><a href="#2-BackGround" class="headerlink" title="2.BackGround"></a>2.BackGround</h2><ul>
+<h2 id="BackGround"><a href="#BackGround" class="headerlink" title="BackGround"></a>BackGround</h2><ul>
 <li>Dimensionality Reduction：降维是一种通过减少数据集的特征/属性数量来提高理解和性能的过程，随着数据集变得越来越大，深层神经网络变得越来越不可解释，其重要性也在不断增加。解决这个问题的常用技术包括FS（feature select）和FC，他们分别通过删除不需要的特征或创建更少、更复杂的元特征来减少特征空间。GP方法由于其功能性和可解释性而被证明是一种适合FC问题的方法。流形学习（非线性降维）可以被看作是一种无监督的FC方法，其任务是建立一组表示高维特征空间中存在的非线性流形的特征。实现这一任务的一种方法是尝试构建一个函数，将高维空间映射到低维流形；这种方法可以在两者之间提供可理解的映射。<ul>
 <li>分析：首先论文简单介绍了降维的意义和目标。与之相比我写的相关工作太冗余了，全都是已有技术的堆砌，没有紧扣主题且逻辑松散。其次论文对流形学习的介绍，用简单明了的语言就把流形学习的意义和目的讲清楚了。我在写作中要多比对自己和论文的表达。</li>
 </ul>
@@ -62,7 +108,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="3-Method"><a href="#3-Method" class="headerlink" title="3.Method"></a>3.Method</h2><ul>
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><ul>
 <li><p>介绍GPt-SNE用于可视化需要解决的技术问题：</p>
 <ul>
 <li>什么终端和功能节点是合适的</li>
@@ -128,7 +174,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="4-Experiment-setup"><a href="#4-Experiment-setup" class="headerlink" title="4.Experiment setup"></a>4.Experiment setup</h2><ul>
+<h2 id="Experiment-setup"><a href="#Experiment-setup" class="headerlink" title="Experiment setup"></a>Experiment setup</h2><ul>
 <li>第一部分给出了作者使用的数据集列表，并且介绍了为什么使用这些数据集“这些数据集来自许多不同的领域，包括一般分类、生物学和图像分析。这些数据集大多来自UCI存储库[38]。”<ul>
 <li>分析：在介绍实验数据集时，最好引用别人的工作，这样显得客观，但是在算法验证部分，为了帮助用户理解，可以使用人工数据集。</li>
 <li><img src="/2020/04/27/GPt-SNE/1588167232568.png" alt="1588167232568"></li>
@@ -146,6 +192,19 @@
 </ul>
 </li>
 </ul>
+<h2 id="Results-and-Discussion"><a href="#Results-and-Discussion" class="headerlink" title="Results and Discussion"></a>Results and Discussion</h2><ul>
+<li><p>这一部分为论文的Case study。因为解决方案本质上是一个降维方法，所以作者主要在对比t-SNE和GP-tSNE的可视化效果（Cost Function 和 可视化视图）。</p>
+</li>
+<li><p>作者在讲到GP-tSNE的Cost Function大于t-SNE时，用到了一句话“与Iris数据集一样，GP-tSNE在最大复杂度下所获得的成本虽然接近于t-SNE，但它是通过映射而非嵌入产生的。”</p>
+<ul>
+<li>分析：我们的技术方案的基础是“Local Linear，Global no-Linear”。所以目前的我们的case study是面向无类别流形数据，发现并理解流形数据中的非线性特征。但是在多类简单数据上（简单体现在每个类别能被一个线性子空间表示），我们的方法应该也能有不错的效果。</li>
+</ul>
+</li>
+<li>GP-tSNE和t-SNE的Cost function值的差（横坐标遗传代数）：<img src="/2020/04/27/GPt-SNE/1588241733421.png" alt="1588241733421"><ul>
+<li>分析：可以看到，对于不同复杂程度的数据，在不同的遗传代数上收敛。对于我们的解决方案，可以绘制数据的分片大小和重建误差均值的折线图，来展示不同复杂度的数据集对解决方案的影响。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>数据可视化</category>
@@ -153,32 +212,6 @@
       <tags>
         <tag>可理解性</tag>
         <tag>非线性降维</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-226.翻转二叉树</title>
-    <url>/2020/04/30/LeetCode-226/</url>
-    <content><![CDATA[<h1 id="LeetCode-226-翻转二叉树"><a href="#LeetCode-226-翻转二叉树" class="headerlink" title="LeetCode-226.翻转二叉树"></a>LeetCode-226.翻转二叉树</h1><p>翻转一棵二叉树。</p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><p>输入：</p>
-<pre><code>      4
-   /   \
-  2     7
- / \   / \
-1   3 6   9
-</code></pre><p>输出：</p>
-<pre><code>     4
-   /   \
-  7     2
- / \   / \
-9   6 3   1
-</code></pre><h2 id="思路解析："><a href="#思路解析：" class="headerlink" title="思路解析："></a>思路解析：</h2><p>这题就是交换二叉树的左右节点。因为你交换二叉树的左右节点，是不会影响到父节点和子节点的。即交换完，你的父节点还是你的父节点，你的子节点还是你的子节点。</p>
-<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        TreeNode *tmp = <span class="literal">nullptr</span>,*tmp2 = <span class="literal">nullptr</span>;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            tmp2 = q.front();</span><br><span class="line">            tmp = tmp2-&gt;left;</span><br><span class="line">            tmp2-&gt;left = tmp2-&gt;right;</span><br><span class="line">            tmp2-&gt;right = tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;left)</span><br><span class="line">                q.push(tmp2-&gt;left);</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;right)</span><br><span class="line">                q.push(tmp2-&gt;right);</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -197,6 +230,23 @@
       <tags>
         <tag>分治</tag>
         <tag>优先队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-617.合并二叉树</title>
+    <url>/2020/04/28/LeetCode-617/</url>
+    <content><![CDATA[<h1 id="LeetCode-617-合并二叉树"><a href="#LeetCode-617-合并二叉树" class="headerlink" title="LeetCode-617.合并二叉树"></a>LeetCode-617.合并二叉树</h1><p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
+<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
+<p>注意: 合并必须从两个树的根节点开始。</p>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这道题还是很简单的，只需要判断当前合并节点在对应的两棵树上是否都不为空。如果都不为空，则继续遍历左右子树，否则直接返回另一棵不为空的树即可。</p>
+<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">mergeTrees</span><span class="params">(TreeNode* t1, TreeNode* t2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!t1 &amp;&amp; !t2)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(!t2)</span><br><span class="line">    	<span class="keyword">return</span> t1;</span><br><span class="line">    <span class="keyword">if</span>(!t1)</span><br><span class="line">    	<span class="keyword">return</span> t2;</span><br><span class="line">    t1-&gt;val += t2-&gt;val;</span><br><span class="line">    t1-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left);</span><br><span class="line">    t1-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> t1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -222,43 +272,6 @@
       <tags>
         <tag>数组</tag>
         <tag>二分查找</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-461.汉明距离</title>
-    <url>/2020/04/29/LeetCode-461/</url>
-    <content><![CDATA[<h1 id="LeetCode-461-汉明距离"><a href="#LeetCode-461-汉明距离" class="headerlink" title="LeetCode-461.汉明距离"></a>LeetCode-461.汉明距离</h1><p>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。</p>
-<p>给出两个整数 x 和 y，计算它们之间的汉明距离。</p>
-<p>注意：<br>0 ≤ x, y &lt; $2^{31}$.</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: x &#x3D; 1, y &#x3D; 4</span><br><span class="line"></span><br><span class="line">输出: 2</span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">1   (0 0 0 1)</span><br><span class="line">4   (0 1 0 0)</span><br><span class="line">       ↑   ↑</span><br><span class="line"></span><br><span class="line">上面的箭头指出了对应二进制位不同的位置。</span><br></pre></td></tr></table></figure>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这题熟悉C++位运算即可。我们通过异或可以将两个数字中不同的位置1，然后计算不同的位的个数即可。</p>
-<h2 id="位运算符简介："><a href="#位运算符简介：" class="headerlink" title="位运算符简介："></a>位运算符简介：</h2><p>位逻辑运算符：</p>
-<p>​    &amp; （位   “与”）    and<br>​    ^ （位   “异或”）<br>​    | （位    “或”）   or<br>​    ~ （位   “取反”）<br>移位运算符：<br>​      &lt;&lt;（左移）<br>​      &gt;&gt;（右移）</p>
-<p>优先级<br>位“与”、位“或”和位“异或”运算符都是双目运算符，其结合性都是从左向右的，优先级高于逻辑运算符，低于比较运算符，且从高到低依次为&amp;、^、| </p>
-<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = x ^ y;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>,i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i != <span class="number">32</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans &amp; <span class="number">1</span>)</span><br><span class="line">        	++count;</span><br><span class="line">        ans &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>位运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-617.合并二叉树</title>
-    <url>/2020/04/28/LeetCode-617/</url>
-    <content><![CDATA[<h1 id="LeetCode-617-合并二叉树"><a href="#LeetCode-617-合并二叉树" class="headerlink" title="LeetCode-617.合并二叉树"></a>LeetCode-617.合并二叉树</h1><p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
-<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
-<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
-<p>注意: 合并必须从两个树的根节点开始。</p>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这道题还是很简单的，只需要判断当前合并节点在对应的两棵树上是否都不为空。如果都不为空，则继续遍历左右子树，否则直接返回另一棵不为空的树即可。</p>
-<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">mergeTrees</span><span class="params">(TreeNode* t1, TreeNode* t2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!t1 &amp;&amp; !t2)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(!t2)</span><br><span class="line">    	<span class="keyword">return</span> t1;</span><br><span class="line">    <span class="keyword">if</span>(!t1)</span><br><span class="line">    	<span class="keyword">return</span> t2;</span><br><span class="line">    t1-&gt;val += t2-&gt;val;</span><br><span class="line">    t1-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left);</span><br><span class="line">    t1-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> t1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>树</tag>
       </tags>
   </entry>
 </search>
