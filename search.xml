@@ -350,9 +350,9 @@
       </tags>
   </entry>
   <entry>
-    <title>GPt-SNE</title>
+    <title>GPt-SNE论文分析</title>
     <url>/2020/04/27/GPt-SNE/</url>
-    <content><![CDATA[<h2 id="GPt-SNE-论文重构与分析"><a href="#GPt-SNE-论文重构与分析" class="headerlink" title="GPt-SNE 论文重构与分析"></a>GPt-SNE 论文重构与分析</h2><p>作者：Andrew Lensen</p>
+    <content><![CDATA[<h2 id="GPt-SNE-论文分析"><a href="#GPt-SNE-论文分析" class="headerlink" title="GPt-SNE 论文分析"></a>GPt-SNE 论文分析</h2><p>作者：Andrew Lensen</p>
 <p>期刊：IEEE Transactions on Cybernetics</p>
 <h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><ul>
 <li>首先直接指出目前的可视化的作用和目前可视化方法的痛点<ul>
@@ -544,6 +544,18 @@
       </tags>
   </entry>
   <entry>
+    <title>GP-tSNE论文重构</title>
+    <url>/2020/05/08/GP-tSNEReconstruct/</url>
+    <content><![CDATA[<h2 id="GP-tSNE论文重构"><a href="#GP-tSNE论文重构" class="headerlink" title="GP-tSNE论文重构"></a>GP-tSNE论文重构</h2>]]></content>
+      <categories>
+        <category>数据可视化</category>
+      </categories>
+      <tags>
+        <tag>可理解性</tag>
+        <tag>论文重构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode-104.二叉树的最大深度</title>
     <url>/2020/05/01/LeetCode-104/</url>
     <content><![CDATA[<h2 id="LeetCode-104-二叉树的最大深度"><a href="#LeetCode-104-二叉树的最大深度" class="headerlink" title="LeetCode-104.二叉树的最大深度"></a>LeetCode-104.二叉树的最大深度</h2><p>给定一个二叉树，找出其最大深度。</p>
@@ -564,9 +576,30 @@
       </tags>
   </entry>
   <entry>
-    <title>GP-tSNEReconstruct</title>
-    <url>/2020/05/08/GP-tSNEReconstruct/</url>
-    <content><![CDATA[]]></content>
+    <title>LeetCode-169.多数元素</title>
+    <url>/2020/05/04/LeetCode-169/</url>
+    <content><![CDATA[<h2 id="LeetCode-169-多数元素"><a href="#LeetCode-169-多数元素" class="headerlink" title="LeetCode-169.多数元素"></a>LeetCode-169.多数元素</h2><p>给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。</p>
+<p>你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [3,2,3]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
+<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2,2,1,1,1,2,2]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>因为多数元素数量大于n/2，所以我们只需要统计投票数：（因为只有众数的投票数不为0）</p>
+<ul>
+<li><p>如果当前数字和记录数一致，投票加1</p>
+</li>
+<li><p>如果当前数字和记录数不一致，投票减1</p>
+<ul>
+<li>如果减一后投票数为0，则更新记录数</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> record = nums[<span class="number">0</span>],count = <span class="number">1</span>,i;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i != nums.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == record)</span><br><span class="line">            &#123;</span><br><span class="line">                ++count;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                --count;</span><br><span class="line">                <span class="keyword">if</span>(!count)</span><br><span class="line">                &#123;</span><br><span class="line">                    record = nums[i];</span><br><span class="line">                    count = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> record;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+      </tags>
   </entry>
   <entry>
     <title>LeetCode-136.只出现一次的数字</title>
@@ -598,29 +631,29 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-169.多数元素</title>
-    <url>/2020/05/04/LeetCode-169/</url>
-    <content><![CDATA[<h2 id="LeetCode-169-多数元素"><a href="#LeetCode-169-多数元素" class="headerlink" title="LeetCode-169.多数元素"></a>LeetCode-169.多数元素</h2><p>给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。</p>
-<p>你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
-<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [3,2,3]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
-<h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2,2,1,1,1,2,2]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>因为多数元素数量大于n/2，所以我们只需要统计投票数：（因为只有众数的投票数不为0）</p>
-<ul>
-<li><p>如果当前数字和记录数一致，投票加1</p>
-</li>
-<li><p>如果当前数字和记录数不一致，投票减1</p>
-<ul>
-<li>如果减一后投票数为0，则更新记录数</li>
-</ul>
-</li>
-</ul>
-<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> record = nums[<span class="number">0</span>],count = <span class="number">1</span>,i;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i != nums.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == record)</span><br><span class="line">            &#123;</span><br><span class="line">                ++count;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                --count;</span><br><span class="line">                <span class="keyword">if</span>(!count)</span><br><span class="line">                &#123;</span><br><span class="line">                    record = nums[i];</span><br><span class="line">                    count = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> record;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <title>LeetCode-226.翻转二叉树</title>
+    <url>/2020/04/30/LeetCode-226/</url>
+    <content><![CDATA[<h2 id="LeetCode-226-翻转二叉树"><a href="#LeetCode-226-翻转二叉树" class="headerlink" title="LeetCode-226.翻转二叉树"></a>LeetCode-226.翻转二叉树</h2><p>翻转一棵二叉树。</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><p>输入：</p>
+<pre><code>     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+</code></pre><p>输出：</p>
+<pre><code>     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+</code></pre><h2 id="思路解析："><a href="#思路解析：" class="headerlink" title="思路解析："></a>思路解析：</h2><p>这题就是交换二叉树的左右节点。因为你交换二叉树的左右节点，是不会影响到父节点和子节点的。即交换完，你的父节点还是你的父节点，你的子节点还是你的子节点。</p>
+<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        TreeNode *tmp = <span class="literal">nullptr</span>,*tmp2 = <span class="literal">nullptr</span>;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            tmp2 = q.front();</span><br><span class="line">            tmp = tmp2-&gt;left;</span><br><span class="line">            tmp2-&gt;left = tmp2-&gt;right;</span><br><span class="line">            tmp2-&gt;right = tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;left)</span><br><span class="line">                q.push(tmp2-&gt;left);</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;right)</span><br><span class="line">                q.push(tmp2-&gt;right);</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>数组</tag>
+        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -656,32 +689,6 @@
       </categories>
       <tags>
         <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-226.翻转二叉树</title>
-    <url>/2020/04/30/LeetCode-226/</url>
-    <content><![CDATA[<h2 id="LeetCode-226-翻转二叉树"><a href="#LeetCode-226-翻转二叉树" class="headerlink" title="LeetCode-226.翻转二叉树"></a>LeetCode-226.翻转二叉树</h2><p>翻转一棵二叉树。</p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><p>输入：</p>
-<pre><code>     4
-   /   \
-  2     7
- / \   / \
-1   3 6   9
-</code></pre><p>输出：</p>
-<pre><code>     4
-   /   \
-  7     2
- / \   / \
-9   6 3   1
-</code></pre><h2 id="思路解析："><a href="#思路解析：" class="headerlink" title="思路解析："></a>思路解析：</h2><p>这题就是交换二叉树的左右节点。因为你交换二叉树的左右节点，是不会影响到父节点和子节点的。即交换完，你的父节点还是你的父节点，你的子节点还是你的子节点。</p>
-<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        TreeNode *tmp = <span class="literal">nullptr</span>,*tmp2 = <span class="literal">nullptr</span>;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            tmp2 = q.front();</span><br><span class="line">            tmp = tmp2-&gt;left;</span><br><span class="line">            tmp2-&gt;left = tmp2-&gt;right;</span><br><span class="line">            tmp2-&gt;right = tmp;</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;left)</span><br><span class="line">                q.push(tmp2-&gt;left);</span><br><span class="line">            <span class="keyword">if</span>(tmp2-&gt;right)</span><br><span class="line">                q.push(tmp2-&gt;right);</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -729,6 +736,50 @@
       <tags>
         <tag>分治</tag>
         <tag>优先队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-437.路径总和III</title>
+    <url>/2020/05/09/LeetCode-437/</url>
+    <content><![CDATA[<h2 id="LeetCode-437-路径总和III"><a href="#LeetCode-437-路径总和III" class="headerlink" title="LeetCode-437.路径总和III"></a>LeetCode-437.路径总和III</h2><p>给定一个二叉树，它的每个结点都存放着一个整数值。</p>
+<p>找出路径和等于给定数值的路径总数。</p>
+<p>路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</p>
+<p>二叉树不超过1000个节点，且节点数值范围是 [-1000000,1000000] 的整数。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><pre><code>root = [10,5,-3,3,2,null,11,3,-2,null,1], sum = 8
+
+      10
+     /  \
+    5   -3
+   / \    \
+  3   2   11
+ / \   \
+3  -2   1
+
+返回 3。和等于 8 的路径有:
+
+1. 5 -&gt; 3
+2. 5 -&gt; 2 -&gt; 1
+3. -3 -&gt; 11
+</code></pre><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="使用双递归完成："><a href="#使用双递归完成：" class="headerlink" title="使用双递归完成："></a>使用双递归完成：</h3><ul>
+<li>第一层递归遍历起始节点</li>
+<li>第二层递归遍历结束节点</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> func(root,sum) + pathSum(root-&gt;left,sum) + pathSum(root-&gt;right,sum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        sum -= root-&gt;val;</span><br><span class="line">        <span class="keyword">return</span> (sum ? <span class="number">0</span> : <span class="number">1</span>) + func(root-&gt;left,sum) + func(root-&gt;right,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="使用前缀和"><a href="#使用前缀和" class="headerlink" title="使用前缀和"></a>使用前缀和</h3><ul>
+<li>前缀和的定义是，路径上到当前节点为止的累加和（包括当前节点）</li>
+<li>因此我们可以得到推论：A节点和B节点之间的节点和为B的前缀和与A的前缀和的差值。</li>
+<li>那么给定B的前缀和与路径和，我们可以算出A的前缀和（A = B - val)</li>
+<li>为了方便检索前缀和，我们可以使用Map管理前缀和。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> count = <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;();</span><br><span class="line">        <span class="keyword">return</span> func(root,count,sum,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &amp;count,<span class="keyword">int</span> &amp;val,<span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        sum += root-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(sum == val)</span><br><span class="line">            ++ans;</span><br><span class="line">        <span class="keyword">if</span>(count.<span class="built_in">find</span>(sum-val) != count.<span class="built_in">end</span>())</span><br><span class="line">            ans += count[sum-val];</span><br><span class="line">        <span class="keyword">if</span>(count.<span class="built_in">find</span>(sum) == count.<span class="built_in">end</span>())</span><br><span class="line">            count[sum] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ++count[sum];</span><br><span class="line">        ans += func(root-&gt;left,count,val,sum);</span><br><span class="line">        ans += func(root-&gt;right,count,val,sum);</span><br><span class="line">        --count[sum];</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
+        <tag>前缀和</tag>
+        <tag>双递归</tag>
       </tags>
   </entry>
   <entry>
@@ -799,23 +850,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-617.合并二叉树</title>
-    <url>/2020/04/28/LeetCode-617/</url>
-    <content><![CDATA[<h2 id="LeetCode-617-合并二叉树"><a href="#LeetCode-617-合并二叉树" class="headerlink" title="LeetCode-617.合并二叉树"></a>LeetCode-617.合并二叉树</h2><p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
-<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
-<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
-<p>注意: 合并必须从两个树的根节点开始。</p>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这道题还是很简单的，只需要判断当前合并节点在对应的两棵树上是否都不为空。如果都不为空，则继续遍历左右子树，否则直接返回另一棵不为空的树即可。</p>
-<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">mergeTrees</span><span class="params">(TreeNode* t1, TreeNode* t2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!t1 &amp;&amp; !t2)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(!t2)</span><br><span class="line">    	<span class="keyword">return</span> t1;</span><br><span class="line">    <span class="keyword">if</span>(!t1)</span><br><span class="line">    	<span class="keyword">return</span> t2;</span><br><span class="line">    t1-&gt;val += t2-&gt;val;</span><br><span class="line">    t1-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left);</span><br><span class="line">    t1-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> t1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode-538.把二叉搜索树转换为累加树</title>
     <url>/2020/05/06/LeetCode-538/</url>
     <content><![CDATA[<h2 id="LeetCode-538-把二叉搜索树转换为累加树"><a href="#LeetCode-538-把二叉搜索树转换为累加树" class="headerlink" title="LeetCode-538.把二叉搜索树转换为累加树"></a>LeetCode-538.把二叉搜索树转换为累加树</h2><p>给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，使得每个节点的值是原来的节点值加上所有大于它的节点值之和。</p>
@@ -841,6 +875,233 @@
       <tags>
         <tag>树</tag>
         <tag>递归/非递归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-617.合并二叉树</title>
+    <url>/2020/04/28/LeetCode-617/</url>
+    <content><![CDATA[<h2 id="LeetCode-617-合并二叉树"><a href="#LeetCode-617-合并二叉树" class="headerlink" title="LeetCode-617.合并二叉树"></a>LeetCode-617.合并二叉树</h2><p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
+<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
+<p>注意: 合并必须从两个树的根节点开始。</p>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>这道题还是很简单的，只需要判断当前合并节点在对应的两棵树上是否都不为空。如果都不为空，则继续遍历左右子树，否则直接返回另一棵不为空的树即可。</p>
+<h2 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">mergeTrees</span><span class="params">(TreeNode* t1, TreeNode* t2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!t1 &amp;&amp; !t2)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(!t2)</span><br><span class="line">    	<span class="keyword">return</span> t1;</span><br><span class="line">    <span class="keyword">if</span>(!t1)</span><br><span class="line">    	<span class="keyword">return</span> t2;</span><br><span class="line">    t1-&gt;val += t2-&gt;val;</span><br><span class="line">    t1-&gt;left = mergeTrees(t1-&gt;left,t2-&gt;left);</span><br><span class="line">    t1-&gt;right = mergeTrees(t1-&gt;right,t2-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> t1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PaperExamRecord-2020-5-9</title>
+    <url>/2020/05/09/PaperExamRecord-2020-5-9/</url>
+    <content><![CDATA[<h2 id="SwissRoll局部线性近似实验分析"><a href="#SwissRoll局部线性近似实验分析" class="headerlink" title="SwissRoll局部线性近似实验分析"></a>SwissRoll局部线性近似实验分析</h2><ul>
+<li><h3 id="SwissRoll-ISOMAP分片示意图："><a href="#SwissRoll-ISOMAP分片示意图：" class="headerlink" title="SwissRoll ISOMAP分片示意图："></a>SwissRoll ISOMAP分片示意图：<img src="/2020/05/09/PaperExamRecord-2020-5-9/1589023174018.png" alt="1589023174018"></h3></li>
+<li><h3 id="SwissRoll分片树示意图："><a href="#SwissRoll分片树示意图：" class="headerlink" title="SwissRoll分片树示意图："></a>SwissRoll分片树示意图：</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022936862.png" alt="1589022936862"></p>
+</li>
+</ul>
+<ul>
+<li><h3 id="SwissRoll三维模型示意图：（图片中的数字对应分片号）"><a href="#SwissRoll三维模型示意图：（图片中的数字对应分片号）" class="headerlink" title="SwissRoll三维模型示意图：（图片中的数字对应分片号）"></a>SwissRoll三维模型示意图：（图片中的数字对应分片号）</h3></li>
+</ul>
+<p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022188714.png" alt="1589022188714"></p>
+<ul>
+<li><h3 id="局部参数映射列表：维度顺序是（z-y-x"><a href="#局部参数映射列表：维度顺序是（z-y-x" class="headerlink" title="局部参数映射列表：维度顺序是（z,y,x)"></a>局部参数映射列表：维度顺序是（z,y,x)</h3></li>
+</ul>
+<table>
+     <tr>
+        <td>分片标号</td>
+        <td>原始特征在X轴上的相关性</td>
+        <td>原始特征在Y轴上的相关性</td>
+     </tr>
+     <tr>
+        <td>1</td>
+        <td>-0.24</td>
+        <td>0.01</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.01</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.96</td>
+        <td>-0.03</td>
+     </tr>
+     <tr>
+        <td>2</td>
+        <td>-0.81</td>
+        <td>0.04</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.02</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.59</td>
+        <td>0.03</td>
+     </tr>
+     <tr>
+        <td>3</td>
+        <td>-0.99</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.16</td>
+        <td>0.05</td>
+     </tr>
+     <tr>
+        <td>4</td>
+        <td>-0.62</td>
+        <td>0.03</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.78</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td>5</td>
+        <td>0.2</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.02</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.98</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td>6</td>
+        <td>0.34</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.01</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.94</td>
+        <td>0.03</td>
+     </tr>
+     <tr>
+        <td>7</td>
+        <td>0.73</td>
+        <td>0.01</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.03</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>-0.68</td>
+        <td>0.02</td>
+     </tr>
+     <tr>
+        <td>8</td>
+        <td>1</td>
+        <td>0</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.11</td>
+        <td>0.01</td>
+     </tr>
+     <tr>
+        <td>9</td>
+        <td>0.57</td>
+        <td>0.04</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.03</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0.82</td>
+        <td>-0.01</td>
+     </tr>
+     <tr>
+        <td>10</td>
+        <td>0.07</td>
+        <td>-0.01</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>0</td>
+        <td>-1</td>
+     </tr>
+     <tr>
+        <td></td>
+        <td>1</td>
+        <td>-0.02</td>
+     </tr>
+     <tr>
+        <td></td>
+     </tr>
+  </table>
+
+<ul>
+<li><h3 id="分析结论："><a href="#分析结论：" class="headerlink" title="分析结论："></a>分析结论：</h3><ul>
+<li>ISOMAP在展开SwissRoll数据集时，二维投影的Y轴与数据集本身的第二维(Y）一一对应。<ul>
+<li>所有分片的Y轴与SwissRoll的第二维（Y）相关程度都为-1</li>
+</ul>
+</li>
+<li>ISOMAP在展开SwissRoll数据集时，不同分片的X轴与原始特征之间的关系呈现出可解释的规律：<ul>
+<li>1,5,6,10等接近水平的分片，X轴与第三维（X）的相关性更强。</li>
+<li>3,8等接近垂直的分片，X轴与第一维（Z）的相关性更强</li>
+<li>根据分片在三维空间中的分布，X轴与第一维（Z）和第三维（X）的相关性一直在规律性的变化<ul>
+<li>1-》2-》3，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直</li>
+<li>4-》5，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li>
+<li>6-》7-》8，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直<ul>
+<li>其中7存在Z和X相关性接近的情况，这是因为7在Z和X上的可分性都很好</li>
+</ul>
+</li>
+<li>8-》9-》10，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li>
+<li>根据上述实验结果的分析，我认为我们方法生成的参数映射是连续的，并可以利用参数映射连续性来分析分片之间的非线性变化。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>论文实验</category>
+      </categories>
+      <tags>
+        <tag>局部线性近似</tag>
+        <tag>SwissRoll</tag>
       </tags>
   </entry>
 </search>
