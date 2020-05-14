@@ -190,6 +190,139 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/14/PaperExamRecord-Iris/" class="post-title-link" itemprop="url">PaperExamRecord-Iris</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-14 20:47:51 / 修改时间：22:49:32" itemprop="dateCreated datePublished" datetime="2020-05-14T20:47:51+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">论文实验</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Iris局部线性近似实验分析"><a href="#Iris局部线性近似实验分析" class="headerlink" title="Iris局部线性近似实验分析"></a>Iris局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul>
+<li>验证算法在低维多类数据集上的有效性</li>
+</ul>
+<h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul>
+<li>多次实验，观察实验结果是否一致</li>
+<li>观测实验结果是否和前人对Iris数据集的分析一致</li>
+</ul>
+<h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul>
+<li>在Iris数据集上使用t-SNE方法投影到二维</li>
+<li>使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）</li>
+</ul>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="Iris-t-SNE分片示意图"><a href="#Iris-t-SNE分片示意图" class="headerlink" title="Iris t-SNE分片示意图"></a>Iris t-SNE分片示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463841875.png" alt="1589463841875"></p>
+<h4 id="Iris分片树示意图"><a href="#Iris分片树示意图" class="headerlink" title="Iris分片树示意图"></a>Iris分片树示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463951813.png" alt="1589463951813"></p>
+<h4 id="局部参数映射列表"><a href="#局部参数映射列表" class="headerlink" title="局部参数映射列表"></a>局部参数映射列表</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>分片标号</th>
+<th>sepal length和投影的相关性</th>
+<th>sepal breadth和投影的相关性</th>
+<th>petal length和投影的相关性</th>
+<th>petal breadth和投影的相关性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.34</td>
+<td>0.28</td>
+<td>1.24</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.28</td>
+<td>0.60</td>
+<td>1.19</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.58</td>
+<td>0.16</td>
+<td>0.98</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Iris数据集前人分析1"><a href="#Iris数据集前人分析1" class="headerlink" title="Iris数据集前人分析1"></a>Iris数据集前人分析<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1936.tb02137.x" target="_blank" rel="noopener" title="THE USE OF MULTIPLE MEASUREMENTS IN(R. A. FISHER)">1</a></h4><ul>
+<li><p>Fisher在线性判别分析的实验中给出的最佳参数（相关性）如下：</p>
+<p>| sepal length | sepal breadth | petal length | petal breadth |<br>| —————— | ——————- | —————— | ——————- |<br>| -3.308998    | -2.759132     | 8.866048     | 9.392551      |</p>
+</li>
+<li><p>Fisher线性判别分析结果</p>
+<p><img src="/2020/05/14/PaperExamRecord-Iris/1589465223247.png" alt="1589465223247"></p>
+</li>
+<li><p>Fisher认为petal length和petal breadth相比sepal length和sepal breadth能够更好地区分Iris</p>
+</li>
+</ul>
+<h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul>
+<li>多次实验得到的实验结果一致</li>
+<li>t-SNE在投影Iris数据集上呈现出和Fisher线性判别分析模型相同的模式<ul>
+<li>所有分片的投影的petal length和petal breadth相关性大于sepal length和sepal breadth的相关性，这和Fisher线性判别分析的结论一致</li>
+</ul>
+</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/LeetCode-53/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -653,7 +786,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/09/PaperExamRecord-2020-5-9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/09/PaperExamRecord-SwissRoll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -667,7 +800,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/09/PaperExamRecord-2020-5-9/" class="post-title-link" itemprop="url">PaperExamRecord-2020-5-9</a>
+            <a href="/2020/05/09/PaperExamRecord-SwissRoll/" class="post-title-link" itemprop="url">PaperExamRecord-SwissRoll</a>
         </h2>
 
         <div class="post-meta">
@@ -684,7 +817,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-13 22:19:34" itemprop="dateModified" datetime="2020-05-13T22:19:34+08:00">2020-05-13</time>
+                <time title="修改时间：2020-05-14 22:49:50" itemprop="dateModified" datetime="2020-05-14T22:49:50+08:00">2020-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -707,12 +840,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="SwissRoll局部线性近似实验分析"><a href="#SwissRoll局部线性近似实验分析" class="headerlink" title="SwissRoll局部线性近似实验分析"></a>SwissRoll局部线性近似实验分析</h2><h3 id="SwissRoll-ISOMAP分片示意图"><a href="#SwissRoll-ISOMAP分片示意图" class="headerlink" title="SwissRoll ISOMAP分片示意图"></a>SwissRoll ISOMAP分片示意图</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589023174018.png" alt="1589023174018"></p>
-<h3 id="SwissRoll分片树示意图"><a href="#SwissRoll分片树示意图" class="headerlink" title="SwissRoll分片树示意图"></a>SwissRoll分片树示意图</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022936862.png" alt="1589022936862"></p>
-<h3 id="SwissRoll三维模型示意图（图片中的数字对应分片号）"><a href="#SwissRoll三维模型示意图（图片中的数字对应分片号）" class="headerlink" title="SwissRoll三维模型示意图（图片中的数字对应分片号）"></a>SwissRoll三维模型示意图（图片中的数字对应分片号）</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022188714.png" alt="1589022188714"></p>
+          <h2 id="SwissRoll局部线性近似实验分析"><a href="#SwissRoll局部线性近似实验分析" class="headerlink" title="SwissRoll局部线性近似实验分析"></a>SwissRoll局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul>
+<li>验证算法在三维流形数据集上的有效性</li>
+</ul>
+<h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul>
+<li>多次实验，观察实验结果是否一致</li>
+<li>实验结果分析得到的结论是否存在异常</li>
+</ul>
+<h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul>
+<li>在SwissRoll三维流形数据集上使用ISOMAP方法投影到二维</li>
+<li>使用算法将ISOMAP投影简化成包含10个局部投影的投影集合</li>
+</ul>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="SwissRoll-ISOMAP分片示意图"><a href="#SwissRoll-ISOMAP分片示意图" class="headerlink" title="SwissRoll ISOMAP分片示意图"></a>SwissRoll ISOMAP分片示意图</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589023174018.png" alt="1589023174018"></p>
+<h4 id="SwissRoll分片树示意图"><a href="#SwissRoll分片树示意图" class="headerlink" title="SwissRoll分片树示意图"></a>SwissRoll分片树示意图</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589022936862.png" alt="1589022936862"></p>
+<h4 id="SwissRoll三维模型示意图（图片中的数字对应分片号）"><a href="#SwissRoll三维模型示意图（图片中的数字对应分片号）" class="headerlink" title="SwissRoll三维模型示意图（图片中的数字对应分片号）"></a>SwissRoll三维模型示意图（图片中的数字对应分片号）</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589022188714.png" alt="1589022188714"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/09/PaperExamRecord-2020-5-9/#more" rel="contents">
+              <a class="btn" href="/2020/05/09/PaperExamRecord-SwissRoll/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -999,112 +1143,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/07/ErrorRecord/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HaowenZhou">
-      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/07/ErrorRecord/" class="post-title-link" itemprop="url">论文错误记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-07 23:33:13" itemprop="dateCreated datePublished" datetime="2020-05-07T23:33:13+08:00">2020-05-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-08 13:17:12" itemprop="dateModified" datetime="2020-05-08T13:17:12+08:00">2020-05-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">数据可视化</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="论文错误记录"><a href="#论文错误记录" class="headerlink" title="论文错误记录"></a>论文错误记录</h2><ul>
-<li><p>原句：但是，目前最流行的可视化方法（如t-SNE[]）往往是黑箱方法，因为使用者无法洞察可视化如何表示数据的原始特征</p>
-<ul>
-<li>问题：最流行的降维方法，不仅仅是t-SNE，还有PCA；无法观察原始特征，和黑箱之间的因果联系未论证。</li>
-<li>解析：<ul>
-<li>定语缺失，应该说是最流行的的流形学习方法</li>
-<li>“流形学习方法（如t-SNE[]）往往是黑箱方法”作为结论，“因为使用者无法洞察可视化如何表示数据的原始特征”作为前提，是以偏概全</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原句：即使是可视化领域中最新的研究进展，如UMAP[] 也承认其依然存在着可解释性问题。</p>
-<ul>
-<li>问题：不知道这里的可解释性问题又是什么？最新的进展，和可解释性有什么关系？为什么要用即使？</li>
-<li>解析：<ul>
-<li>可解释性问题在上文中没有给出直接的定义，我只描述了导致可解释问题的两个情景。</li>
-<li>因果关系没写清楚，太含混了</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原句：其他的方法如AutoEncoder[] 和 parametric t-SNE[] 给出了从原始数据及到二维可视化<br>的参数映射，但这些参数映射都基于复杂的神经网络生成，对人来说依然难以理解</p>
-<ul>
-<li>问题：其它的方法，什么叫其它的方法？举例不能代表概念。</li>
-<li>解析：应该写成给出参数映射的流形学习变体</li>
-</ul>
-</li>
-<li>原句：虽然PCA 和LDA 等线性方法的可视化结果具有很强的可解释性，但它们的可视化仅能表示数据的原始特征的线性组合，这限制了其可视化的质量。<ul>
-<li>问题：刚刚在讨论可解释性，为什么忽然又变成了可视化的质量？</li>
-<li>解析：要紧扣主题</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1174,7 +1212,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1187,7 +1225,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

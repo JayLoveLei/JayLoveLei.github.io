@@ -20,18 +20,25 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyBlog">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/index.html">
+  <meta name="description" content="Iris局部线性近似实验分析实验目的 验证算法在低维多类数据集上的有效性  如何验证 多次实验，观察实验结果是否一致 观测实验结果是否和前人对Iris数据集的分析一致  实验设计 在Iris数据集上使用t-SNE方法投影到二维 使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）  实验结果Iris t-SNE分片示意图 Iris分片树示意图 局部参数映射列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PaperExamRecord-Iris">
+<meta property="og:url" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+<meta property="og:description" content="Iris局部线性近似实验分析实验目的 验证算法在低维多类数据集上的有效性  如何验证 多次实验，观察实验结果是否一致 观测实验结果是否和前人对Iris数据集的分析一致  实验设计 在Iris数据集上使用t-SNE方法投影到二维 使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）  实验结果Iris t-SNE分片示意图 Iris分片树示意图 局部参数映射列">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463841875.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463951813.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589465223247.png">
+<meta property="article:published_time" content="2020-05-14T12:47:51.000Z">
+<meta property="article:modified_time" content="2020-05-14T14:49:32.616Z">
 <meta property="article:author" content="HaowenZhou">
-<meta property="article:tag" content="游戏客户端开发，后端开发，数据可视化，C++，数据结构与算法">
+<meta property="article:tag" content="局部线性近似">
+<meta property="article:tag" content="Iris">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463841875.png">
 
-<link rel="canonical" href="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/">
+<link rel="canonical" href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/">
 
 
 <script id="page-configurations">
@@ -39,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 数组 | MyBlog</title>
+  <title>PaperExamRecord-Iris | MyBlog</title>
   
 
 
@@ -184,137 +191,169 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">数组
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PaperExamRecord-Iris
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-14 20:47:51 / 修改时间：22:49:32" itemprop="dateCreated datePublished" datetime="2020-05-14T20:47:51+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">论文实验</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h2 id="Iris局部线性近似实验分析"><a href="#Iris局部线性近似实验分析" class="headerlink" title="Iris局部线性近似实验分析"></a>Iris局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul>
+<li>验证算法在低维多类数据集上的有效性</li>
+</ul>
+<h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul>
+<li>多次实验，观察实验结果是否一致</li>
+<li>观测实验结果是否和前人对Iris数据集的分析一致</li>
+</ul>
+<h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul>
+<li>在Iris数据集上使用t-SNE方法投影到二维</li>
+<li>使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）</li>
+</ul>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="Iris-t-SNE分片示意图"><a href="#Iris-t-SNE分片示意图" class="headerlink" title="Iris t-SNE分片示意图"></a>Iris t-SNE分片示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463841875.png" alt="1589463841875"></p>
+<h4 id="Iris分片树示意图"><a href="#Iris分片树示意图" class="headerlink" title="Iris分片树示意图"></a>Iris分片树示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463951813.png" alt="1589463951813"></p>
+<h4 id="局部参数映射列表"><a href="#局部参数映射列表" class="headerlink" title="局部参数映射列表"></a>局部参数映射列表</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>分片标号</th>
+<th>sepal length和投影的相关性</th>
+<th>sepal breadth和投影的相关性</th>
+<th>petal length和投影的相关性</th>
+<th>petal breadth和投影的相关性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.34</td>
+<td>0.28</td>
+<td>1.24</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.28</td>
+<td>0.60</td>
+<td>1.19</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.58</td>
+<td>0.16</td>
+<td>0.98</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Iris数据集前人分析1"><a href="#Iris数据集前人分析1" class="headerlink" title="Iris数据集前人分析1"></a>Iris数据集前人分析<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1936.tb02137.x" target="_blank" rel="noopener" title="THE USE OF MULTIPLE MEASUREMENTS IN(R. A. FISHER)">1</a></h4><ul>
+<li><p>Fisher在线性判别分析的实验中给出的最佳参数（相关性）如下：</p>
+<p>| sepal length | sepal breadth | petal length | petal breadth |<br>| —————— | ——————- | —————— | ——————- |<br>| -3.308998    | -2.759132     | 8.866048     | 9.392551      |</p>
+</li>
+<li><p>Fisher线性判别分析结果</p>
+<p><img src="/2020/05/14/PaperExamRecord-Iris/1589465223247.png" alt="1589465223247"></p>
+</li>
+<li><p>Fisher认为petal length和petal breadth相比sepal length和sepal breadth能够更好地区分Iris</p>
+</li>
+</ul>
+<h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul>
+<li>多次实验得到的实验结果一致</li>
+<li>t-SNE在投影Iris数据集上呈现出和Fisher线性判别分析模型相同的模式<ul>
+<li>所有分片的投影的petal length和petal breadth相关性大于sepal length和sepal breadth的相关性，这和Fisher线性判别分析的结论一致</li>
+</ul>
+</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-12T12:11:41+08:00"
-              content="2020-05-12">
-          05-12
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B1%80%E9%83%A8%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC/" rel="tag"># 局部线性近似</a>
+              <a href="/tags/Iris/" rel="tag"># Iris</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/12/LeetCode-121/" itemprop="url">
-            <span itemprop="name">LeetCode-121.买卖股票的最佳时机</span>
-          </a>
-      </div>
+        
 
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-08T13:09:24+08:00"
-              content="2020-05-08">
-          05-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/08/LeetCode-448/" itemprop="url">
-            <span itemprop="name">LeetCode-448.找到所有数组中消失的数字</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-07T11:48:57+08:00"
-              content="2020-05-07">
-          05-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/07/LeetCode-283/" itemprop="url">
-            <span itemprop="name">LeetCode-283.移动零</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-04T10:33:08+08:00"
-              content="2020-05-04">
-          05-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/04/LeetCode-169/" itemprop="url">
-            <span itemprop="name">LeetCode-169.多数元素</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-27T22:24:05+08:00"
-              content="2020-04-27">
-          04-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/27/LeetCode-33/" itemprop="url">
-            <span itemprop="name">LeetCode-33.搜索旋转排序数组</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/14/LeetCode-53/" rel="prev" title="LeetCode-53.最大子序和">
+      <i class="fa fa-chevron-left"></i> LeetCode-53.最大子序和
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -361,6 +400,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iris局部线性近似实验分析"><span class="nav-number">1.</span> <span class="nav-text">Iris局部线性近似实验分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验目的"><span class="nav-number">1.1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何验证"><span class="nav-number">1.2.</span> <span class="nav-text">如何验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验设计"><span class="nav-number">1.3.</span> <span class="nav-text">实验设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验结果"><span class="nav-number">1.4.</span> <span class="nav-text">实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris-t-SNE分片示意图"><span class="nav-number">1.4.1.</span> <span class="nav-text">Iris t-SNE分片示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris分片树示意图"><span class="nav-number">1.4.2.</span> <span class="nav-text">Iris分片树示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部参数映射列表"><span class="nav-number">1.4.3.</span> <span class="nav-text">局部参数映射列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris数据集前人分析1"><span class="nav-number">1.4.4.</span> <span class="nav-text">Iris数据集前人分析1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验结果分析"><span class="nav-number">1.5.</span> <span class="nav-text">实验结果分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.6.</span> <span class="nav-text">引用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -567,6 +607,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'c83cc72459daed0afebb',
+      clientSecret: '9a23846e57d82a3f03363a6b55e7e0ba04c372d6',
+      repo        : 'JayLoveLei.github.io',
+      owner       : 'JayLoveLei',
+      admin       : ['germey'],
+      id          : '6236da720c336639180ebdf5f6e925f0',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>

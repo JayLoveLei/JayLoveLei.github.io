@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-14T07:01:30.297Z</updated>
+  <updated>2020-05-14T14:49:32.616Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PaperExamRecord-Iris</title>
+    <link href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/"/>
+    <id>http://yoursite.com/2020/05/14/PaperExamRecord-Iris/</id>
+    <published>2020-05-14T12:47:51.000Z</published>
+    <updated>2020-05-14T14:49:32.616Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Iris局部线性近似实验分析"><a href="#Iris局部线性近似实验分析" class="headerlink" title="Iris局部线性近似实验分析"></a>Iris局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>验证算法在低维多类数据集上的有效性</li></ul><h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul><li>多次实验，观察实验结果是否一致</li><li>观测实验结果是否和前人对Iris数据集的分析一致</li></ul><h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul><li>在Iris数据集上使用t-SNE方法投影到二维</li><li>使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）</li></ul><h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="Iris-t-SNE分片示意图"><a href="#Iris-t-SNE分片示意图" class="headerlink" title="Iris t-SNE分片示意图"></a>Iris t-SNE分片示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463841875.png" alt="1589463841875"></p><h4 id="Iris分片树示意图"><a href="#Iris分片树示意图" class="headerlink" title="Iris分片树示意图"></a>Iris分片树示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463951813.png" alt="1589463951813"></p><h4 id="局部参数映射列表"><a href="#局部参数映射列表" class="headerlink" title="局部参数映射列表"></a>局部参数映射列表</h4><div class="table-container"><table><thead><tr><th>分片标号</th><th>sepal length和投影的相关性</th><th>sepal breadth和投影的相关性</th><th>petal length和投影的相关性</th><th>petal breadth和投影的相关性</th></tr></thead><tbody><tr><td>1</td><td>0.34</td><td>0.28</td><td>1.24</td><td>0.5</td></tr><tr><td>2</td><td>0.28</td><td>0.60</td><td>1.19</td><td>0.36</td></tr><tr><td>3</td><td>0.58</td><td>0.16</td><td>0.98</td><td>0.83</td></tr></tbody></table></div><h4 id="Iris数据集前人分析1"><a href="#Iris数据集前人分析1" class="headerlink" title="Iris数据集前人分析1"></a>Iris数据集前人分析<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1469-1809.1936.tb02137.x" target="_blank" rel="noopener" title="THE USE OF MULTIPLE MEASUREMENTS IN(R. A. FISHER)">1</a></h4><ul><li><p>Fisher在线性判别分析的实验中给出的最佳参数（相关性）如下：</p><p>| sepal length | sepal breadth | petal length | petal breadth |<br>| —————— | ——————- | —————— | ——————- |<br>| -3.308998    | -2.759132     | 8.866048     | 9.392551      |</p></li><li><p>Fisher线性判别分析结果</p><p><img src="/2020/05/14/PaperExamRecord-Iris/1589465223247.png" alt="1589465223247"></p></li><li><p>Fisher认为petal length和petal breadth相比sepal length和sepal breadth能够更好地区分Iris</p></li></ul><h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul><li>多次实验得到的实验结果一致</li><li>t-SNE在投影Iris数据集上呈现出和Fisher线性判别分析模型相同的模式<ul><li>所有分片的投影的petal length和petal breadth相关性大于sepal length和sepal breadth的相关性，这和Fisher线性判别分析的结论一致</li></ul></li></ul><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Iris局部线性近似实验分析&quot;&gt;&lt;a href=&quot;#Iris局部线性近似实验分析&quot; class=&quot;headerlink&quot; title=&quot;Iris局部线性近似实验分析&quot;&gt;&lt;/a&gt;Iris局部线性近似实验分析&lt;/h2&gt;&lt;h3 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实
+      
+    
+    </summary>
+    
+    
+      <category term="论文实验" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/"/>
+    
+    
+      <category term="局部线性近似" scheme="http://yoursite.com/tags/%E5%B1%80%E9%83%A8%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC/"/>
+    
+      <category term="Iris" scheme="http://yoursite.com/tags/Iris/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-53.最大子序和</title>
@@ -222,19 +250,30 @@
   </entry>
   
   <entry>
-    <title>PaperExamRecord-2020-5-9</title>
-    <link href="http://yoursite.com/2020/05/09/PaperExamRecord-2020-5-9/"/>
-    <id>http://yoursite.com/2020/05/09/PaperExamRecord-2020-5-9/</id>
+    <title>PaperExamRecord-SwissRoll</title>
+    <link href="http://yoursite.com/2020/05/09/PaperExamRecord-SwissRoll/"/>
+    <id>http://yoursite.com/2020/05/09/PaperExamRecord-SwissRoll/</id>
     <published>2020-05-09T10:29:49.000Z</published>
-    <updated>2020-05-13T14:19:34.065Z</updated>
+    <updated>2020-05-14T14:49:50.708Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="SwissRoll局部线性近似实验分析"><a href="#SwissRoll局部线性近似实验分析" class="headerlink" title="SwissRoll局部线性近似实验分析"></a>SwissRoll局部线性近似实验分析</h2><h3 id="SwissRoll-ISOMAP分片示意图"><a href="#SwissRoll-ISOMAP分片示意图" class="headerlink" title="SwissRoll ISOMAP分片示意图"></a>SwissRoll ISOMAP分片示意图</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589023174018.png" alt="1589023174018"></p><h3 id="SwissRoll分片树示意图"><a href="#SwissRoll分片树示意图" class="headerlink" title="SwissRoll分片树示意图"></a>SwissRoll分片树示意图</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022936862.png" alt="1589022936862"></p><h3 id="SwissRoll三维模型示意图（图片中的数字对应分片号）"><a href="#SwissRoll三维模型示意图（图片中的数字对应分片号）" class="headerlink" title="SwissRoll三维模型示意图（图片中的数字对应分片号）"></a>SwissRoll三维模型示意图（图片中的数字对应分片号）</h3><p><img src="/2020/05/09/PaperExamRecord-2020-5-9/1589022188714.png" alt="1589022188714"></p><a id="more"></a><h3 id="局部参数映射列表-维度顺序是（z-y-x"><a href="#局部参数映射列表-维度顺序是（z-y-x" class="headerlink" title="局部参数映射列表 维度顺序是（z,y,x)"></a>局部参数映射列表 维度顺序是（z,y,x)</h3><table>     <tr>        <td>分片标号</td>        <td>原始特征在X轴上的相关性</td>        <td>原始特征在Y轴上的相关性</td>     </tr>     <tr>        <td>1</td>        <td>-0.24</td>        <td>0.01</td>     </tr>     <tr>        <td></td>        <td>0.01</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.96</td>        <td>-0.03</td>     </tr>     <tr>        <td>2</td>        <td>-0.81</td>        <td>0.04</td>     </tr>     <tr>        <td></td>        <td>0.02</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.59</td>        <td>0.03</td>     </tr>     <tr>        <td>3</td>        <td>-0.99</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.16</td>        <td>0.05</td>     </tr>     <tr>        <td>4</td>        <td>-0.62</td>        <td>0.03</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.78</td>        <td>0</td>     </tr>     <tr>        <td>5</td>        <td>0.2</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>-0.02</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.98</td>        <td>0</td>     </tr>     <tr>        <td>6</td>        <td>0.34</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>-0.01</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.94</td>        <td>0.03</td>     </tr>     <tr>        <td>7</td>        <td>0.73</td>        <td>0.01</td>     </tr>     <tr>        <td></td>        <td>0.03</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.68</td>        <td>0.02</td>     </tr>     <tr>        <td>8</td>        <td>1</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.11</td>        <td>0.01</td>     </tr>     <tr>        <td>9</td>        <td>0.57</td>        <td>0.04</td>     </tr>     <tr>        <td></td>        <td>0.03</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.82</td>        <td>-0.01</td>     </tr>     <tr>        <td>10</td>        <td>0.07</td>        <td>-0.01</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>1</td>        <td>-0.02</td>     </tr>     <tr>        <td></td>     </tr>  </table><h3 id="分析结论"><a href="#分析结论" class="headerlink" title="分析结论"></a>分析结论</h3><ul><li>ISOMAP在展开SwissRoll数据集时，二维投影的Y轴与数据集本身的第二维(Y）一一对应。<ul><li>所有分片的Y轴与SwissRoll的第二维（Y）相关程度都为-1</li></ul></li><li>ISOMAP在展开SwissRoll数据集时，不同分片的X轴与原始特征之间的关系呈现出可解释的规律：<ul><li>1,5,6,10等接近水平的分片，X轴与第三维（X）的相关性更强。</li><li>3,8等接近垂直的分片，X轴与第一维（Z）的相关性更强</li><li>根据分片在三维空间中的分布，X轴与第一维（Z）和第三维（X）的相关性一直在规律性的变化<ul><li>1-》2-》3，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直</li><li>4-》5，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li><li>6-》7-》8，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直<ul><li>其中7存在Z和X相关性接近的情况，这是因为7在Z和X上的可分性都很好</li></ul></li><li>8-》9-》10，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li><li>根据上述实验结果的分析，我认为我们方法生成的参数映射是连续的，并可以利用参数映射连续性来分析分片之间的非线性变化。</li></ul></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="SwissRoll局部线性近似实验分析"><a href="#SwissRoll局部线性近似实验分析" class="headerlink" title="SwissRoll局部线性近似实验分析"></a>SwissRoll局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>验证算法在三维流形数据集上的有效性</li></ul><h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul><li>多次实验，观察实验结果是否一致</li><li>实验结果分析得到的结论是否存在异常</li></ul><h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul><li>在SwissRoll三维流形数据集上使用ISOMAP方法投影到二维</li><li>使用算法将ISOMAP投影简化成包含10个局部投影的投影集合</li></ul><h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="SwissRoll-ISOMAP分片示意图"><a href="#SwissRoll-ISOMAP分片示意图" class="headerlink" title="SwissRoll ISOMAP分片示意图"></a>SwissRoll ISOMAP分片示意图</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589023174018.png" alt="1589023174018"></p><h4 id="SwissRoll分片树示意图"><a href="#SwissRoll分片树示意图" class="headerlink" title="SwissRoll分片树示意图"></a>SwissRoll分片树示意图</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589022936862.png" alt="1589022936862"></p><h4 id="SwissRoll三维模型示意图（图片中的数字对应分片号）"><a href="#SwissRoll三维模型示意图（图片中的数字对应分片号）" class="headerlink" title="SwissRoll三维模型示意图（图片中的数字对应分片号）"></a>SwissRoll三维模型示意图（图片中的数字对应分片号）</h4><p><img src="/2020/05/09/PaperExamRecord-SwissRoll/1589022188714.png" alt="1589022188714"></p><a id="more"></a><h4 id="局部参数映射列表-维度顺序是（z-y-x"><a href="#局部参数映射列表-维度顺序是（z-y-x" class="headerlink" title="局部参数映射列表 维度顺序是（z,y,x)"></a>局部参数映射列表 维度顺序是（z,y,x)</h4><table>     <tr>        <td>分片标号</td>        <td>原始特征在X轴上的相关性</td>        <td>原始特征在Y轴上的相关性</td>     </tr>     <tr>        <td>1</td>        <td>-0.24</td>        <td>0.01</td>     </tr>     <tr>        <td></td>        <td>0.01</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.96</td>        <td>-0.03</td>     </tr>     <tr>        <td>2</td>        <td>-0.81</td>        <td>0.04</td>     </tr>     <tr>        <td></td>        <td>0.02</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.59</td>        <td>0.03</td>     </tr>     <tr>        <td>3</td>        <td>-0.99</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.16</td>        <td>0.05</td>     </tr>     <tr>        <td>4</td>        <td>-0.62</td>        <td>0.03</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.78</td>        <td>0</td>     </tr>     <tr>        <td>5</td>        <td>0.2</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>-0.02</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.98</td>        <td>0</td>     </tr>     <tr>        <td>6</td>        <td>0.34</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>-0.01</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.94</td>        <td>0.03</td>     </tr>     <tr>        <td>7</td>        <td>0.73</td>        <td>0.01</td>     </tr>     <tr>        <td></td>        <td>0.03</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>-0.68</td>        <td>0.02</td>     </tr>     <tr>        <td>8</td>        <td>1</td>        <td>0</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.11</td>        <td>0.01</td>     </tr>     <tr>        <td>9</td>        <td>0.57</td>        <td>0.04</td>     </tr>     <tr>        <td></td>        <td>0.03</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>0.82</td>        <td>-0.01</td>     </tr>     <tr>        <td>10</td>        <td>0.07</td>        <td>-0.01</td>     </tr>     <tr>        <td></td>        <td>0</td>        <td>-1</td>     </tr>     <tr>        <td></td>        <td>1</td>        <td>-0.02</td>     </tr>  </table><h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul><li>多次实验得到的实验结果一致，且实验结果中没有发现异常</li><li>ISOMAP在展开SwissRoll数据集时，二维投影的Y轴与数据集本身的第二维(Y）一一对应。<ul><li>所有分片的Y轴与SwissRoll的第二维（Y）相关程度都为-1</li></ul></li><li>ISOMAP在展开SwissRoll数据集时，不同分片的X轴与原始特征之间的关系呈现出可解释的规律：<ul><li>1,5,6,10等接近水平的分片，X轴与第三维（X）的相关性更强。</li><li>3,8等接近垂直的分片，X轴与第一维（Z）的相关性更强</li><li>根据分片在三维空间中的分布，X轴与第一维（Z）和第三维（X）的相关性一直在规律性的变化<ul><li>1-》2-》3，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直</li><li>4-》5，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li><li>6-》7-》8，Z的相关性增强，X的相关性减弱，因为分片变得更接近垂直<ul><li>其中7存在Z和X相关性接近的情况，这是因为7在Z和X上的可分性都很好</li></ul></li><li>8-》9-》10，Z的相关性减弱，X的相关性增强，因为分片变得更接近水平</li><li>根据上述实验结果的分析，我认为我们方法生成的参数映射是连续的，并可以利用参数映射连续性来分析分片之间的非线性变化。</li></ul></li></ul></li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;SwissRoll局部线性近似实验分析&quot;&gt;&lt;a href=&quot;#SwissRoll局部线性近似实验分析&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll局部线性近似实验分析&quot;&gt;&lt;/a&gt;SwissRoll局部线性近似实验分析&lt;/h2&gt;&lt;h3 id=&quot;SwissRoll-ISOMAP分片示意图&quot;&gt;&lt;a href=&quot;#SwissRoll-ISOMAP分片示意图&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll ISOMAP分片示意图&quot;&gt;&lt;/a&gt;SwissRoll ISOMAP分片示意图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-2020-5-9/1589023174018.png&quot; alt=&quot;1589023174018&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;SwissRoll分片树示意图&quot;&gt;&lt;a href=&quot;#SwissRoll分片树示意图&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll分片树示意图&quot;&gt;&lt;/a&gt;SwissRoll分片树示意图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-2020-5-9/1589022936862.png&quot; alt=&quot;1589022936862&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;SwissRoll三维模型示意图（图片中的数字对应分片号）&quot;&gt;&lt;a href=&quot;#SwissRoll三维模型示意图（图片中的数字对应分片号）&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll三维模型示意图（图片中的数字对应分片号）&quot;&gt;&lt;/a&gt;SwissRoll三维模型示意图（图片中的数字对应分片号）&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-2020-5-9/1589022188714.png&quot; alt=&quot;1589022188714&quot;&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;SwissRoll局部线性近似实验分析&quot;&gt;&lt;a href=&quot;#SwissRoll局部线性近似实验分析&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll局部线性近似实验分析&quot;&gt;&lt;/a&gt;SwissRoll局部线性近似实验分析&lt;/h2&gt;&lt;h3 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;验证算法在三维流形数据集上的有效性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;如何验证&quot;&gt;&lt;a href=&quot;#如何验证&quot; class=&quot;headerlink&quot; title=&quot;如何验证&quot;&gt;&lt;/a&gt;如何验证&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;多次实验，观察实验结果是否一致&lt;/li&gt;
+&lt;li&gt;实验结果分析得到的结论是否存在异常&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;实验设计&quot;&gt;&lt;a href=&quot;#实验设计&quot; class=&quot;headerlink&quot; title=&quot;实验设计&quot;&gt;&lt;/a&gt;实验设计&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;在SwissRoll三维流形数据集上使用ISOMAP方法投影到二维&lt;/li&gt;
+&lt;li&gt;使用算法将ISOMAP投影简化成包含10个局部投影的投影集合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;实验结果&quot;&gt;&lt;a href=&quot;#实验结果&quot; class=&quot;headerlink&quot; title=&quot;实验结果&quot;&gt;&lt;/a&gt;实验结果&lt;/h3&gt;&lt;h4 id=&quot;SwissRoll-ISOMAP分片示意图&quot;&gt;&lt;a href=&quot;#SwissRoll-ISOMAP分片示意图&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll ISOMAP分片示意图&quot;&gt;&lt;/a&gt;SwissRoll ISOMAP分片示意图&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-SwissRoll/1589023174018.png&quot; alt=&quot;1589023174018&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;SwissRoll分片树示意图&quot;&gt;&lt;a href=&quot;#SwissRoll分片树示意图&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll分片树示意图&quot;&gt;&lt;/a&gt;SwissRoll分片树示意图&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-SwissRoll/1589022936862.png&quot; alt=&quot;1589022936862&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;SwissRoll三维模型示意图（图片中的数字对应分片号）&quot;&gt;&lt;a href=&quot;#SwissRoll三维模型示意图（图片中的数字对应分片号）&quot; class=&quot;headerlink&quot; title=&quot;SwissRoll三维模型示意图（图片中的数字对应分片号）&quot;&gt;&lt;/a&gt;SwissRoll三维模型示意图（图片中的数字对应分片号）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;/2020/05/09/PaperExamRecord-SwissRoll/1589022188714.png&quot; alt=&quot;1589022188714&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -320,9 +359,9 @@
       <category term="数据可视化" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
     
-      <category term="论文重构" scheme="http://yoursite.com/tags/%E8%AE%BA%E6%96%87%E9%87%8D%E6%9E%84/"/>
-    
       <category term="可理解性" scheme="http://yoursite.com/tags/%E5%8F%AF%E7%90%86%E8%A7%A3%E6%80%A7/"/>
+    
+      <category term="论文重构" scheme="http://yoursite.com/tags/%E8%AE%BA%E6%96%87%E9%87%8D%E6%9E%84/"/>
     
   </entry>
   
@@ -699,33 +738,6 @@
     
     
       <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-461.汉明距离</title>
-    <link href="http://yoursite.com/2020/04/29/LeetCode-461/"/>
-    <id>http://yoursite.com/2020/04/29/LeetCode-461/</id>
-    <published>2020-04-29T04:18:48.000Z</published>
-    <updated>2020-05-12T09:26:44.246Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-461-汉明距离"><a href="#LeetCode-461-汉明距离" class="headerlink" title="LeetCode-461.汉明距离"></a>LeetCode-461.汉明距离</h2><p>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。</p><p>给出两个整数 x 和 y，计算它们之间的汉明距离。</p><p>注意：<br>0 ≤ x, y &lt; $2^{31}$.</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入: x &#x3D; 1, y &#x3D; 4</span><br><span class="line"></span><br><span class="line">输出: 2</span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">1   (0 0 0 1)</span><br><span class="line">4   (0 1 0 0)</span><br><span class="line">       ↑   ↑</span><br><span class="line"></span><br><span class="line">上面的箭头指出了对应二进制位不同的位置。</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这题熟悉C++位运算即可。我们通过异或可以将两个数字中不同的位置1，然后计算不同的位的个数即可。</p><a id="more"></a><h3 id="位运算符简介"><a href="#位运算符简介" class="headerlink" title="位运算符简介"></a>位运算符简介</h3><p>位逻辑运算符：</p><p>​    &amp; （位   “与”）    and<br>​    ^ （位   “异或”）<br>​    | （位    “或”）   or<br>​    ~ （位   “取反”）<br>移位运算符：<br>​      &lt;&lt;（左移）<br>​      &gt;&gt;（右移）</p><p>优先级<br>位“与”、位“或”和位“异或”运算符都是双目运算符，其结合性都是从左向右的，优先级高于逻辑运算符，低于比较运算符，且从高到低依次为&amp;、^、| </p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = x ^ y;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>,i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i != <span class="number">32</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ans &amp; <span class="number">1</span>)</span><br><span class="line">        ++count;</span><br><span class="line">        ans &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-461-汉明距离&quot;&gt;&lt;a href=&quot;#LeetCode-461-汉明距离&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-461.汉明距离&quot;&gt;&lt;/a&gt;LeetCode-461.汉明距离&lt;/h2&gt;&lt;p&gt;两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。&lt;/p&gt;
-&lt;p&gt;给出两个整数 x 和 y，计算它们之间的汉明距离。&lt;/p&gt;
-&lt;p&gt;注意：&lt;br&gt;0 ≤ x, y &amp;lt; $2^{31}$.&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: x &amp;#x3D; 1, y &amp;#x3D; 4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1   (0 0 0 1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4   (0 1 0 0)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       ↑   ↑&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;上面的箭头指出了对应二进制位不同的位置。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;解题思路&quot;&gt;&lt;a href=&quot;#解题思路&quot; class=&quot;headerlink&quot; title=&quot;解题思路&quot;&gt;&lt;/a&gt;解题思路&lt;/h3&gt;&lt;p&gt;这题熟悉C++位运算即可。我们通过异或可以将两个数字中不同的位置1，然后计算不同的位的个数即可。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="位运算" scheme="http://yoursite.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
   </entry>
   
