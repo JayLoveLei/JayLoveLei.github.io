@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T07:30:10.971Z</updated>
+  <updated>2020-05-16T05:06:36.348Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-543.二叉树的直径</title>
+    <link href="http://yoursite.com/2020/05/16/LeetCode-543/"/>
+    <id>http://yoursite.com/2020/05/16/LeetCode-543/</id>
+    <published>2020-05-16T05:01:16.000Z</published>
+    <updated>2020-05-16T05:06:36.348Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-543-二叉树的直径"><a href="#LeetCode-543-二叉树的直径" class="headerlink" title="LeetCode-543.二叉树的直径"></a>LeetCode-543.二叉树的直径</h2><p>给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>给定二叉树</p><pre><code>      1     / \    2   3   / \       4   5    </code></pre><p>返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。</p><p>注意：两结点之间的路径长度是以它们之间边的数目表示。</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>对于每一个节点，最长路径可能横跨这个节点的左右子树，或者只是经过这个节点的左右子树中的一个</li></ul><a id="more"></a><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">diameterOfBinaryTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        func(root,ans);</span><br><span class="line">        <span class="keyword">return</span> ans<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode *root,<span class="keyword">int</span> &amp;ans)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = func(root-&gt;left,ans);</span><br><span class="line">        <span class="keyword">int</span> right = func(root-&gt;right,ans);</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,left+right+<span class="number">1</span>);</span><br><span class="line">        <span class="comment">// ans = max(left+right+1,ans);</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(left,right)+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h3><ul><li>这里max(ans,left+right+1)和max(left+right+1,ans)的时间开销不同，需要调研一下</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-543-二叉树的直径&quot;&gt;&lt;a href=&quot;#LeetCode-543-二叉树的直径&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-543.二叉树的直径&quot;&gt;&lt;/a&gt;LeetCode-543.二叉树的直径&lt;/h2&gt;&lt;p&gt;给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;p&gt;给定二叉树&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;      1
+     / \
+    2   3
+   / \     
+  4   5    
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。&lt;/p&gt;
+&lt;p&gt;注意：两结点之间的路径长度是以它们之间边的数目表示。&lt;/p&gt;
+&lt;h3 id=&quot;解题思路&quot;&gt;&lt;a href=&quot;#解题思路&quot; class=&quot;headerlink&quot; title=&quot;解题思路&quot;&gt;&lt;/a&gt;解题思路&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;对于每一个节点，最长路径可能横跨这个节点的左右子树，或者只是经过这个节点的左右子树中的一个&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-101.对称二叉树</title>
@@ -718,37 +752,6 @@
       <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
     
       <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-104.二叉树的最大深度</title>
-    <link href="http://yoursite.com/2020/05/01/LeetCode-104/"/>
-    <id>http://yoursite.com/2020/05/01/LeetCode-104/</id>
-    <published>2020-05-01T02:11:35.000Z</published>
-    <updated>2020-05-12T09:22:41.938Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-104-二叉树的最大深度"><a href="#LeetCode-104-二叉树的最大深度" class="headerlink" title="LeetCode-104.二叉树的最大深度"></a>LeetCode-104.二叉树的最大深度</h2><p>给定一个二叉树，找出其最大深度。</p><p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p><p>说明: 叶子节点是指没有子节点的节点。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>给定二叉树 [3,9,20,null,null,15,7]，</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure><p>返回它的最大深度 3 。</p><h3 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h3><p>只需要使用深度搜索遍历树。</p><a id="more"></a><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func(root,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,<span class="keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> depth;</span><br><span class="line">        <span class="keyword">int</span> lv = func(root-&gt;left,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> rv = func(root-&gt;right,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> lv &gt; rv ? lv : rv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-104-二叉树的最大深度&quot;&gt;&lt;a href=&quot;#LeetCode-104-二叉树的最大深度&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-104.二叉树的最大深度&quot;&gt;&lt;/a&gt;LeetCode-104.二叉树的最大深度&lt;/h2&gt;&lt;p&gt;给定一个二叉树，找出其最大深度。&lt;/p&gt;
-&lt;p&gt;二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。&lt;/p&gt;
-&lt;p&gt;说明: 叶子节点是指没有子节点的节点。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;p&gt;给定二叉树 [3,9,20,null,null,15,7]，&lt;/p&gt;
-&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; / \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;  &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  /  \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;   &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;返回它的最大深度 3 。&lt;/p&gt;
-&lt;h3 id=&quot;思路解析&quot;&gt;&lt;a href=&quot;#思路解析&quot; class=&quot;headerlink&quot; title=&quot;思路解析&quot;&gt;&lt;/a&gt;思路解析&lt;/h3&gt;&lt;p&gt;只需要使用深度搜索遍历树。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
-    
-      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
