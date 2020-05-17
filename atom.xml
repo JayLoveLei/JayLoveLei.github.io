@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-16T05:06:36.348Z</updated>
+  <updated>2020-05-17T08:44:21.983Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-70.爬楼梯</title>
+    <link href="http://yoursite.com/2020/05/17/LeetCode-70/"/>
+    <id>http://yoursite.com/2020/05/17/LeetCode-70/</id>
+    <published>2020-05-17T08:41:35.000Z</published>
+    <updated>2020-05-17T08:44:21.983Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-70-爬楼梯"><a href="#LeetCode-70-爬楼梯" class="headerlink" title="LeetCode-70.爬楼梯"></a>LeetCode-70.爬楼梯</h2><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p><p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p><p>注意：给定 n 是一个正整数。</p><h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入： 2</span><br><span class="line">输出： 2</span><br><span class="line">解释： 有两种方法可以爬到楼顶。</span><br><span class="line"></span><br><span class="line">1. 1 阶 + 1 阶</span><br><span class="line">2. 2 阶</span><br></pre></td></tr></table></figure><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入： 3</span><br><span class="line">输出： 3</span><br><span class="line">解释： 有三种方法可以爬到楼顶。</span><br><span class="line"></span><br><span class="line">1. 1 阶 + 1 阶 + 1 阶</span><br><span class="line">2. 1 阶 + 2 阶</span><br><span class="line">3. 2 阶 + 1 阶</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>因为每次只能爬1或2个台阶，所以每一级台阶的上法 = 低一级台阶的上法 + 低两阶台阶的上法</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c,i;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">for</span>(a = <span class="number">1</span>,b = <span class="number">2</span>,i = <span class="number">3</span>;i &lt;= n;++i)&#123;</span><br><span class="line">            c = a + b;</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;LeetCode-70-爬楼梯&quot;&gt;&lt;a href=&quot;#LeetCode-70-爬楼梯&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-70.爬楼梯&quot;&gt;&lt;/a&gt;LeetCode-70.爬楼梯&lt;/h2&gt;&lt;p&gt;假设你正在爬楼梯。需要 n 阶你才能
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-543.二叉树的直径</title>
@@ -483,16 +509,16 @@
     <link href="http://yoursite.com/2020/05/07/ErrorRecord/"/>
     <id>http://yoursite.com/2020/05/07/ErrorRecord/</id>
     <published>2020-05-07T15:33:13.000Z</published>
-    <updated>2020-05-08T05:17:12.972Z</updated>
+    <updated>2020-05-17T08:26:10.291Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="论文错误记录"><a href="#论文错误记录" class="headerlink" title="论文错误记录"></a>论文错误记录</h2><ul><li><p>原句：但是，目前最流行的可视化方法（如t-SNE[]）往往是黑箱方法，因为使用者无法洞察可视化如何表示数据的原始特征</p><ul><li>问题：最流行的降维方法，不仅仅是t-SNE，还有PCA；无法观察原始特征，和黑箱之间的因果联系未论证。</li><li>解析：<ul><li>定语缺失，应该说是最流行的的流形学习方法</li><li>“流形学习方法（如t-SNE[]）往往是黑箱方法”作为结论，“因为使用者无法洞察可视化如何表示数据的原始特征”作为前提，是以偏概全</li></ul></li></ul></li><li><p>原句：即使是可视化领域中最新的研究进展，如UMAP[] 也承认其依然存在着可解释性问题。</p><ul><li>问题：不知道这里的可解释性问题又是什么？最新的进展，和可解释性有什么关系？为什么要用即使？</li><li>解析：<ul><li>可解释性问题在上文中没有给出直接的定义，我只描述了导致可解释问题的两个情景。</li><li>因果关系没写清楚，太含混了</li></ul></li></ul></li><li><p>原句：其他的方法如AutoEncoder[] 和 parametric t-SNE[] 给出了从原始数据及到二维可视化<br>的参数映射，但这些参数映射都基于复杂的神经网络生成，对人来说依然难以理解</p><ul><li>问题：其它的方法，什么叫其它的方法？举例不能代表概念。</li><li>解析：应该写成给出参数映射的流形学习变体</li></ul></li><li>原句：虽然PCA 和LDA 等线性方法的可视化结果具有很强的可解释性，但它们的可视化仅能表示数据的原始特征的线性组合，这限制了其可视化的质量。<ul><li>问题：刚刚在讨论可解释性，为什么忽然又变成了可视化的质量？</li><li>解析：要紧扣主题</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="论文错误记录"><a href="#论文错误记录" class="headerlink" title="论文错误记录"></a>论文错误记录</h2><ul><li>原句：但是，目前最流行的可视化方法（如t-SNE[]）往往是黑箱方法，因为使用者无法洞察可视化如何表示数据的原始特征<ul><li>问题：最流行的降维方法，不仅仅是t-SNE，还有PCA；无法观察原始特征，和黑箱之间的因果联系未论证。</li><li>解析：<ul><li>定语缺失，应该说是最流行的的流形学习方法</li><li>“流形学习方法（如t-SNE[]）往往是黑箱方法”作为结论，“因为使用者无法洞察可视化如何表示数据的原始特征”作为前提，是以偏概全</li></ul></li></ul></li><li>原句：即使是可视化领域中最新的研究进展，如UMAP[] 也承认其依然存在着可解释性问题。<ul><li>问题：不知道这里的可解释性问题又是什么？最新的进展，和可解释性有什么关系？为什么要用即使？</li><li>解析：<ul><li>可解释性问题在上文中没有给出直接的定义，我只描述了导致可解释问题的两个情景。</li><li>因果关系没写清楚，太含混了</li></ul></li></ul></li><li>原句：其他的方法如AutoEncoder[] 和 parametric t-SNE[] 给出了从原始数据及到二维可视化<br>的参数映射，但这些参数映射都基于复杂的神经网络生成，对人来说依然难以理解<ul><li>问题：其它的方法，什么叫其它的方法？举例不能代表概念。</li><li>解析：应该写成给出参数映射的流形学习变体</li></ul></li><li>原句：虽然PCA 和LDA 等线性方法的可视化结果具有很强的可解释性，但它们的可视化仅能表示数据的原始特征的线性组合，这限制了其可视化的质量。<ul><li>问题：刚刚在讨论可解释性，为什么忽然又变成了可视化的质量？</li><li>解析：要紧扣主题</li></ul></li><li>写作结构：<ul><li>原来的t-sne投影，原始特征跟投影轴之间的关系复杂，难以描述和理解</li><li>虽然有一些方法试图可视化这种复杂关系，但还存在xx问题</li><li>我们提出t-sne投影的分片线性近似，如何解决了上述问题</li><li>我们认为，一个可理解的分片线性近似，需要具有如下的性质1、2、3、</li><li>为次，我们提出了xx算法，设计了xx表达，…</li></ul></li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2 id=&quot;论文错误记录&quot;&gt;&lt;a href=&quot;#论文错误记录&quot; class=&quot;headerlink&quot; title=&quot;论文错误记录&quot;&gt;&lt;/a&gt;论文错误记录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原句：但是，目前最流行的可视化方法（如t-SNE[]）往往是黑箱方法，因为使用者无法洞察可
+&lt;li&gt;原句：但是，目前最流行的可视化方法（如t-SNE[]）往往是黑箱方法，因为使用者无法洞察可视化如
       
     
     </summary>
@@ -723,35 +749,6 @@
     
     
       <category term="位运算" scheme="http://yoursite.com/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-206.反转链表</title>
-    <link href="http://yoursite.com/2020/05/02/LeetCode-206/"/>
-    <id>http://yoursite.com/2020/05/02/LeetCode-206/</id>
-    <published>2020-05-02T06:17:49.000Z</published>
-    <updated>2020-05-12T09:27:53.900Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-206-反转链表"><a href="#LeetCode-206-反转链表" class="headerlink" title="LeetCode-206.反转链表"></a>LeetCode-206.反转链表</h2><p>反转一个单链表。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</span><br><span class="line">输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</span><br></pre></td></tr></table></figure><p>进阶:<br>你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p><h3 id="非递归"><a href="#非递归" class="headerlink" title="非递归"></a>非递归</h3><p>反转链表，就是让后面的节点指向前面的节点。</p><p>如果是迭代执行，使用头插就行</p><a id="more"></a><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    ListNode *h = head,*tmp = h;</span><br><span class="line">    head = head-&gt;next;</span><br><span class="line">    h-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(head)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = head;</span><br><span class="line">        head = head-&gt;next;</span><br><span class="line">        tmp-&gt;next = h;</span><br><span class="line">        h = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>如果是递归执行，则从尾向头反转</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    ListNode *ans = func(head);</span><br><span class="line">    head-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">func</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!head-&gt;next)</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    ListNode *ans = func(head-&gt;next);</span><br><span class="line">    head-&gt;next-&gt;next = head;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-206-反转链表&quot;&gt;&lt;a href=&quot;#LeetCode-206-反转链表&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-206.反转链表&quot;&gt;&lt;/a&gt;LeetCode-206.反转链表&lt;/h2&gt;&lt;p&gt;反转一个单链表。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;进阶:&lt;br&gt;你可以迭代或递归地反转链表。你能否用两种方法解决这道题？&lt;/p&gt;
-&lt;h3 id=&quot;非递归&quot;&gt;&lt;a href=&quot;#非递归&quot; class=&quot;headerlink&quot; title=&quot;非递归&quot;&gt;&lt;/a&gt;非递归&lt;/h3&gt;&lt;p&gt;反转链表，就是让后面的节点指向前面的节点。&lt;/p&gt;
-&lt;p&gt;如果是迭代执行，使用头插就行&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
-    
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
