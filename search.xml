@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>论文错误记录</title>
+    <url>/2020/05/07/ErrorRecord/</url>
+    <content><![CDATA[<h2 id="论文错误记录"><a href="#论文错误记录" class="headerlink" title="论文错误记录"></a>论文错误记录</h2><h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>实例：每篇论文有不同的叫法，data point是最常用的，机器学习的论文可能会叫instance，item</li>
+</ul>
+<h3 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h3><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><h4 id="一种写作结构："><a href="#一种写作结构：" class="headerlink" title="一种写作结构："></a>一种写作结构：</h4><ul>
+<li>原来的t-sne投影，原始特征跟投影轴之间的关系复杂，难以描述和理解</li>
+<li>虽然有一些方法试图可视化这种复杂关系，但还存在xx问题</li>
+<li>我们提出t-sne投影的分片线性近似，如何解决了上述问题</li>
+<li>我们认为，一个可理解的分片线性近似，需要具有如下的性质1、2、3、</li>
+<li>为次，我们提出了xx算法，设计了xx表达，…</li>
+</ul>
+<h4 id="论文写作的模块："><a href="#论文写作的模块：" class="headerlink" title="论文写作的模块："></a>论文写作的模块：</h4><ul>
+<li>背景（重要性）：要结合自己的问题完成背景的写作。<ul>
+<li>重要性是什么：重要性就是，看完你的背景介绍，就能感觉到有一个问题需要解决，但是你又不能直接讲出这个问题。</li>
+</ul>
+</li>
+<li>问题：用最简单的语言讲清楚自己的问题，让非专家也能看懂</li>
+<li>技术挑战：需要解决某个问题存在的困难，这里的困难就是挑战。</li>
+<li>解决方案：<ul>
+<li>首先要提炼解决方案的目标</li>
+<li>然后给出如何设计系统来完成目标</li>
+</ul>
+</li>
+<li>贡献：<ul>
+<li>平实，有什么说什么</li>
+</ul>
+</li>
+</ul>
+<h4 id="Related-Work中的分类："><a href="#Related-Work中的分类：" class="headerlink" title="Related Work中的分类："></a>Related Work中的分类：</h4><ul>
+<li>每个分类，都按照what、why、how的三个层次来描述</li>
+<li>what，是指这个技术是什么</li>
+<li>why，是指这个技术能给可视化带来什么好处，能解决哪些问题</li>
+<li>how，是具体的案例</li>
+</ul>
+<h4 id="Related-Work要讲清楚的问题："><a href="#Related-Work要讲清楚的问题：" class="headerlink" title="Related Work要讲清楚的问题："></a>Related Work要讲清楚的问题：</h4><ul>
+<li>哪些工作跟你的核心问题相关？</li>
+<li>这些工作分别有哪些主要类型？</li>
+<li>这些工作跟你的工作的联系和区别是什么？为什么不能解决你的问题？</li>
+</ul>
+<h4 id="识别论证："><a href="#识别论证：" class="headerlink" title="识别论证："></a>识别论证：</h4><ul>
+<li>无论是演绎论证还是非演绎论证，都由两部分构成。其中一个部分提供让我们相信另一部分的理由。论证的根本标识词为“所以”之类的词语。构成论证至少要有两个断言，而且各断言间（或明示的或暗示的）以“所以”等词语连接。</li>
+<li>论证的提示词是识别论证的指南。除了“所以”之外，论证之结论的提示词还有：<ul>
+<li>由此得出……</li>
+<li>这表明……</li>
+<li>于是……</li>
+<li>因此……</li>
+<li>结果……</li>
+<li>我的结论是……</li>
+</ul>
+</li>
+<li>论证的前提也有其指示词，如：<ul>
+<li>既然……</li>
+<li>因为……</li>
+<li>由于……</li>
+<li>依据……</li>
+</ul>
+</li>
+</ul>
+<h4 id="Case-Study："><a href="#Case-Study：" class="headerlink" title="Case Study："></a>Case Study：</h4><ul>
+<li>系统能解决什么问题</li>
+<li>Case怎么验证要解决的问题</li>
+<li>Case怎么设计</li>
+</ul>
+<h3 id="表达方式"><a href="#表达方式" class="headerlink" title="表达方式"></a>表达方式</h3><p>* </p>
+]]></content>
+      <categories>
+        <category>数据可视化</category>
+      </categories>
+      <tags>
+        <tag>写作错误</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>批判性思维-阅读笔记</title>
     <url>/2020/05/03/CRITICAL-THINKING/</url>
     <content><![CDATA[<h1 id="批判性思维基础"><a href="#批判性思维基础" class="headerlink" title="批判性思维基础"></a>批判性思维基础</h1><h2 id="什么是批判性思维"><a href="#什么是批判性思维" class="headerlink" title="什么是批判性思维"></a>什么是批判性思维</h2><ul>
@@ -307,109 +381,6 @@
       </tags>
   </entry>
   <entry>
-    <title>论文错误记录</title>
-    <url>/2020/05/07/ErrorRecord/</url>
-    <content><![CDATA[<h2 id="论文错误记录"><a href="#论文错误记录" class="headerlink" title="论文错误记录"></a>论文错误记录</h2><h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
-<li>实例：每篇论文有不同的叫法，data point是最常用的，机器学习的论文可能会叫instance，item</li>
-</ul>
-<h3 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h3><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><h4 id="一种写作结构："><a href="#一种写作结构：" class="headerlink" title="一种写作结构："></a>一种写作结构：</h4><ul>
-<li>原来的t-sne投影，原始特征跟投影轴之间的关系复杂，难以描述和理解</li>
-<li>虽然有一些方法试图可视化这种复杂关系，但还存在xx问题</li>
-<li>我们提出t-sne投影的分片线性近似，如何解决了上述问题</li>
-<li>我们认为，一个可理解的分片线性近似，需要具有如下的性质1、2、3、</li>
-<li>为次，我们提出了xx算法，设计了xx表达，…</li>
-</ul>
-<h4 id="论文写作的模块："><a href="#论文写作的模块：" class="headerlink" title="论文写作的模块："></a>论文写作的模块：</h4><ul>
-<li>背景（重要性）：要结合自己的问题完成背景的写作。<ul>
-<li>重要性是什么：重要性就是，看完你的背景介绍，就能感觉到有一个问题需要解决，但是你又不能直接讲出这个问题。</li>
-</ul>
-</li>
-<li>问题：用最简单的语言讲清楚自己的问题，让非专家也能看懂</li>
-<li>技术挑战：需要解决某个问题存在的困难，这里的困难就是挑战。</li>
-<li>解决方案：<ul>
-<li>首先要提炼解决方案的目标</li>
-<li>然后给出如何设计系统来完成目标</li>
-</ul>
-</li>
-<li>贡献：<ul>
-<li>平实，有什么说什么</li>
-</ul>
-</li>
-</ul>
-<h4 id="Related-Work中的分类："><a href="#Related-Work中的分类：" class="headerlink" title="Related Work中的分类："></a>Related Work中的分类：</h4><ul>
-<li>每个分类，都按照what、why、how的三个层次来描述</li>
-<li>what，是指这个技术是什么</li>
-<li>why，是指这个技术能给可视化带来什么好处，能解决哪些问题</li>
-<li>how，是具体的案例</li>
-</ul>
-<h4 id="Related-Work要讲清楚的问题："><a href="#Related-Work要讲清楚的问题：" class="headerlink" title="Related Work要讲清楚的问题："></a>Related Work要讲清楚的问题：</h4><ul>
-<li>哪些工作跟你的核心问题相关？</li>
-<li>这些工作分别有哪些主要类型？</li>
-<li>这些工作跟你的工作的联系和区别是什么？为什么不能解决你的问题？</li>
-</ul>
-<h4 id="识别论证："><a href="#识别论证：" class="headerlink" title="识别论证："></a>识别论证：</h4><ul>
-<li>无论是演绎论证还是非演绎论证，都由两部分构成。其中一个部分提供让我们相信另一部分的理由。论证的根本标识词为“所以”之类的词语。构成论证至少要有两个断言，而且各断言间（或明示的或暗示的）以“所以”等词语连接。</li>
-<li>论证的提示词是识别论证的指南。除了“所以”之外，论证之结论的提示词还有：<ul>
-<li>由此得出……</li>
-<li>这表明……</li>
-<li>于是……</li>
-<li>因此……</li>
-<li>结果……</li>
-<li>我的结论是……</li>
-</ul>
-</li>
-<li>论证的前提也有其指示词，如：<ul>
-<li>既然……</li>
-<li>因为……</li>
-<li>由于……</li>
-<li>依据……</li>
-</ul>
-</li>
-</ul>
-<h3 id="表达方式"><a href="#表达方式" class="headerlink" title="表达方式"></a>表达方式</h3><p>* </p>
-]]></content>
-      <categories>
-        <category>数据可视化</category>
-      </categories>
-      <tags>
-        <tag>写作错误</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GP-tSNE论文重构</title>
-    <url>/2020/05/08/GP-tSNEReconstruct/</url>
-    <content><![CDATA[<h2 id="GP-tSNE论文重构"><a href="#GP-tSNE论文重构" class="headerlink" title="GP-tSNE论文重构"></a>GP-tSNE论文重构</h2><p>高维数据投影是</p>
-]]></content>
-      <categories>
-        <category>数据可视化</category>
-      </categories>
-      <tags>
-        <tag>论文重构</tag>
-        <tag>可理解性</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-1.两数之和</title>
-    <url>/2020/05/18/LeetCode-1/</url>
-    <content><![CDATA[<h2 id="LeetCode-1-两数之和"><a href="#LeetCode-1-两数之和" class="headerlink" title="LeetCode-1.两数之和"></a>LeetCode-1.两数之和</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>在建立HashTable的过程中，判断当前HashTable是否存在满足条件的元素</li>
-<li>时间复杂度为O(n)，空间复杂度也为O(n)</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">int</span> i,j,len;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>,len = nums.<span class="built_in">size</span>();i != len;++i)&#123;</span><br><span class="line">            j = target-nums[i];</span><br><span class="line">            <span class="keyword">if</span>(m.<span class="built_in">find</span>(j) != m.<span class="built_in">end</span>())&#123;</span><br><span class="line">                ans.push_back(m[j]);</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-        <tag>哈希表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GPt-SNE论文分析</title>
     <url>/2020/04/27/GPt-SNE/</url>
     <content><![CDATA[<h2 id="GPt-SNE-论文分析"><a href="#GPt-SNE-论文分析" class="headerlink" title="GPt-SNE 论文分析"></a>GPt-SNE 论文分析</h2><p>作者：Andrew Lensen</p>
@@ -605,6 +576,19 @@
       </tags>
   </entry>
   <entry>
+    <title>GP-tSNE论文重构</title>
+    <url>/2020/05/08/GP-tSNEReconstruct/</url>
+    <content><![CDATA[<h2 id="GP-tSNE论文重构"><a href="#GP-tSNE论文重构" class="headerlink" title="GP-tSNE论文重构"></a>GP-tSNE论文重构</h2><p>高维数据投影是</p>
+]]></content>
+      <categories>
+        <category>数据可视化</category>
+      </categories>
+      <tags>
+        <tag>可理解性</tag>
+        <tag>论文重构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HeapSort.堆排序</title>
     <url>/2020/05/12/HeapSort/</url>
     <content><![CDATA[<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>来源百度百科：</p>
@@ -646,24 +630,24 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-104.二叉树的最大深度</title>
-    <url>/2020/05/01/LeetCode-104/</url>
-    <content><![CDATA[<h2 id="LeetCode-104-二叉树的最大深度"><a href="#LeetCode-104-二叉树的最大深度" class="headerlink" title="LeetCode-104.二叉树的最大深度"></a>LeetCode-104.二叉树的最大深度</h2><p>给定一个二叉树，找出其最大深度。</p>
-<p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
-<p>说明: 叶子节点是指没有子节点的节点。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>给定二叉树 [3,9,20,null,null,15,7]，</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p>返回它的最大深度 3 。</p>
-<h3 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h3><p>只需要使用深度搜索遍历树。</p>
+    <title>LeetCode-1.两数之和</title>
+    <url>/2020/05/18/LeetCode-1/</url>
+    <content><![CDATA[<h2 id="LeetCode-1-两数之和"><a href="#LeetCode-1-两数之和" class="headerlink" title="LeetCode-1.两数之和"></a>LeetCode-1.两数之和</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func(root,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,<span class="keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> depth;</span><br><span class="line">        <span class="keyword">int</span> lv = func(root-&gt;left,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> rv = func(root-&gt;right,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> lv &gt; rv ? lv : rv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>在建立HashTable的过程中，判断当前HashTable是否存在满足条件的元素</li>
+<li>时间复杂度为O(n)，空间复杂度也为O(n)</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">twoSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">int</span> i,j,len;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>,len = nums.<span class="built_in">size</span>();i != len;++i)&#123;</span><br><span class="line">            j = target-nums[i];</span><br><span class="line">            <span class="keyword">if</span>(m.<span class="built_in">find</span>(j) != m.<span class="built_in">end</span>())&#123;</span><br><span class="line">                ans.push_back(m[j]);</span><br><span class="line">                ans.push_back(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>树</tag>
-        <tag>深度优先搜索</tag>
+        <tag>数组</tag>
+        <tag>哈希表</tag>
       </tags>
   </entry>
   <entry>
@@ -715,6 +699,27 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode-104.二叉树的最大深度</title>
+    <url>/2020/05/01/LeetCode-104/</url>
+    <content><![CDATA[<h2 id="LeetCode-104-二叉树的最大深度"><a href="#LeetCode-104-二叉树的最大深度" class="headerlink" title="LeetCode-104.二叉树的最大深度"></a>LeetCode-104.二叉树的最大深度</h2><p>给定一个二叉树，找出其最大深度。</p>
+<p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
+<p>说明: 叶子节点是指没有子节点的节点。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>给定二叉树 [3,9,20,null,null,15,7]，</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure>
+<p>返回它的最大深度 3 。</p>
+<h3 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h3><p>只需要使用深度搜索遍历树。</p>
+<a id="more"></a>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func(root,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,<span class="keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> depth;</span><br><span class="line">        <span class="keyword">int</span> lv = func(root-&gt;left,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> rv = func(root-&gt;right,depth+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> lv &gt; rv ? lv : rv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
+        <tag>深度优先搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode-121.买卖股票的最佳时机</title>
     <url>/2020/05/12/LeetCode-121/</url>
     <content><![CDATA[<h2 id="LeetCode-121-买卖股票的最佳时机"><a href="#LeetCode-121-买卖股票的最佳时机" class="headerlink" title="LeetCode-121.买卖股票的最佳时机"></a>LeetCode-121.买卖股票的最佳时机</h2><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
@@ -742,33 +747,30 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-141.环形链表</title>
-    <url>/2020/05/19/LeetCode-141/</url>
-    <content><![CDATA[<h2 id="LeetCode-141-环形链表"><a href="#LeetCode-141-环形链表" class="headerlink" title="LeetCode-141.环形链表"></a>LeetCode-141.环形链表</h2><p>给定一个链表，判断链表中是否有环。</p>
-<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist.png" alt="img"></p>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1,2], pos &#x3D; 0</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist_test2.png" alt="img"></p>
-<h3 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1], pos &#x3D; -1</span><br><span class="line">输出：false</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist_test3.png" alt="img"></p>
-<p>进阶：你能用 O(1)（即，常量）内存解决此问题吗？</p>
-<a id="more"></a>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>使用快慢指针</li>
-<li><p>如果存在环，那么快指针会追上慢指针。</p>
-</li>
-<li><p>如果没有环，那么快指针会遍历到空指针</p>
-</li>
+    <title>LeetCode-155.最小栈</title>
+    <url>/2020/05/13/LeetCode-155/</url>
+    <content><![CDATA[<h2 id="LeetCode-155-最小栈"><a href="#LeetCode-155-最小栈" class="headerlink" title="LeetCode-155.最小栈"></a>LeetCode-155.最小栈</h2><p>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。</p>
+<p>push(x) —— 将元素 x 推入栈中。<br>pop() —— 删除栈顶的元素。<br>top() —— 获取栈顶元素。<br>getMin() —— 检索栈中的最小元素。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]</span><br><span class="line">[[],[-2],[0],[-3],[],[],[],[]]</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">[null,null,null,null,-3,null,0,-2]</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">MinStack minStack &#x3D; new MinStack();</span><br><span class="line">minStack.push(-2);</span><br><span class="line">minStack.push(0);</span><br><span class="line">minStack.push(-3);</span><br><span class="line">minStack.getMin();   --&gt; 返回 -3.</span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; 返回 0.</span><br><span class="line">minStack.getMin();   --&gt; 返回 -2.</span><br></pre></td></tr></table></figure>
+<p>提示：</p>
+<p>pop、top 和 getMin 操作总是在 非空栈 上调用。</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>实现一个能在常数时间能检索到最小元素的栈，那么需要这么设计数据结构</p>
+<ul>
+<li>用数组实现一个数据栈来存储数据</li>
+<li>用数组实现一个最小数栈来存储最小数<ul>
+<li>因为两个最小数之间的数字都不会是最小数，所以当Pop出一个最小数，那么新的最小数栈的栈顶就是当前的最小数</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        ListNode *quick,*slow;</span><br><span class="line">        quick = slow = head;</span><br><span class="line">        <span class="keyword">while</span>(quick &amp;&amp; slow)&#123;</span><br><span class="line">            quick = quick-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(quick)</span><br><span class="line">                quick = quick-&gt;next;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(quick == slow)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li>需要注意动态扩容的问题</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="keyword">int</span> *data,*<span class="built_in">min</span>;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">size</span>,msize;</span><br><span class="line">    <span class="keyword">int</span> length,mlength;</span><br><span class="line">    MinStack() :data(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]),<span class="built_in">min</span>(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]),<span class="built_in">size</span>(<span class="number">128</span>),msize(<span class="number">128</span>),length(<span class="number">0</span>),mlength(<span class="number">0</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mlength == <span class="number">0</span> || x &lt;= <span class="built_in">min</span>[mlength - <span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">if</span>(mlength == msize)&#123;</span><br><span class="line">                msize *= <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">int</span> *newdata = <span class="keyword">new</span> <span class="keyword">int</span>[msize];</span><br><span class="line">                <span class="keyword">int</span> i;</span><br><span class="line">                <span class="keyword">for</span>(i = <span class="number">0</span>;i != mlength;++i)</span><br><span class="line">                    newdata[i] = <span class="built_in">min</span>[i];</span><br><span class="line">                <span class="keyword">delete</span>[] <span class="built_in">min</span>;</span><br><span class="line">                <span class="built_in">min</span> = newdata;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">min</span>[mlength++] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(length == <span class="built_in">size</span>)&#123;</span><br><span class="line">            <span class="built_in">size</span> *= <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> *newdata = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="built_in">size</span>];</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>;i != length;++i)</span><br><span class="line">                newdata[i] = data[i];</span><br><span class="line">            <span class="keyword">delete</span>[] data;</span><br><span class="line">            data = newdata;</span><br><span class="line">        &#125;</span><br><span class="line">        data[length++] = x;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(data[--length] == <span class="built_in">min</span>[mlength<span class="number">-1</span>])&#123;</span><br><span class="line">                --mlength;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(length &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> data[length<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mlength &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">min</span>[mlength<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack* obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>链表</tag>
-        <tag>双指针</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -802,30 +804,95 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-155.最小栈</title>
-    <url>/2020/05/13/LeetCode-155/</url>
-    <content><![CDATA[<h2 id="LeetCode-155-最小栈"><a href="#LeetCode-155-最小栈" class="headerlink" title="LeetCode-155.最小栈"></a>LeetCode-155.最小栈</h2><p>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。</p>
-<p>push(x) —— 将元素 x 推入栈中。<br>pop() —— 删除栈顶的元素。<br>top() —— 获取栈顶元素。<br>getMin() —— 检索栈中的最小元素。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]</span><br><span class="line">[[],[-2],[0],[-3],[],[],[],[]]</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">[null,null,null,null,-3,null,0,-2]</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">MinStack minStack &#x3D; new MinStack();</span><br><span class="line">minStack.push(-2);</span><br><span class="line">minStack.push(0);</span><br><span class="line">minStack.push(-3);</span><br><span class="line">minStack.getMin();   --&gt; 返回 -3.</span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; 返回 0.</span><br><span class="line">minStack.getMin();   --&gt; 返回 -2.</span><br></pre></td></tr></table></figure>
-<p>提示：</p>
-<p>pop、top 和 getMin 操作总是在 非空栈 上调用。</p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>实现一个能在常数时间能检索到最小元素的栈，那么需要这么设计数据结构</p>
-<ul>
-<li>用数组实现一个数据栈来存储数据</li>
-<li>用数组实现一个最小数栈来存储最小数<ul>
-<li>因为两个最小数之间的数字都不会是最小数，所以当Pop出一个最小数，那么新的最小数栈的栈顶就是当前的最小数</li>
-</ul>
-</li>
-<li>需要注意动态扩容的问题</li>
-</ul>
+    <title>LeetCode-141.环形链表</title>
+    <url>/2020/05/19/LeetCode-141/</url>
+    <content><![CDATA[<h2 id="LeetCode-141-环形链表"><a href="#LeetCode-141-环形链表" class="headerlink" title="LeetCode-141.环形链表"></a>LeetCode-141.环形链表</h2><p>给定一个链表，判断链表中是否有环。</p>
+<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [3,2,0,-4], pos &#x3D; 1</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist.png" alt="img"></p>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1,2], pos &#x3D; 0</span><br><span class="line">输出：true</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist_test2.png" alt="img"></p>
+<h3 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：head &#x3D; [1], pos &#x3D; -1</span><br><span class="line">输出：false</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/05/19/LeetCode-141/circularlinkedlist_test3.png" alt="img"></p>
+<p>进阶：你能用 O(1)（即，常量）内存解决此问题吗？</p>
 <a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="keyword">int</span> *data,*<span class="built_in">min</span>;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">size</span>,msize;</span><br><span class="line">    <span class="keyword">int</span> length,mlength;</span><br><span class="line">    MinStack() :data(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]),<span class="built_in">min</span>(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]),<span class="built_in">size</span>(<span class="number">128</span>),msize(<span class="number">128</span>),length(<span class="number">0</span>),mlength(<span class="number">0</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mlength == <span class="number">0</span> || x &lt;= <span class="built_in">min</span>[mlength - <span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">if</span>(mlength == msize)&#123;</span><br><span class="line">                msize *= <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">int</span> *newdata = <span class="keyword">new</span> <span class="keyword">int</span>[msize];</span><br><span class="line">                <span class="keyword">int</span> i;</span><br><span class="line">                <span class="keyword">for</span>(i = <span class="number">0</span>;i != mlength;++i)</span><br><span class="line">                    newdata[i] = <span class="built_in">min</span>[i];</span><br><span class="line">                <span class="keyword">delete</span>[] <span class="built_in">min</span>;</span><br><span class="line">                <span class="built_in">min</span> = newdata;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">min</span>[mlength++] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(length == <span class="built_in">size</span>)&#123;</span><br><span class="line">            <span class="built_in">size</span> *= <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> *newdata = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="built_in">size</span>];</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>;i != length;++i)</span><br><span class="line">                newdata[i] = data[i];</span><br><span class="line">            <span class="keyword">delete</span>[] data;</span><br><span class="line">            data = newdata;</span><br><span class="line">        &#125;</span><br><span class="line">        data[length++] = x;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(data[--length] == <span class="built_in">min</span>[mlength<span class="number">-1</span>])&#123;</span><br><span class="line">                --mlength;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(length &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> data[length<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mlength &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">min</span>[mlength<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack* obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>使用快慢指针</li>
+<li><p>如果存在环，那么快指针会追上慢指针。</p>
+</li>
+<li><p>如果没有环，那么快指针会遍历到空指针</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        ListNode *quick,*slow;</span><br><span class="line">        quick = slow = head;</span><br><span class="line">        <span class="keyword">while</span>(quick &amp;&amp; slow)&#123;</span><br><span class="line">            quick = quick-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(quick)</span><br><span class="line">                quick = quick-&gt;next;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(quick == slow)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>栈</tag>
+        <tag>链表</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-198.打家劫舍</title>
+    <url>/2020/05/20/LeetCode-198/</url>
+    <content><![CDATA[<h2 id="LeetCode-198-打家劫舍"><a href="#LeetCode-198-打家劫舍" class="headerlink" title="LeetCode-198.打家劫舍"></a>LeetCode-198.打家劫舍</h2><p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，<strong>如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</strong></p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你<strong>在不触动警报装置的情况下</strong>，能够偷窃到的最高金额。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 1) ，然后偷窃 3 号房屋 (金额 &#x3D; 3)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 1 + 3 &#x3D; 4 。</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2,7,9,3,1]</span><br><span class="line">输出: 12</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 2), 偷窃 3 号房屋 (金额 &#x3D; 9)，接着偷窃 5 号房屋 (金额 &#x3D; 1)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 2 + 9 + 1 &#x3D; 12 。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>假设我们从左往右偷</li>
+<li>对于任一房屋，我们能偷到的最高金额是$f(x) = max(f(x-2) + nums[x],f(x-1))$</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>() == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>() == <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        a = nums[<span class="number">0</span>],b = <span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> i,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">2</span>;i != len;++i)&#123;</span><br><span class="line">            c = <span class="built_in">max</span>(a+nums[i],b);</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-160.相交链表</title>
+    <url>/2020/05/10/LeetCode-160/</url>
+    <content><![CDATA[<h2 id="LeetCode-160-相交链表"><a href="#LeetCode-160-相交链表" class="headerlink" title="LeetCode-160.相交链表"></a>LeetCode-160.相交链表</h2><p>编写一个程序，找到两个单链表相交的起始节点。</p>
+<p>如下面的两个链表：</p>
+<p><img src="/2020/05/10/LeetCode-160/160_statement.png" alt="img"></p>
+<p>在节点 c1 开始相交。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><p><img src="/2020/05/10/LeetCode-160/160_example_1.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 8, listA &#x3D; [4,1,8,4,5], listB &#x3D; [5,0,1,8,4,5], skipA &#x3D; 2, skipB &#x3D; 3</span><br><span class="line">输出：Reference of the node with value &#x3D; 8</span><br><span class="line">输入解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><p><img src="/2020/05/10/LeetCode-160/160_example_2.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 2, listA &#x3D; [0,9,1,2,4], listB &#x3D; [3,2,4], skipA &#x3D; 3, skipB &#x3D; 1</span><br><span class="line">输出：Reference of the node with value &#x3D; 2</span><br><span class="line">输入解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3"></a>示例 3</h3><p><img src="/2020/05/10/LeetCode-160/160_example_3.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 0, listA &#x3D; [2,6,4], listB &#x3D; [1,5], skipA &#x3D; 3, skipB &#x3D; 2</span><br><span class="line">输出：null</span><br><span class="line">输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。</span><br><span class="line">解释：这两个链表不相交，因此返回 null。</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>如果两个链表没有交点，返回 null</li>
+<li>在返回结果后，两个链表仍须保持原有的结构</li>
+<li>可假定整个链表结构中没有循环</li>
+<li>程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存</li>
+</ul>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>因为时间复杂度O(n)和空间复杂度O(1)的要求，所以我们可知，只能遍历固定次数链表，且不能根据数据规模开辟内存空间。</li>
+<li>两个链表可能是不等长的，并且如果存在交点，交点肯定不在不等长的那部分。</li>
+<li>首先遍历两个链表，确定两个链表的长度，Lengtha，Lengthb。</li>
+<li>根据Lengtha和Lengthb的长度调整两个链表为等长的</li>
+<li>遍历比较两个链表的首节点是否相等<ul>
+<li>不相等将首节点下一个节点置为首节点</li>
+<li>相等跳出遍历</li>
+</ul>
+</li>
+<li>如果首节点不为空，则存在交点；如果为空，则不存在交点</li>
+</ul>
+<a id="more"></a>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Lengtha = <span class="number">0</span>,Lengthb = <span class="number">0</span>;</span><br><span class="line">        ListNode *tmpa = headA,*tmpb = headB;</span><br><span class="line">        <span class="keyword">while</span>(tmpa)&#123;</span><br><span class="line">            ++Lengtha;</span><br><span class="line">            tmpa = tmpa-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(tmpb)&#123;</span><br><span class="line">            ++Lengthb;</span><br><span class="line">            tmpb = tmpb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        tmpa = headA,tmpb = headB;</span><br><span class="line">        <span class="keyword">while</span>(Lengtha != Lengthb)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Lengtha &lt; Lengthb)&#123;</span><br><span class="line">                --Lengthb;</span><br><span class="line">                tmpb = tmpb-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --Lengtha;</span><br><span class="line">                tmpa = tmpa-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(tmpa!=tmpb)&#123;</span><br><span class="line">            tmpa = tmpa-&gt;next;</span><br><span class="line">            tmpb = tmpb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(tmpa)</span><br><span class="line">            <span class="keyword">return</span> tmpa;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -886,65 +953,36 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-160.相交链表</title>
-    <url>/2020/05/10/LeetCode-160/</url>
-    <content><![CDATA[<h2 id="LeetCode-160-相交链表"><a href="#LeetCode-160-相交链表" class="headerlink" title="LeetCode-160.相交链表"></a>LeetCode-160.相交链表</h2><p>编写一个程序，找到两个单链表相交的起始节点。</p>
-<p>如下面的两个链表：</p>
-<p><img src="/2020/05/10/LeetCode-160/160_statement.png" alt="img"></p>
-<p>在节点 c1 开始相交。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><p><img src="/2020/05/10/LeetCode-160/160_example_1.png" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 8, listA &#x3D; [4,1,8,4,5], listB &#x3D; [5,0,1,8,4,5], skipA &#x3D; 2, skipB &#x3D; 3</span><br><span class="line">输出：Reference of the node with value &#x3D; 8</span><br><span class="line">输入解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</span><br></pre></td></tr></table></figure>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><p><img src="/2020/05/10/LeetCode-160/160_example_2.png" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 2, listA &#x3D; [0,9,1,2,4], listB &#x3D; [3,2,4], skipA &#x3D; 3, skipB &#x3D; 1</span><br><span class="line">输出：Reference of the node with value &#x3D; 2</span><br><span class="line">输入解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</span><br></pre></td></tr></table></figure>
-<h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3"></a>示例 3</h3><p><img src="/2020/05/10/LeetCode-160/160_example_3.png" alt="img"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：intersectVal &#x3D; 0, listA &#x3D; [2,6,4], listB &#x3D; [1,5], skipA &#x3D; 3, skipB &#x3D; 2</span><br><span class="line">输出：null</span><br><span class="line">输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。</span><br><span class="line">解释：这两个链表不相交，因此返回 null。</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
-<li>如果两个链表没有交点，返回 null</li>
-<li>在返回结果后，两个链表仍须保持原有的结构</li>
-<li>可假定整个链表结构中没有循环</li>
-<li>程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存</li>
+    <title>LeetCode-22.括号生成</title>
+    <url>/2020/05/26/LeetCode-22/</url>
+    <content><![CDATA[<h2 id="LeetCode-22-括号生成"><a href="#LeetCode-22-括号生成" class="headerlink" title="LeetCode-22.括号生成"></a>LeetCode-22.括号生成</h2><p>数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 <strong>有效的</strong> 括号组合。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：n &#x3D; 3</span><br><span class="line">输出：[</span><br><span class="line">       &quot;((()))&quot;,</span><br><span class="line">       &quot;(()())&quot;,</span><br><span class="line">       &quot;(())()&quot;,</span><br><span class="line">       &quot;()(())&quot;,</span><br><span class="line">       &quot;()()()&quot;</span><br><span class="line">     ]</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h4><ul>
+<li>一个有效的括号组合，即字符串中括号都是成对出现的，且在每个右括号之前都有与之对应的左括号</li>
+<li>我们用一个变量use统计，目前有多少未对应的右括号</li>
+<li>递归遍历所有可能性，当括号对个数==n时，判断use是否==0，如果等于0，则该括号对是有效的</li>
 </ul>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>因为时间复杂度O(n)和空间复杂度O(1)的要求，所以我们可知，只能遍历固定次数链表，且不能根据数据规模开辟内存空间。</li>
-<li>两个链表可能是不等长的，并且如果存在交点，交点肯定不在不等长的那部分。</li>
-<li>首先遍历两个链表，确定两个链表的长度，Lengtha，Lengthb。</li>
-<li>根据Lengtha和Lengthb的长度调整两个链表为等长的</li>
-<li>遍历比较两个链表的首节点是否相等<ul>
-<li>不相等将首节点下一个节点置为首节点</li>
-<li>相等跳出遍历</li>
-</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line">        <span class="built_in">string</span> s = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> use = <span class="number">0</span>;</span><br><span class="line">        func(ans,s,n,use);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;ans,<span class="built_in">string</span> &amp;s,<span class="keyword">int</span> &amp;n,<span class="keyword">int</span> &amp;use)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == n * <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!use)</span><br><span class="line">                ans.push_back(s);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(use &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                s.append(<span class="string">")"</span>);</span><br><span class="line">                --use;</span><br><span class="line">                func(ans,s,n,use);</span><br><span class="line">                s = s.substr(<span class="number">0</span>,s.length() - <span class="number">1</span>);</span><br><span class="line">                ++use;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(use &lt; n)&#123;</span><br><span class="line">                s.append(<span class="string">"("</span>);</span><br><span class="line">                ++use;</span><br><span class="line">                func(ans,s,n,use);</span><br><span class="line">                s = s.substr(<span class="number">0</span>,s.length() - <span class="number">1</span>);</span><br><span class="line">                --use;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="非递归方法"><a href="#非递归方法" class="headerlink" title="非递归方法"></a>非递归方法</h4><ul>
+<li><p>我们可以观察到递归方法中，系统栈帮我们记录了回溯的位置，并且是深度搜索</p>
 </li>
-<li>如果首节点不为空，则存在交点；如果为空，则不存在交点</li>
+<li><p>我们将遍历过程看成一颗二叉树，对于每一个位置，只有左右括号两条路径</p>
+</li>
+<li>在这颗二叉树上，我们可以使用栈来实现广度搜索，具体做法是用栈存储即将要遍历的节点，和该节点上的use值</li>
+<li>当要遍历的节点括号对个数==n时，判断use是否==0，如果等于0，则该括号对是有效的</li>
 </ul>
-<a id="more"></a>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Lengtha = <span class="number">0</span>,Lengthb = <span class="number">0</span>;</span><br><span class="line">        ListNode *tmpa = headA,*tmpb = headB;</span><br><span class="line">        <span class="keyword">while</span>(tmpa)&#123;</span><br><span class="line">            ++Lengtha;</span><br><span class="line">            tmpa = tmpa-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(tmpb)&#123;</span><br><span class="line">            ++Lengthb;</span><br><span class="line">            tmpb = tmpb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        tmpa = headA,tmpb = headB;</span><br><span class="line">        <span class="keyword">while</span>(Lengtha != Lengthb)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Lengtha &lt; Lengthb)&#123;</span><br><span class="line">                --Lengthb;</span><br><span class="line">                tmpb = tmpb-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                --Lengtha;</span><br><span class="line">                tmpa = tmpa-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(tmpa!=tmpb)&#123;</span><br><span class="line">            tmpa = tmpa-&gt;next;</span><br><span class="line">            tmpb = tmpb-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(tmpa)</span><br><span class="line">            <span class="keyword">return</span> tmpa;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line">        <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;&gt; s;</span><br><span class="line">        pair&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">        tmp.first = <span class="string">""</span>,tmp.second = <span class="number">0</span>;</span><br><span class="line">        s.push(tmp);</span><br><span class="line">        <span class="keyword">while</span>(!s.empty())&#123;</span><br><span class="line">            tmp = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="keyword">if</span>(tmp.first.length() == n*<span class="number">2</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!tmp.second)</span><br><span class="line">                    ans.push_back(tmp.first);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(tmp.second &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    tmp.first.append(<span class="string">")"</span>);</span><br><span class="line">                    --tmp.second;</span><br><span class="line">                    s.push(tmp);</span><br><span class="line">                    tmp.first = tmp.first.substr(<span class="number">0</span>,tmp.first.length() - <span class="number">1</span>);</span><br><span class="line">                    ++tmp.second;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(tmp.second &lt; n)&#123;</span><br><span class="line">                    tmp.first.append(<span class="string">"("</span>);</span><br><span class="line">                    ++tmp.second;</span><br><span class="line">                    s.push(tmp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-198.打家劫舍</title>
-    <url>/2020/05/20/LeetCode-198/</url>
-    <content><![CDATA[<h2 id="LeetCode-198-打家劫舍"><a href="#LeetCode-198-打家劫舍" class="headerlink" title="LeetCode-198.打家劫舍"></a>LeetCode-198.打家劫舍</h2><p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，<strong>如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</strong></p>
-<p>给定一个代表每个房屋存放金额的非负整数数组，计算你<strong>在不触动警报装置的情况下</strong>，能够偷窃到的最高金额。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 1) ，然后偷窃 3 号房屋 (金额 &#x3D; 3)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 1 + 3 &#x3D; 4 。</span><br></pre></td></tr></table></figure>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2,7,9,3,1]</span><br><span class="line">输出: 12</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 2), 偷窃 3 号房屋 (金额 &#x3D; 9)，接着偷窃 5 号房屋 (金额 &#x3D; 1)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 2 + 9 + 1 &#x3D; 12 。</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>假设我们从左往右偷</li>
-<li>对于任一房屋，我们能偷到的最高金额是$f(x) = max(f(x-2) + nums[x],f(x-1))$</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>() == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>() == <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        a = nums[<span class="number">0</span>],b = <span class="built_in">max</span>(nums[<span class="number">0</span>],nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> i,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">2</span>;i != len;++i)&#123;</span><br><span class="line">            c = <span class="built_in">max</span>(a+nums[i],b);</span><br><span class="line">            a = b;</span><br><span class="line">            b = c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
+        <tag>递归/非递归</tag>
+        <tag>字符串</tag>
+        <tag>回溯算法</tag>
+        <tag>深度搜索</tag>
+        <tag>广度搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -965,22 +1003,6 @@
       </categories>
       <tags>
         <tag>递归/非递归</tag>
-        <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-21.合并两个有序链表</title>
-    <url>/2020/05/05/LeetCode-21/</url>
-    <content><![CDATA[<h2 id="LeetCode-21-合并两个有序链表"><a href="#LeetCode-21-合并两个有序链表" class="headerlink" title="LeetCode-21.合并两个有序链表"></a>LeetCode-21.合并两个有序链表</h2><p>将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>选取两个链表中较小的头节点作为合并链表的头结点，然后按从小到大顺添加两个链表的头节点到合并链表上</p>
-<a id="more"></a>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l1)</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">if</span>(!l2)</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        ListNode *head = <span class="literal">nullptr</span>,*tmp = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            head = l1;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            head = l2;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        tmp = head;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                tmp-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                tmp-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp-&gt;next = l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp-&gt;next = l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
         <tag>链表</tag>
       </tags>
   </entry>
@@ -1009,6 +1031,41 @@
       </categories>
       <tags>
         <tag>树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-21.合并两个有序链表</title>
+    <url>/2020/05/05/LeetCode-21/</url>
+    <content><![CDATA[<h2 id="LeetCode-21-合并两个有序链表"><a href="#LeetCode-21-合并两个有序链表" class="headerlink" title="LeetCode-21.合并两个有序链表"></a>LeetCode-21.合并两个有序链表</h2><p>将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>选取两个链表中较小的头节点作为合并链表的头结点，然后按从小到大顺添加两个链表的头节点到合并链表上</p>
+<a id="more"></a>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!l1)</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">if</span>(!l2)</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        ListNode *head = <span class="literal">nullptr</span>,*tmp = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            head = l1;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            head = l2;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        tmp = head;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &lt; l2-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                tmp-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                tmp-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp-&gt;next = l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp-&gt;next = l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-23.合并K个排序链表</title>
+    <url>/2020/04/26/LeetCode-23/</url>
+    <content><![CDATA[<h2 id="LeetCode-23-合并K个排序链表"><a href="#LeetCode-23-合并K个排序链表" class="headerlink" title="LeetCode 23.合并K个排序链表"></a>LeetCode 23.合并K个排序链表</h2><p>合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  1-&gt;4-&gt;5,</span><br><span class="line">  1-&gt;3-&gt;4,</span><br><span class="line">  2-&gt;6</span><br><span class="line">]</span><br><span class="line">输出: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="循环合并最后两个链表"><a href="#循环合并最后两个链表" class="headerlink" title="循环合并最后两个链表"></a>循环合并最后两个链表</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">marge</span><span class="params">(ListNode *a,ListNode *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!a || !b)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span>(!a &amp;&amp; !b)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    	<span class="keyword">if</span>(!a)</span><br><span class="line">    		<span class="keyword">return</span> b;</span><br><span class="line">    	<span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode *tmp = <span class="literal">nullptr</span>,*next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(a-&gt;val &gt; b-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = b;</span><br><span class="line">        b = a;</span><br><span class="line">        a = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp = a;</span><br><span class="line">    <span class="keyword">while</span>(a-&gt;next &amp;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a-&gt;next-&gt;val &gt; b-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            next = a-&gt;next;</span><br><span class="line">            a-&gt;next = b;</span><br><span class="line">            b = b-&gt;next;</span><br><span class="line">            a-&gt;next-&gt;next = next;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        next = a-&gt;next;</span><br><span class="line">        a-&gt;next = b;</span><br><span class="line">        b = b-&gt;next;</span><br><span class="line">        a-&gt;next-&gt;next = next;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode *a = <span class="literal">nullptr</span>,*b = <span class="literal">nullptr</span>,*c = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(lists.<span class="built_in">size</span>() &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        a = lists.back();</span><br><span class="line">        lists.pop_back();</span><br><span class="line">        b = lists.back();</span><br><span class="line">        lists.pop_back();</span><br><span class="line">        c = marge(a,b);</span><br><span class="line">        lists.push_back(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lists.front();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用分治法"><a href="#使用分治法" class="headerlink" title="使用分治法"></a>使用分治法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">marge</span><span class="params">(ListNode *a,ListNode *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!a || !b)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span>(!a &amp;&amp; !b)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    	<span class="keyword">if</span>(!a)</span><br><span class="line">    		<span class="keyword">return</span> b;</span><br><span class="line">    	<span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode *tmp = <span class="literal">nullptr</span>,*next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(a-&gt;val &gt; b-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = b;</span><br><span class="line">        b = a;</span><br><span class="line">        a = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp = a;</span><br><span class="line">    <span class="keyword">while</span>(a-&gt;next &amp;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a-&gt;next-&gt;val &gt; b-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            next = a-&gt;next;</span><br><span class="line">            a-&gt;next = b;</span><br><span class="line">            b = b-&gt;next;</span><br><span class="line">            a-&gt;next-&gt;next = next;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        next = a-&gt;next;</span><br><span class="line">        a-&gt;next = b;</span><br><span class="line">        b = b-&gt;next;</span><br><span class="line">        a-&gt;next-&gt;next = next;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">margeFunc</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(low+<span class="number">1</span> == high)</span><br><span class="line">    	<span class="keyword">return</span> lists[low];</span><br><span class="line">    <span class="keyword">int</span> middle = (low+high)/<span class="number">2</span>;</span><br><span class="line">    ListNode *ls = margeFunc(lists,low,middle);</span><br><span class="line">    ListNode *rs = margeFunc(lists,middle,high);</span><br><span class="line">    ListNode *s = marge(ls,rs);</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode *ans = <span class="literal">nullptr</span>;</span><br><span class="line">    ans = margeFunc(lists,<span class="number">0</span>,lists.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">return</span> lists.front();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用优先队列"><a href="#使用优先队列" class="headerlink" title="使用优先队列"></a>使用优先队列</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">auto</span> comp = [](ListNode* &amp;a,ListNode* &amp;b)&#123;<span class="keyword">return</span> a-&gt;val &gt; b-&gt;val;&#125;;</span><br><span class="line">    priority_queue&lt;ListNode*,vector&lt;ListNode*&gt;,decltype(comp)&gt; que(comp);</span><br><span class="line">    ListNode *Head = <span class="literal">nullptr</span>,*temp = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i != lists.<span class="built_in">size</span>();++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(lists[i])</span><br><span class="line">        &#123;</span><br><span class="line">			que.push(lists[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!que.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!Head)</span><br><span class="line">        &#123;</span><br><span class="line">            Head = temp = que.top();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            temp-&gt;next = que.top();</span><br><span class="line">            temp = temp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            que.push(temp-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        que.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这部分需要注意，构造优先队列的第三参数时仿函数。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>分治</tag>
+        <tag>优先队列</tag>
       </tags>
   </entry>
   <entry>
@@ -1065,50 +1122,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-23.合并K个排序链表</title>
-    <url>/2020/04/26/LeetCode-23/</url>
-    <content><![CDATA[<h2 id="LeetCode-23-合并K个排序链表"><a href="#LeetCode-23-合并K个排序链表" class="headerlink" title="LeetCode 23.合并K个排序链表"></a>LeetCode 23.合并K个排序链表</h2><p>合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  1-&gt;4-&gt;5,</span><br><span class="line">  1-&gt;3-&gt;4,</span><br><span class="line">  2-&gt;6</span><br><span class="line">]</span><br><span class="line">输出: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="循环合并最后两个链表"><a href="#循环合并最后两个链表" class="headerlink" title="循环合并最后两个链表"></a>循环合并最后两个链表</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">marge</span><span class="params">(ListNode *a,ListNode *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!a || !b)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span>(!a &amp;&amp; !b)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    	<span class="keyword">if</span>(!a)</span><br><span class="line">    		<span class="keyword">return</span> b;</span><br><span class="line">    	<span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode *tmp = <span class="literal">nullptr</span>,*next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(a-&gt;val &gt; b-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = b;</span><br><span class="line">        b = a;</span><br><span class="line">        a = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp = a;</span><br><span class="line">    <span class="keyword">while</span>(a-&gt;next &amp;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a-&gt;next-&gt;val &gt; b-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            next = a-&gt;next;</span><br><span class="line">            a-&gt;next = b;</span><br><span class="line">            b = b-&gt;next;</span><br><span class="line">            a-&gt;next-&gt;next = next;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        next = a-&gt;next;</span><br><span class="line">        a-&gt;next = b;</span><br><span class="line">        b = b-&gt;next;</span><br><span class="line">        a-&gt;next-&gt;next = next;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode *a = <span class="literal">nullptr</span>,*b = <span class="literal">nullptr</span>,*c = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(lists.<span class="built_in">size</span>() &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        a = lists.back();</span><br><span class="line">        lists.pop_back();</span><br><span class="line">        b = lists.back();</span><br><span class="line">        lists.pop_back();</span><br><span class="line">        c = marge(a,b);</span><br><span class="line">        lists.push_back(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> lists.front();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用分治法"><a href="#使用分治法" class="headerlink" title="使用分治法"></a>使用分治法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">marge</span><span class="params">(ListNode *a,ListNode *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!a || !b)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span>(!a &amp;&amp; !b)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    	<span class="keyword">if</span>(!a)</span><br><span class="line">    		<span class="keyword">return</span> b;</span><br><span class="line">    	<span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode *tmp = <span class="literal">nullptr</span>,*next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(a-&gt;val &gt; b-&gt;val)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp = b;</span><br><span class="line">        b = a;</span><br><span class="line">        a = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    tmp = a;</span><br><span class="line">    <span class="keyword">while</span>(a-&gt;next &amp;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a-&gt;next-&gt;val &gt; b-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            next = a-&gt;next;</span><br><span class="line">            a-&gt;next = b;</span><br><span class="line">            b = b-&gt;next;</span><br><span class="line">            a-&gt;next-&gt;next = next;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        next = a-&gt;next;</span><br><span class="line">        a-&gt;next = b;</span><br><span class="line">        b = b-&gt;next;</span><br><span class="line">        a-&gt;next-&gt;next = next;</span><br><span class="line">        a = a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">margeFunc</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(low+<span class="number">1</span> == high)</span><br><span class="line">    	<span class="keyword">return</span> lists[low];</span><br><span class="line">    <span class="keyword">int</span> middle = (low+high)/<span class="number">2</span>;</span><br><span class="line">    ListNode *ls = margeFunc(lists,low,middle);</span><br><span class="line">    ListNode *rs = margeFunc(lists,middle,high);</span><br><span class="line">    ListNode *s = marge(ls,rs);</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode *ans = <span class="literal">nullptr</span>;</span><br><span class="line">    ans = margeFunc(lists,<span class="number">0</span>,lists.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">return</span> lists.front();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用优先队列"><a href="#使用优先队列" class="headerlink" title="使用优先队列"></a>使用优先队列</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(<span class="built_in">vector</span>&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(lists.empty())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">auto</span> comp = [](ListNode* &amp;a,ListNode* &amp;b)&#123;<span class="keyword">return</span> a-&gt;val &gt; b-&gt;val;&#125;;</span><br><span class="line">    priority_queue&lt;ListNode*,vector&lt;ListNode*&gt;,decltype(comp)&gt; que(comp);</span><br><span class="line">    ListNode *Head = <span class="literal">nullptr</span>,*temp = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i != lists.<span class="built_in">size</span>();++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(lists[i])</span><br><span class="line">        &#123;</span><br><span class="line">			que.push(lists[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!que.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!Head)</span><br><span class="line">        &#123;</span><br><span class="line">            Head = temp = que.top();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            temp-&gt;next = que.top();</span><br><span class="line">            temp = temp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            que.push(temp-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        que.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这部分需要注意，构造优先队列的第三参数时仿函数。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>分治</tag>
-        <tag>优先队列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-33.搜索旋转排序数组</title>
-    <url>/2020/04/27/LeetCode-33/</url>
-    <content><![CDATA[<h2 id="LeetCode-33-搜索旋转排序数组"><a href="#LeetCode-33-搜索旋转排序数组" class="headerlink" title="LeetCode-33.搜索旋转排序数组"></a>LeetCode-33.搜索旋转排序数组</h2><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p>
-<p>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。</p>
-<p>搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</p>
-<p>你可以假设数组中不存在重复的元素。</p>
-<p>你的算法时间复杂度必须是 O(log n) 级别。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums &#x3D; [4,5,6,7,0,1,2], target &#x3D; 0</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums &#x3D; [4,5,6,7,0,1,2], target &#x3D; 3</span><br><span class="line">输出: -1</span><br></pre></td></tr></table></figure>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>1.本质上还是二分查找，但是对排序数组旋转后，需要做一些判断确定下一次的检索区域</p>
-<p>2.当middle &lt; target时，我们需要判断low-&gt;middle是否为一个连续区间，如果成立，那么target只会在middle和high之间，因为low-&gt;middle都 &lt; target。如果low-&gt;middle不为一个连续区间，那么middle-&gt;high为一个连续区间，此时我们要判断high是否 &gt;= target，如果成立就在middle-&gt;high区间，反之在low-&gt;middle区间。</p>
-<p>3.当middle &gt; target时，我们需要判断middle-&gt;high是否为一个连续区间，如果成立，那么target只会在low和middle之间，因为middle-&gt;high都 &gt; target。如果middle和high不为一个连续区间，那么low-&gt;middle为一个连续区间，此时我们要判断low是否 &lt;= target，如果成立就在low-&gt;middle区间，反之在middle-&gt;high区间。</p>
-<p>Tag: 实际实现的时候，middle不被考虑在下一次的检索区域内，因为middle已经和target比较过了。</p>
-<a id="more"></a>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>,high = nums.<span class="built_in">size</span>(),middle = low + (high-low)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[middle] == target)</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">        <span class="keyword">if</span>(nums[middle] &lt; target)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[low] &lt; nums[middle])</span><br><span class="line">            &#123;</span><br><span class="line">            	low = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[high<span class="number">-1</span>] &gt;= target)</span><br><span class="line">                &#123;</span><br><span class="line">                	low = middle + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                	high = middle;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[middle] &lt; nums[high<span class="number">-1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">            	high = middle;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">            	<span class="keyword">if</span>(nums[low] &lt;= target)</span><br><span class="line">                &#123;</span><br><span class="line">                    high = middle;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    low = middle + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        middle = low + (high-low)/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-        <tag>二分查找</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode-437.路径总和III</title>
     <url>/2020/05/09/LeetCode-437/</url>
     <content><![CDATA[<h2 id="LeetCode-437-路径总和III"><a href="#LeetCode-437-路径总和III" class="headerlink" title="LeetCode-437.路径总和III"></a>LeetCode-437.路径总和III</h2><p>给定一个二叉树，它的每个结点都存放着一个整数值。</p>
@@ -1154,29 +1167,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode-448.找到所有数组中消失的数字</title>
-    <url>/2020/05/08/LeetCode-448/</url>
-    <content><![CDATA[<h2 id="LeetCode-448-找到所有数组中消失的数字"><a href="#LeetCode-448-找到所有数组中消失的数字" class="headerlink" title="LeetCode-448.找到所有数组中消失的数字"></a>LeetCode-448.找到所有数组中消失的数字</h2><p>给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。</p>
-<p>找到所有在 [1, n] 范围之间没有出现在数组中的数字。</p>
-<p>您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">[4,3,2,7,8,2,3,1]</span><br><span class="line"></span><br><span class="line">输出:</span><br><span class="line">[5,6]</span><br></pre></td></tr></table></figure>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>因为不能使用额外空间，且1 ≤ a[i] ≤ n,所以我们可以直接使用原数组完成hash</li>
-<li>将被hash到的位置变成负数，因为1 ≤ a[i] ≤ n,所以值为负就可以确保该位置被hash到</li>
-<li>最后统计值&gt;0的位置即可</li>
-<li>时间复杂度O(2n),空间复杂度O(1)(如果不算返回值)</li>
-</ul>
-<a id="more"></a>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">findDisappearedNumbers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != nums.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            j = <span class="built_in">abs</span>(nums[i])<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[j] &gt; <span class="number">0</span>)</span><br><span class="line">                nums[j] *= <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != nums.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)</span><br><span class="line">                ans.push_back(i+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode-46.全排列</title>
     <url>/2020/05/25/LeetCode-46/</url>
     <content><![CDATA[<h2 id="LeetCode-46-全排列"><a href="#LeetCode-46-全排列" class="headerlink" title="LeetCode-46.全排列"></a>LeetCode-46.全排列</h2><p>给定一个<strong>没有重复</strong>数字的序列，返回其所有可能的全排列。</p>
@@ -1201,6 +1191,54 @@
         <tag>数组</tag>
         <tag>递归/非递归</tag>
         <tag>回溯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-33.搜索旋转排序数组</title>
+    <url>/2020/04/27/LeetCode-33/</url>
+    <content><![CDATA[<h2 id="LeetCode-33-搜索旋转排序数组"><a href="#LeetCode-33-搜索旋转排序数组" class="headerlink" title="LeetCode-33.搜索旋转排序数组"></a>LeetCode-33.搜索旋转排序数组</h2><p>假设按照升序排序的数组在预先未知的某个点上进行了旋转。</p>
+<p>( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。</p>
+<p>搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。</p>
+<p>你可以假设数组中不存在重复的元素。</p>
+<p>你的算法时间复杂度必须是 O(log n) 级别。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums &#x3D; [4,5,6,7,0,1,2], target &#x3D; 0</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums &#x3D; [4,5,6,7,0,1,2], target &#x3D; 3</span><br><span class="line">输出: -1</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>1.本质上还是二分查找，但是对排序数组旋转后，需要做一些判断确定下一次的检索区域</p>
+<p>2.当middle &lt; target时，我们需要判断low-&gt;middle是否为一个连续区间，如果成立，那么target只会在middle和high之间，因为low-&gt;middle都 &lt; target。如果low-&gt;middle不为一个连续区间，那么middle-&gt;high为一个连续区间，此时我们要判断high是否 &gt;= target，如果成立就在middle-&gt;high区间，反之在low-&gt;middle区间。</p>
+<p>3.当middle &gt; target时，我们需要判断middle-&gt;high是否为一个连续区间，如果成立，那么target只会在low和middle之间，因为middle-&gt;high都 &gt; target。如果middle和high不为一个连续区间，那么low-&gt;middle为一个连续区间，此时我们要判断low是否 &lt;= target，如果成立就在low-&gt;middle区间，反之在middle-&gt;high区间。</p>
+<p>Tag: 实际实现的时候，middle不被考虑在下一次的检索区域内，因为middle已经和target比较过了。</p>
+<a id="more"></a>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>,high = nums.<span class="built_in">size</span>(),middle = low + (high-low)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[middle] == target)</span><br><span class="line">        	<span class="keyword">return</span> middle;</span><br><span class="line">        <span class="keyword">if</span>(nums[middle] &lt; target)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[low] &lt; nums[middle])</span><br><span class="line">            &#123;</span><br><span class="line">            	low = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[high<span class="number">-1</span>] &gt;= target)</span><br><span class="line">                &#123;</span><br><span class="line">                	low = middle + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                	high = middle;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[middle] &lt; nums[high<span class="number">-1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">            	high = middle;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">            	<span class="keyword">if</span>(nums[low] &lt;= target)</span><br><span class="line">                &#123;</span><br><span class="line">                    high = middle;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    low = middle + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        middle = low + (high-low)/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+        <tag>二分查找</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode-448.找到所有数组中消失的数字</title>
+    <url>/2020/05/08/LeetCode-448/</url>
+    <content><![CDATA[<h2 id="LeetCode-448-找到所有数组中消失的数字"><a href="#LeetCode-448-找到所有数组中消失的数字" class="headerlink" title="LeetCode-448.找到所有数组中消失的数字"></a>LeetCode-448.找到所有数组中消失的数字</h2><p>给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。</p>
+<p>找到所有在 [1, n] 范围之间没有出现在数组中的数字。</p>
+<p>您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入:</span><br><span class="line">[4,3,2,7,8,2,3,1]</span><br><span class="line"></span><br><span class="line">输出:</span><br><span class="line">[5,6]</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>因为不能使用额外空间，且1 ≤ a[i] ≤ n,所以我们可以直接使用原数组完成hash</li>
+<li>将被hash到的位置变成负数，因为1 ≤ a[i] ≤ n,所以值为负就可以确保该位置被hash到</li>
+<li>最后统计值&gt;0的位置即可</li>
+<li>时间复杂度O(2n),空间复杂度O(1)(如果不算返回值)</li>
+</ul>
+<a id="more"></a>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">findDisappearedNumbers</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != nums.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            j = <span class="built_in">abs</span>(nums[i])<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[j] &gt; <span class="number">0</span>)</span><br><span class="line">                nums[j] *= <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != nums.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)</span><br><span class="line">                ans.push_back(i+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1288,6 +1326,33 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode-581.最短无序连续子数组</title>
+    <url>/2020/05/23/LeetCode-581/</url>
+    <content><![CDATA[<h2 id="LeetCode-581-最短无序连续子数组"><a href="#LeetCode-581-最短无序连续子数组" class="headerlink" title="LeetCode-581.最短无序连续子数组"></a>LeetCode-581.最短无序连续子数组</h2><p>给定一个整数数组，你需要寻找一个连续的子数组，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。</p>
+<p>你找到的子数组应是最短的，请输出它的长度。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2, 6, 4, 8, 10, 9, 15]</span><br><span class="line">输出: 5</span><br><span class="line">解释: 你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。</span><br></pre></td></tr></table></figure>
+<p>说明 :</p>
+<ul>
+<li>输入的数组长度范围在 [1, 10,000]。</li>
+<li>输入的数组可能包含重复元素 ，所以升序的意思是&lt;=。</li>
+</ul>
+<a id="more"></a>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="通过栈找到无序子数组的左边界和右边界"><a href="#通过栈找到无序子数组的左边界和右边界" class="headerlink" title="通过栈找到无序子数组的左边界和右边界"></a>通过栈找到无序子数组的左边界和右边界</h4><p><img src="/2020/05/23/LeetCode-581/61276ef77b0f1338b09332c278ad2751874b9bbc36161be9a7de9c974b1de859-image.png" alt="image.png"></p>
+<ul>
+<li>使用栈存储递增的值，如果遇到一个比栈顶小的值，那么该值为无序值，通过弹出栈顶找到无序值的位置</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findUnsortedSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,l,r,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>,l = len<span class="number">-1</span>;i != len;++i)&#123;</span><br><span class="line">           <span class="keyword">while</span>(!s.empty() &amp;&amp; nums[s.top()] &gt; nums[i])&#123;</span><br><span class="line">               l = <span class="built_in">min</span>(l,s.top());</span><br><span class="line">               s.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!s.empty()) s.pop();</span><br><span class="line">        <span class="keyword">for</span>(i = len<span class="number">-1</span>,r = <span class="number">0</span>;i != <span class="number">-1</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">while</span>(!s.empty() &amp;&amp; nums[s.top()] &lt; nums[i])&#123;</span><br><span class="line">               r = <span class="built_in">max</span>(r,s.top());</span><br><span class="line">               s.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r &lt;= l? <span class="number">0</span> : r - l + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="不使用额外空间"><a href="#不使用额外空间" class="headerlink" title="不使用额外空间"></a>不使用额外空间</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findUnsortedSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,l,r,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        l = <span class="number">1e9</span>,r = <span class="number">-1e9</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i != len;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt; nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">                l = <span class="built_in">min</span>(l,nums[i]);</span><br><span class="line">                r = <span class="built_in">max</span>(r,nums[i<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != len;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l &lt; nums[i])&#123;</span><br><span class="line">                l = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = len<span class="number">-1</span>;i != <span class="number">-1</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(r &gt; nums[i])&#123;</span><br><span class="line">                r = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r &gt; l ? r - l + <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+        <tag>栈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode-538.把二叉搜索树转换为累加树</title>
     <url>/2020/05/06/LeetCode-538/</url>
     <content><![CDATA[<h2 id="LeetCode-538-把二叉搜索树转换为累加树"><a href="#LeetCode-538-把二叉搜索树转换为累加树" class="headerlink" title="LeetCode-538.把二叉搜索树转换为累加树"></a>LeetCode-538.把二叉搜索树转换为累加树</h2><p>给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，使得每个节点的值是原来的节点值加上所有大于它的节点值之和。</p>
@@ -1342,33 +1407,6 @@
       </categories>
       <tags>
         <tag>树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode-581.最短无序连续子数组</title>
-    <url>/2020/05/23/LeetCode-581/</url>
-    <content><![CDATA[<h2 id="LeetCode-581-最短无序连续子数组"><a href="#LeetCode-581-最短无序连续子数组" class="headerlink" title="LeetCode-581.最短无序连续子数组"></a>LeetCode-581.最短无序连续子数组</h2><p>给定一个整数数组，你需要寻找一个连续的子数组，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。</p>
-<p>你找到的子数组应是最短的，请输出它的长度。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2, 6, 4, 8, 10, 9, 15]</span><br><span class="line">输出: 5</span><br><span class="line">解释: 你只需要对 [6, 4, 8, 10, 9] 进行升序排序，那么整个表都会变为升序排序。</span><br></pre></td></tr></table></figure>
-<p>说明 :</p>
-<ul>
-<li>输入的数组长度范围在 [1, 10,000]。</li>
-<li>输入的数组可能包含重复元素 ，所以升序的意思是&lt;=。</li>
-</ul>
-<a id="more"></a>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="通过栈找到无序子数组的左边界和右边界"><a href="#通过栈找到无序子数组的左边界和右边界" class="headerlink" title="通过栈找到无序子数组的左边界和右边界"></a>通过栈找到无序子数组的左边界和右边界</h4><p><img src="/2020/05/23/LeetCode-581/61276ef77b0f1338b09332c278ad2751874b9bbc36161be9a7de9c974b1de859-image.png" alt="image.png"></p>
-<ul>
-<li>使用栈存储递增的值，如果遇到一个比栈顶小的值，那么该值为无序值，通过弹出栈顶找到无序值的位置</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findUnsortedSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,l,r,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>,l = len<span class="number">-1</span>;i != len;++i)&#123;</span><br><span class="line">           <span class="keyword">while</span>(!s.empty() &amp;&amp; nums[s.top()] &gt; nums[i])&#123;</span><br><span class="line">               l = <span class="built_in">min</span>(l,s.top());</span><br><span class="line">               s.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!s.empty()) s.pop();</span><br><span class="line">        <span class="keyword">for</span>(i = len<span class="number">-1</span>,r = <span class="number">0</span>;i != <span class="number">-1</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">while</span>(!s.empty() &amp;&amp; nums[s.top()] &lt; nums[i])&#123;</span><br><span class="line">               r = <span class="built_in">max</span>(r,s.top());</span><br><span class="line">               s.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           s.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r &lt;= l? <span class="number">0</span> : r - l + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="不使用额外空间"><a href="#不使用额外空间" class="headerlink" title="不使用额外空间"></a>不使用额外空间</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findUnsortedSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,l,r,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        l = <span class="number">1e9</span>,r = <span class="number">-1e9</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i != len;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &lt; nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">                l = <span class="built_in">min</span>(l,nums[i]);</span><br><span class="line">                r = <span class="built_in">max</span>(r,nums[i<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != len;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l &lt; nums[i])&#123;</span><br><span class="line">                l = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i = len<span class="number">-1</span>;i != <span class="number">-1</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(r &gt; nums[i])&#123;</span><br><span class="line">                r = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r &gt; l ? r - l + <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -1532,6 +1570,40 @@
       <tags>
         <tag>局部线性近似</tag>
         <tag>Iris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实践论（论认识和实践的关系——知和行的关系）读书笔记</title>
+    <url>/2020/05/23/ShiJianLun/</url>
+    <content><![CDATA[<h2 id="实践论（论认识和实践的关系——知和行的关系）读书笔记"><a href="#实践论（论认识和实践的关系——知和行的关系）读书笔记" class="headerlink" title="实践论（论认识和实践的关系——知和行的关系）读书笔记"></a>实践论（论认识和实践的关系——知和行的关系）读书笔记</h2><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
+<li>教条主义和经验主义在党内盛行</li>
+</ul>
+<h3 id="写作的目的"><a href="#写作的目的" class="headerlink" title="写作的目的"></a>写作的目的</h3><ul>
+<li>用马克思主义的认识论观点去揭露党内的教条主义和经验主义</li>
+</ul>
+<a id="more"></a>
+<h3 id="要点记录："><a href="#要点记录：" class="headerlink" title="要点记录："></a>要点记录：</h3><ul>
+<li>只有在社会实践过程中（物质生产过程中， 阶级斗争过程中，科学实验过程中），人们达到了思想中所预想的结果时，人们的认识才被证实了。</li>
+<li>理论对于实践的依赖关系，理论的基础是实践，又转过来为实践服务。判定认识或理论之是否真理，不是依主观上觉得如何而定，而是依客观上社会实践的结果如何而定。</li>
+<li>认识的两个个阶段：<ul>
+<li>认识的感性阶段：看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系（在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论）</li>
+<li>认知的理性阶段：概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。（在这个阶段中，使用判断和推理的方法， 就可产生出合乎论理的结论来）</li>
+</ul>
+</li>
+<li>认识的真正任务在于经过感觉而到达于思维，到达于逐步了解客观事物的内部矛盾，了解它的规律性，了解这一过程和那一过程间的内部联系，即到达于论理的认识。</li>
+<li>认识过程中两个阶段的特性，在低级阶段，认识表现为感性的，在高级阶段，认识表现为论理的，但任何阶段，都是统一的认识过程中的阶段。感性和理性二者的性质不同，但又不是互相分离的，它们在实践的基础上统一起来了。我们的实践证明：感觉到了的东西，我们不能立刻理解它，只有理解了的东西才更深刻地感觉它。感觉只解决现象问题，理论才解决本质问题。这些问题的解决，一点 也不能离开实践。无论何人要认识什么事物，除了同那个事物接触，即生活于 （实践于）那个事物的环境中，是没有法子解决的。</li>
+<li>认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。 第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。 只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据 这样的材料造出正确的概念和论理来。 </li>
+<li>理性认识依赖于感性认识的问题</li>
+<li>如果以为认识可以停顿在低级的感性阶段，以为只有感性认识可靠，而理性认识是靠不住的，这便是重复了历史上的“经验论”的错误。这种理论的错误，在于不知道感觉材料固然是客观外界某些真实性的反映 （我这里不来说经验只是所谓内省体验的那种唯心的经验论），但它们仅是片面的和表面的东西，这种反映是不完全的，是没有反映事物本质的。</li>
+<li>认识从实践始，经过实践得到了理论的认识，还须再回到实践去。认识的能动作用，不但表现于从感性的认识到理性的认识之能动的飞跃， 更重要的还须表现于从理性的认识到革命的实践这一个飞跃。</li>
+<li>抓着了世界的规律性的认识，必须把它再回到改造世界的实践中去，再用到生产的实践、革命 的阶级斗争和民族斗争的实践以及科学实验的实践中去。这就是检验理论和发展理论的过程，是整个认识过程的继续。理论的东西之是否符合于客观真理性 这个问题，在前面说的由感性到理性之认识运动中是没有完全解决的，也不能 完全解决的。要完全地解决这个问题，只有把理性的认识再回到社会实践中去， 应用理论于实践，看它是否能够达到预想的目的。许多自然科学理论之所以被 称为真理，不但在于自然科学家们创立这些学说的时候，而且在于为尔后的科 学实践所证实的时候。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>阅读笔记</category>
+      </categories>
+      <tags>
+        <tag>实践论</tag>
       </tags>
   </entry>
   <entry>
@@ -1740,40 +1812,6 @@
       <tags>
         <tag>局部线性近似</tag>
         <tag>SwissRoll</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实践论（论认识和实践的关系——知和行的关系）读书笔记</title>
-    <url>/2020/05/23/ShiJianLun/</url>
-    <content><![CDATA[<h2 id="实践论（论认识和实践的关系——知和行的关系）读书笔记"><a href="#实践论（论认识和实践的关系——知和行的关系）读书笔记" class="headerlink" title="实践论（论认识和实践的关系——知和行的关系）读书笔记"></a>实践论（论认识和实践的关系——知和行的关系）读书笔记</h2><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
-<li>教条主义和经验主义在党内盛行</li>
-</ul>
-<h3 id="写作的目的"><a href="#写作的目的" class="headerlink" title="写作的目的"></a>写作的目的</h3><ul>
-<li>用马克思主义的认识论观点去揭露党内的教条主义和经验主义</li>
-</ul>
-<a id="more"></a>
-<h3 id="要点记录："><a href="#要点记录：" class="headerlink" title="要点记录："></a>要点记录：</h3><ul>
-<li>只有在社会实践过程中（物质生产过程中， 阶级斗争过程中，科学实验过程中），人们达到了思想中所预想的结果时，人们的认识才被证实了。</li>
-<li>理论对于实践的依赖关系，理论的基础是实践，又转过来为实践服务。判定认识或理论之是否真理，不是依主观上觉得如何而定，而是依客观上社会实践的结果如何而定。</li>
-<li>认识的两个个阶段：<ul>
-<li>认识的感性阶段：看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系（在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论）</li>
-<li>认知的理性阶段：概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。（在这个阶段中，使用判断和推理的方法， 就可产生出合乎论理的结论来）</li>
-</ul>
-</li>
-<li>认识的真正任务在于经过感觉而到达于思维，到达于逐步了解客观事物的内部矛盾，了解它的规律性，了解这一过程和那一过程间的内部联系，即到达于论理的认识。</li>
-<li>认识过程中两个阶段的特性，在低级阶段，认识表现为感性的，在高级阶段，认识表现为论理的，但任何阶段，都是统一的认识过程中的阶段。感性和理性二者的性质不同，但又不是互相分离的，它们在实践的基础上统一起来了。我们的实践证明：感觉到了的东西，我们不能立刻理解它，只有理解了的东西才更深刻地感觉它。感觉只解决现象问题，理论才解决本质问题。这些问题的解决，一点 也不能离开实践。无论何人要认识什么事物，除了同那个事物接触，即生活于 （实践于）那个事物的环境中，是没有法子解决的。</li>
-<li>认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。 第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。 只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据 这样的材料造出正确的概念和论理来。 </li>
-<li>理性认识依赖于感性认识的问题</li>
-<li>如果以为认识可以停顿在低级的感性阶段，以为只有感性认识可靠，而理性认识是靠不住的，这便是重复了历史上的“经验论”的错误。这种理论的错误，在于不知道感觉材料固然是客观外界某些真实性的反映 （我这里不来说经验只是所谓内省体验的那种唯心的经验论），但它们仅是片面的和表面的东西，这种反映是不完全的，是没有反映事物本质的。</li>
-<li>认识从实践始，经过实践得到了理论的认识，还须再回到实践去。认识的能动作用，不但表现于从感性的认识到理性的认识之能动的飞跃， 更重要的还须表现于从理性的认识到革命的实践这一个飞跃。</li>
-<li>抓着了世界的规律性的认识，必须把它再回到改造世界的实践中去，再用到生产的实践、革命 的阶级斗争和民族斗争的实践以及科学实验的实践中去。这就是检验理论和发展理论的过程，是整个认识过程的继续。理论的东西之是否符合于客观真理性 这个问题，在前面说的由感性到理性之认识运动中是没有完全解决的，也不能 完全解决的。要完全地解决这个问题，只有把理性的认识再回到社会实践中去， 应用理论于实践，看它是否能够达到预想的目的。许多自然科学理论之所以被 称为真理，不但在于自然科学家们创立这些学说的时候，而且在于为尔后的科 学实践所证实的时候。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>阅读笔记</category>
-      </categories>
-      <tags>
-        <tag>实践论</tag>
       </tags>
   </entry>
 </search>
