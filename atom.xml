@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-28T03:42:35.534Z</updated>
+  <updated>2020-05-29T10:29:22.021Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-114.二叉树展开为链表</title>
+    <link href="http://yoursite.com/2020/05/29/LeetCode-114/"/>
+    <id>http://yoursite.com/2020/05/29/LeetCode-114/</id>
+    <published>2020-05-29T10:16:33.000Z</published>
+    <updated>2020-05-29T10:29:22.021Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-114-二叉树展开为链表"><a href="#LeetCode-114-二叉树展开为链表" class="headerlink" title="LeetCode-114.二叉树展开为链表"></a>LeetCode-114.二叉树展开为链表</h2><p>给定一个二叉树，原地将它展开为一个单链表。</p><p> 例如，给定二叉树</p><pre><code>    1   / \  2   5 / \   \3   4   6</code></pre><p>将其展开为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"> \</span><br><span class="line">  2</span><br><span class="line">   \</span><br><span class="line">    3</span><br><span class="line">     \</span><br><span class="line">      4</span><br><span class="line">       \</span><br><span class="line">        5</span><br><span class="line">         \</span><br><span class="line">          6</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>首先我们可以看出展开过程就是对二叉树的先序遍历（根左右）</li><li>由先序遍历可知，根是最优先的，其次是左子树，最后是右子树</li><li>我们首先把左子树插入到右子树的位置</li><li>将原来的右子树接到左子树的最右边节点</li><li>在新的右子树的根节点上一直重复上边3~4的过程，直到新的右子树为 null</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        TreeNode *pre = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span>(root)&#123;</span><br><span class="line">            <span class="keyword">if</span>(root-&gt;left)&#123;</span><br><span class="line">                pre = root-&gt;left;</span><br><span class="line">                <span class="keyword">while</span>(pre-&gt;right)&#123;  </span><br><span class="line">                    pre = pre-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">                pre-&gt;right = root-&gt;right;</span><br><span class="line">                root-&gt;right = root-&gt;left;</span><br><span class="line">                root-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;LeetCode-114-二叉树展开为链表&quot;&gt;&lt;a href=&quot;#LeetCode-114-二叉树展开为链表&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-114.二叉树展开为链表&quot;&gt;&lt;/a&gt;LeetCode-114.二叉树展开为链表&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
+    
+      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-94.二叉树的中序遍历</title>
@@ -110,7 +138,7 @@
     <link href="http://yoursite.com/2020/05/26/LeetCode-22/"/>
     <id>http://yoursite.com/2020/05/26/LeetCode-22/</id>
     <published>2020-05-26T04:14:47.000Z</published>
-    <updated>2020-05-26T04:27:24.151Z</updated>
+    <updated>2020-05-29T10:21:25.838Z</updated>
     
     <content type="html"><![CDATA[<h2 id="LeetCode-22-括号生成"><a href="#LeetCode-22-括号生成" class="headerlink" title="LeetCode-22.括号生成"></a>LeetCode-22.括号生成</h2><p>数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 <strong>有效的</strong> 括号组合。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：n &#x3D; 3</span><br><span class="line">输出：[</span><br><span class="line">       &quot;((()))&quot;,</span><br><span class="line">       &quot;(()())&quot;,</span><br><span class="line">       &quot;(())()&quot;,</span><br><span class="line">       &quot;()(())&quot;,</span><br><span class="line">       &quot;()()()&quot;</span><br><span class="line">     ]</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h4><ul><li>一个有效的括号组合，即字符串中括号都是成对出现的，且在每个右括号之前都有与之对应的左括号</li><li>我们用一个变量use统计，目前有多少未对应的右括号</li><li>递归遍历所有可能性，当括号对个数==n时，判断use是否==0，如果等于0，则该括号对是有效的</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line">        <span class="built_in">string</span> s = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> use = <span class="number">0</span>;</span><br><span class="line">        func(ans,s,n,use);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;ans,<span class="built_in">string</span> &amp;s,<span class="keyword">int</span> &amp;n,<span class="keyword">int</span> &amp;use)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() == n * <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!use)</span><br><span class="line">                ans.push_back(s);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(use &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                s.append(<span class="string">")"</span>);</span><br><span class="line">                --use;</span><br><span class="line">                func(ans,s,n,use);</span><br><span class="line">                s = s.substr(<span class="number">0</span>,s.length() - <span class="number">1</span>);</span><br><span class="line">                ++use;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(use &lt; n)&#123;</span><br><span class="line">                s.append(<span class="string">"("</span>);</span><br><span class="line">                ++use;</span><br><span class="line">                func(ans,s,n,use);</span><br><span class="line">                s = s.substr(<span class="number">0</span>,s.length() - <span class="number">1</span>);</span><br><span class="line">                --use;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h4 id="非递归方法"><a href="#非递归方法" class="headerlink" title="非递归方法"></a>非递归方法</h4><ul><li><p>我们可以观察到递归方法中，系统栈帮我们记录了回溯的位置，并且是深度搜索</p></li><li><p>我们将遍历过程看成一颗二叉树，对于每一个位置，只有左右括号两条路径</p></li><li>在这颗二叉树上，我们可以使用栈来实现广度搜索，具体做法是用栈存储即将要遍历的节点，和该节点上的use值</li><li>当要遍历的节点括号对个数==n时，判断use是否==0，如果等于0，则该括号对是有效的</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ans;</span><br><span class="line">        <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;&gt; s;</span><br><span class="line">        pair&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">        tmp.first = <span class="string">""</span>,tmp.second = <span class="number">0</span>;</span><br><span class="line">        s.push(tmp);</span><br><span class="line">        <span class="keyword">while</span>(!s.empty())&#123;</span><br><span class="line">            tmp = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="keyword">if</span>(tmp.first.length() == n*<span class="number">2</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!tmp.second)</span><br><span class="line">                    ans.push_back(tmp.first);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(tmp.second &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    tmp.first.append(<span class="string">")"</span>);</span><br><span class="line">                    --tmp.second;</span><br><span class="line">                    s.push(tmp);</span><br><span class="line">                    tmp.first = tmp.first.substr(<span class="number">0</span>,tmp.first.length() - <span class="number">1</span>);</span><br><span class="line">                    ++tmp.second;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(tmp.second &lt; n)&#123;</span><br><span class="line">                    tmp.first.append(<span class="string">"("</span>);</span><br><span class="line">                    ++tmp.second;</span><br><span class="line">                    s.push(tmp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -127,13 +155,13 @@
     
       <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
     
+      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
       <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="回溯算法" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
     
-      <category term="深度搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="广度搜索" scheme="http://yoursite.com/tags/%E5%B9%BF%E5%BA%A6%E6%90%9C%E7%B4%A2/"/>
+      <category term="广度优先搜索" scheme="http://yoursite.com/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
@@ -157,9 +185,9 @@
       <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
     
       <category term="回溯" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%BA%AF/"/>
     
@@ -186,9 +214,9 @@
       <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
@@ -599,43 +627,6 @@
     
     
       <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-121.买卖股票的最佳时机</title>
-    <link href="http://yoursite.com/2020/05/12/LeetCode-121/"/>
-    <id>http://yoursite.com/2020/05/12/LeetCode-121/</id>
-    <published>2020-05-12T04:11:41.000Z</published>
-    <updated>2020-05-12T09:20:41.920Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-121-买卖股票的最佳时机"><a href="#LeetCode-121-买卖股票的最佳时机" class="headerlink" title="LeetCode-121.买卖股票的最佳时机"></a>LeetCode-121.买卖股票的最佳时机</h2><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p><p>如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。</p><p>注意：你不能在买入股票前卖出股票。</p><h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 5</span><br><span class="line">解释: 在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出，最大利润 &#x3D; 6-1 &#x3D; 5 。</span><br><span class="line">(注意利润不能是 7-1 &#x3D; 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。)</span><br></pre></td></tr></table></figure><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,6,4,3,1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</span><br></pre></td></tr></table></figure><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li><p>可以用动态规划实现，那么就会涉及到状态转移方程。</p></li><li><p>状态转移方程：计算到每一天的最低股价 = 前一天的股价 &lt; 当天的股价 ？ 前一天的股价 ： 当天的股价。</p></li><li><p>最大利润为最低股价和当前股价之间的差值的最大值</p></li></ul><a id="more"></a><h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(prices.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">max</span> = prices[<span class="number">0</span>],<span class="built_in">min</span> = prices[<span class="number">0</span>],ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i,len = prices.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != len;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prices[i] &lt; <span class="built_in">min</span>)&#123;</span><br><span class="line">                ans = ans &gt; <span class="built_in">max</span> - <span class="built_in">min</span> ? ans : <span class="built_in">max</span> - <span class="built_in">min</span>;</span><br><span class="line">                <span class="built_in">min</span> = prices[i];</span><br><span class="line">                <span class="built_in">max</span> = prices[i];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(prices[i] &gt; <span class="built_in">max</span>)&#123;</span><br><span class="line">                <span class="built_in">max</span> = prices[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans = ans &gt; <span class="built_in">max</span> - <span class="built_in">min</span> ? ans : <span class="built_in">max</span>-<span class="built_in">min</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-121-买卖股票的最佳时机&quot;&gt;&lt;a href=&quot;#LeetCode-121-买卖股票的最佳时机&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-121.买卖股票的最佳时机&quot;&gt;&lt;/a&gt;LeetCode-121.买卖股票的最佳时机&lt;/h2&gt;&lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。&lt;/p&gt;
-&lt;p&gt;如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。&lt;/p&gt;
-&lt;p&gt;注意：你不能在买入股票前卖出股票。&lt;/p&gt;
-&lt;h3 id=&quot;示例-1&quot;&gt;&lt;a href=&quot;#示例-1&quot; class=&quot;headerlink&quot; title=&quot;示例 1&quot;&gt;&lt;/a&gt;示例 1&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: [7,1,5,3,6,4]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 在第 2 天（股票价格 &amp;#x3D; 1）的时候买入，在第 5 天（股票价格 &amp;#x3D; 6）的时候卖出，最大利润 &amp;#x3D; 6-1 &amp;#x3D; 5 。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(注意利润不能是 7-1 &amp;#x3D; 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;示例-2&quot;&gt;&lt;a href=&quot;#示例-2&quot; class=&quot;headerlink&quot; title=&quot;示例 2&quot;&gt;&lt;/a&gt;示例 2&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: [7,6,4,3,1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;解题思路&quot;&gt;&lt;a href=&quot;#解题思路&quot; class=&quot;headerlink&quot; title=&quot;解题思路&quot;&gt;&lt;/a&gt;解题思路&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;可以用动态规划实现，那么就会涉及到状态转移方程。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;状态转移方程：计算到每一天的最低股价 = 前一天的股价 &amp;lt; 当天的股价 ？ 前一天的股价 ： 当天的股价。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;最大利润为最低股价和当前股价之间的差值的最大值&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
