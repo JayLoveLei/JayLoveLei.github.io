@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-30T13:32:51.690Z</updated>
+  <updated>2020-05-31T05:14:03.128Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-48.选择图像</title>
+    <link href="http://yoursite.com/2020/05/31/LeetCode-48/"/>
+    <id>http://yoursite.com/2020/05/31/LeetCode-48/</id>
+    <published>2020-05-31T05:07:54.000Z</published>
+    <updated>2020-05-31T05:14:03.128Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-48-选择图像"><a href="#LeetCode-48-选择图像" class="headerlink" title="LeetCode-48.选择图像"></a>LeetCode-48.选择图像</h2><p>给定一个 n × n 的二维矩阵表示一个图像。</p><p>将图像顺时针旋转 90 度。</p><p>说明：</p><p>你必须在<strong>原地</strong>旋转图像，这意味着你需要直接修改输入的二维矩阵。<strong>请不要</strong>使用另一个矩阵来旋转图像。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [4,5,6],</span><br><span class="line">  [7,8,9]</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[</span><br><span class="line">  [7,4,1],</span><br><span class="line">  [8,5,2],</span><br><span class="line">  [9,6,3]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">给定 matrix &#x3D;</span><br><span class="line">[</span><br><span class="line">  [ 5, 1, 9,11],</span><br><span class="line">  [ 2, 4, 8,10],</span><br><span class="line">  [13, 3, 6, 7],</span><br><span class="line">  [15,14,12,16]</span><br><span class="line">], </span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[</span><br><span class="line">  [15,13, 2, 5],</span><br><span class="line">  [14, 3, 4, 1],</span><br><span class="line">  [12, 6, 8, 9],</span><br><span class="line">  [16, 7,10,11]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>每4个数字的交换构成一次90度的旋转，例如例1中的{1,3,9,7}</li><li>按规律顺序交换这些数字，即可完成一轮旋转</li><li>完成了外圈的数字旋转后，再完成内圈的数字旋转</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = matrix.<span class="built_in">size</span>(),col = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> x,y,i,j,k;</span><br><span class="line">        x = <span class="number">0</span>,y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(row &gt; <span class="number">1</span> &amp;&amp; col &gt; <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>;i != row<span class="number">-1</span>;++i)&#123;</span><br><span class="line">                k = matrix[x][y+i];</span><br><span class="line">                matrix[x][y+i] = matrix[x+row<span class="number">-1</span>-i][y];</span><br><span class="line">                matrix[x+row<span class="number">-1</span>-i][y] = matrix[x+row<span class="number">-1</span>][y+col<span class="number">-1</span>-i];</span><br><span class="line">                matrix[x+row<span class="number">-1</span>][y+col<span class="number">-1</span>-i] = matrix[x+i][y+col<span class="number">-1</span>];</span><br><span class="line">                matrix[x+i][y+col<span class="number">-1</span>] = k;</span><br><span class="line">            &#125;</span><br><span class="line">            row -= <span class="number">2</span>,col -= <span class="number">2</span>;</span><br><span class="line">            ++x,++y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-48-选择图像&quot;&gt;&lt;a href=&quot;#LeetCode-48-选择图像&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-48.选择图像&quot;&gt;&lt;/a&gt;LeetCode-48.选择图像&lt;/h2&gt;&lt;p&gt;给定一个 n × n 的二维矩阵表示一个图像。&lt;/p&gt;
+&lt;p&gt;将图像顺时针旋转 90 度。&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;你必须在&lt;strong&gt;原地&lt;/strong&gt;旋转图像，这意味着你需要直接修改输入的二维矩阵。&lt;strong&gt;请不要&lt;/strong&gt;使用另一个矩阵来旋转图像。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;给定 matrix &amp;#x3D; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,2,3],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [4,5,6],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [7,8,9]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原地旋转输入矩阵，使其变为:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [7,4,1],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [8,5,2],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [9,6,3]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;给定 matrix &amp;#x3D;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [ 5, 1, 9,11],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [ 2, 4, 8,10],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [13, 3, 6, 7],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [15,14,12,16]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;], &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;原地旋转输入矩阵，使其变为:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [15,13, 2, 5],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [14, 3, 4, 1],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [12, 6, 8, 9],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [16, 7,10,11]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>实践论学习报告</title>
@@ -236,9 +263,9 @@
       <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
       <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
+    
+      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
     
       <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -607,41 +634,6 @@
       <category term="递归/非递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92/"/>
     
       <category term="镜像树" scheme="http://yoursite.com/tags/%E9%95%9C%E5%83%8F%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PaperExamRecord-Iris</title>
-    <link href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/"/>
-    <id>http://yoursite.com/2020/05/14/PaperExamRecord-Iris/</id>
-    <published>2020-05-14T12:47:51.000Z</published>
-    <updated>2020-05-14T15:24:18.327Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Iris局部线性近似实验分析"><a href="#Iris局部线性近似实验分析" class="headerlink" title="Iris局部线性近似实验分析"></a>Iris局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>验证算法在低维多类数据集上的有效性</li></ul><h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul><li>多次实验，观察实验结果是否一致</li><li>观测实验结果是否和前人对Iris数据集的分析一致</li></ul><h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul><li>在Iris数据集上使用t-SNE方法投影到二维</li><li>使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）</li></ul><a id="more"></a><h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="Iris-t-SNE分片示意图"><a href="#Iris-t-SNE分片示意图" class="headerlink" title="Iris t-SNE分片示意图"></a>Iris t-SNE分片示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463841875.png" alt="1589463841875"></p><h4 id="Iris分片树示意图"><a href="#Iris分片树示意图" class="headerlink" title="Iris分片树示意图"></a>Iris分片树示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463951813.png" alt="1589463951813"></p><h4 id="局部参数映射列表"><a href="#局部参数映射列表" class="headerlink" title="局部参数映射列表"></a>局部参数映射列表</h4><div class="table-container"><table><thead><tr><th>分片标号</th><th>sepal length和投影的相关性</th><th>sepal breadth和投影的相关性</th><th>petal length和投影的相关性</th><th>petal breadth和投影的相关性</th></tr></thead><tbody><tr><td>1</td><td>0.34</td><td>0.28</td><td>1.24</td><td>0.5</td></tr><tr><td>2</td><td>0.28</td><td>0.60</td><td>1.19</td><td>0.36</td></tr><tr><td>3</td><td>0.58</td><td>0.16</td><td>0.98</td><td>0.83</td></tr></tbody></table></div><h4 id="Iris数据集前人分析-1"><a href="#Iris数据集前人分析-1" class="headerlink" title="Iris数据集前人分析$^1$"></a>Iris数据集前人分析$^1$</h4><ul><li>Fisher在线性判别分析的实验中给出的最佳参数（相关性）如下：</li></ul><div class="table-container"><table><thead><tr><th>sepal length</th><th>sepal breadth</th><th>petal length</th><th>petal breadth</th></tr></thead><tbody><tr><td>-3.308998</td><td>-2.759132</td><td>8.866048</td><td>9.392551</td></tr></tbody></table></div><ul><li><p>Fisher线性判别分析结果</p><p><img src="/2020/05/14/PaperExamRecord-Iris/1589465223247.png" alt="1589465223247"></p></li><li><p>Fisher认为petal length和petal breadth相比sepal length和sepal breadth能够更好地区分Iris</p></li></ul><h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul><li>多次实验得到的实验结果一致</li><li>t-SNE在投影Iris数据集上呈现出和Fisher线性判别分析模型相同的模式<ul><li>所有分片的投影的petal length和petal breadth相关性大于sepal length和sepal breadth的相关性，这和Fisher线性判别分析的结论一致</li></ul></li></ul><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>[1]Fisher R A. The use of multiple measurements in taxonomic problems[J]. Annals of eugenics, 1936, 7(2): 179-188.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Iris局部线性近似实验分析&quot;&gt;&lt;a href=&quot;#Iris局部线性近似实验分析&quot; class=&quot;headerlink&quot; title=&quot;Iris局部线性近似实验分析&quot;&gt;&lt;/a&gt;Iris局部线性近似实验分析&lt;/h2&gt;&lt;h3 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;验证算法在低维多类数据集上的有效性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;如何验证&quot;&gt;&lt;a href=&quot;#如何验证&quot; class=&quot;headerlink&quot; title=&quot;如何验证&quot;&gt;&lt;/a&gt;如何验证&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;多次实验，观察实验结果是否一致&lt;/li&gt;
-&lt;li&gt;观测实验结果是否和前人对Iris数据集的分析一致&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;实验设计&quot;&gt;&lt;a href=&quot;#实验设计&quot; class=&quot;headerlink&quot; title=&quot;实验设计&quot;&gt;&lt;/a&gt;实验设计&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;在Iris数据集上使用t-SNE方法投影到二维&lt;/li&gt;
-&lt;li&gt;使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="论文实验" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-      <category term="局部线性近似" scheme="http://yoursite.com/tags/%E5%B1%80%E9%83%A8%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC/"/>
-    
-      <category term="Iris" scheme="http://yoursite.com/tags/Iris/"/>
     
   </entry>
   
