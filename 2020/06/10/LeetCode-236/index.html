@@ -20,25 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Iris局部线性近似实验分析实验目的 验证算法在低维多类数据集上的有效性  如何验证 多次实验，观察实验结果是否一致 观测实验结果是否和前人对Iris数据集的分析一致  实验设计 在Iris数据集上使用t-SNE方法投影到二维 使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）">
+  <meta name="description" content="LeetCode-236.二叉树的最近公共祖先给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。” 例如，给定如下二叉树:  root &#x3D; [3,5,1,6,2,0,8,null,null,7,4]  示例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PaperExamRecord-Iris">
-<meta property="og:url" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/index.html">
+<meta property="og:title" content="LeetCode-236.二叉树的最近公共祖先">
+<meta property="og:url" content="http://yoursite.com/2020/06/10/LeetCode-236/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Iris局部线性近似实验分析实验目的 验证算法在低维多类数据集上的有效性  如何验证 多次实验，观察实验结果是否一致 观测实验结果是否和前人对Iris数据集的分析一致  实验设计 在Iris数据集上使用t-SNE方法投影到二维 使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）">
+<meta property="og:description" content="LeetCode-236.二叉树的最近公共祖先给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。 百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。” 例如，给定如下二叉树:  root &#x3D; [3,5,1,6,2,0,8,null,null,7,4]  示例">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463841875.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463951813.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589465223247.png">
-<meta property="article:published_time" content="2020-05-14T12:47:51.000Z">
-<meta property="article:modified_time" content="2020-05-14T15:24:18.327Z">
+<meta property="og:image" content="http://yoursite.com/2020/06/10/LeetCode-236/binarytree.png">
+<meta property="article:published_time" content="2020-06-10T06:16:52.000Z">
+<meta property="article:modified_time" content="2020-06-10T07:34:53.537Z">
 <meta property="article:author" content="HaowenZhou">
-<meta property="article:tag" content="局部线性近似">
-<meta property="article:tag" content="Iris">
+<meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/1589463841875.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/10/LeetCode-236/binarytree.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/">
+<link rel="canonical" href="http://yoursite.com/2020/06/10/LeetCode-236/">
 
 
 <script id="page-configurations">
@@ -51,7 +48,7 @@
   };
 </script>
 
-  <title>PaperExamRecord-Iris | MyBlog</title>
+  <title>LeetCode-236.二叉树的最近公共祖先 | MyBlog</title>
   
 
 
@@ -198,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/PaperExamRecord-Iris/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/LeetCode-236/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -211,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PaperExamRecord-Iris
+          LeetCode-236.二叉树的最近公共祖先
         </h1>
 
         <div class="post-meta">
@@ -222,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-14 20:47:51 / 修改时间：23:24:18" itemprop="dateCreated datePublished" datetime="2020-05-14T20:47:51+08:00">2020-05-14</time>
+              <time title="创建时间：2020-06-10 14:16:52 / 修改时间：15:34:53" itemprop="dateCreated datePublished" datetime="2020-06-10T14:16:52+08:00">2020-06-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">论文实验</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -252,94 +249,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Iris局部线性近似实验分析"><a href="#Iris局部线性近似实验分析" class="headerlink" title="Iris局部线性近似实验分析"></a>Iris局部线性近似实验分析</h2><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul>
-<li>验证算法在低维多类数据集上的有效性</li>
-</ul>
-<h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul>
-<li>多次实验，观察实验结果是否一致</li>
-<li>观测实验结果是否和前人对Iris数据集的分析一致</li>
-</ul>
-<h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul>
-<li>在Iris数据集上使用t-SNE方法投影到二维</li>
-<li>使用算法将t-SNE投影简化成包含3个局部投影的投影集合（Iris数据集中存在三种类型的花）</li>
-</ul>
+        <h2 id="LeetCode-236-二叉树的最近公共祖先"><a href="#LeetCode-236-二叉树的最近公共祖先" class="headerlink" title="LeetCode-236.二叉树的最近公共祖先"></a>LeetCode-236.二叉树的最近公共祖先</h2><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
+<p>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]</p>
+<p><img src="/2020/06/10/LeetCode-236/binarytree.png" alt="img"></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 1</span><br><span class="line">输出: 3</span><br><span class="line">解释: 节点 5 和节点 1 的最近公共祖先是节点 3。</span><br><span class="line"></span><br><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 4</span><br><span class="line">输出: 5</span><br><span class="line">解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。</span><br></pre></td></tr></table></figure>
+<p><strong>说明:</strong></p>
+<ol>
+<li>所有节点的值都是唯一的。</li>
+<li>p、q 为不同节点且均存在于给定的二叉树中。</li>
+</ol>
 <a id="more"></a>
-<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="Iris-t-SNE分片示意图"><a href="#Iris-t-SNE分片示意图" class="headerlink" title="Iris t-SNE分片示意图"></a>Iris t-SNE分片示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463841875.png" alt="1589463841875"></p>
-<h4 id="Iris分片树示意图"><a href="#Iris分片树示意图" class="headerlink" title="Iris分片树示意图"></a>Iris分片树示意图</h4><p><img src="/2020/05/14/PaperExamRecord-Iris/1589463951813.png" alt="1589463951813"></p>
-<h4 id="局部参数映射列表"><a href="#局部参数映射列表" class="headerlink" title="局部参数映射列表"></a>局部参数映射列表</h4><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>分片标号</th>
-<th>sepal length和投影的相关性</th>
-<th>sepal breadth和投影的相关性</th>
-<th>petal length和投影的相关性</th>
-<th>petal breadth和投影的相关性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>0.34</td>
-<td>0.28</td>
-<td>1.24</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>2</td>
-<td>0.28</td>
-<td>0.60</td>
-<td>1.19</td>
-<td>0.36</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0.58</td>
-<td>0.16</td>
-<td>0.98</td>
-<td>0.83</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="Iris数据集前人分析-1"><a href="#Iris数据集前人分析-1" class="headerlink" title="Iris数据集前人分析$^1$"></a>Iris数据集前人分析$^1$</h4><ul>
-<li>Fisher在线性判别分析的实验中给出的最佳参数（相关性）如下：</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>sepal length</th>
-<th>sepal breadth</th>
-<th>petal length</th>
-<th>petal breadth</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-3.308998</td>
-<td>-2.759132</td>
-<td>8.866048</td>
-<td>9.392551</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li><p>Fisher线性判别分析结果</p>
-<p><img src="/2020/05/14/PaperExamRecord-Iris/1589465223247.png" alt="1589465223247"></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol>
+<li>p，q两点只有以下几种分布：<ol>
+<li>p或者q点其中一个是父节点：<ol>
+<li>另一个在其左子树中</li>
+<li>另一个在其右子树中</li>
+</ol>
 </li>
-<li><p>Fisher认为petal length和petal breadth相比sepal length和sepal breadth能够更好地区分Iris</p>
+<li>p或者q中一个在左子树中，另一个在右子树中</li>
+</ol>
 </li>
-</ul>
-<h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><ul>
-<li>多次实验得到的实验结果一致</li>
-<li>t-SNE在投影Iris数据集上呈现出和Fisher线性判别分析模型相同的模式<ul>
-<li>所有分片的投影的petal length和petal breadth相关性大于sepal length和sepal breadth的相关性，这和Fisher线性判别分析的结论一致</li>
-</ul>
-</li>
-</ul>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>[1]Fisher R A. The use of multiple measurements in taxonomic problems[J]. Annals of eugenics, 1936, 7(2): 179-188.</p>
+<li>因此我们遍历时只要注意这两种情况即可</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeNode *ans;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        func(root,p,q);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">func</span><span class="params">(TreeNode *root,TreeNode *&amp;p,TreeNode *&amp;q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">bool</span> lb,rb;</span><br><span class="line">        lb = func(root-&gt;left,p,q);</span><br><span class="line">        rb = func(root-&gt;right,p,q);</span><br><span class="line">        <span class="keyword">if</span>((lb &amp;&amp; rb) || ((root == p || root == q) &amp;&amp; (lb || rb)))&#123;</span><br><span class="line">            ans = root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lb || rb || root == p || root == q;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -349,8 +282,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%B1%80%E9%83%A8%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC/" rel="tag"># 局部线性近似</a>
-              <a href="/tags/Iris/" rel="tag"># Iris</a>
+              <a href="/tags/%E6%A0%91/" rel="tag"># 树</a>
           </div>
 
         
@@ -359,13 +291,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/14/LeetCode-53/" rel="prev" title="LeetCode-53.最大子序和">
-      <i class="fa fa-chevron-left"></i> LeetCode-53.最大子序和
+    <a href="/2020/06/09/LeetCode-406/" rel="prev" title="LeetCode-406.根据身高重建队列">
+      <i class="fa fa-chevron-left"></i> LeetCode-406.根据身高重建队列
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/15/LeetCode-101/" rel="next" title="LeetCode-101.对称二叉树">
-      LeetCode-101.对称二叉树 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -425,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iris局部线性近似实验分析"><span class="nav-number">1.</span> <span class="nav-text">Iris局部线性近似实验分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验目的"><span class="nav-number">1.1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何验证"><span class="nav-number">1.2.</span> <span class="nav-text">如何验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验设计"><span class="nav-number">1.3.</span> <span class="nav-text">实验设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验结果"><span class="nav-number">1.4.</span> <span class="nav-text">实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris-t-SNE分片示意图"><span class="nav-number">1.4.1.</span> <span class="nav-text">Iris t-SNE分片示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris分片树示意图"><span class="nav-number">1.4.2.</span> <span class="nav-text">Iris分片树示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部参数映射列表"><span class="nav-number">1.4.3.</span> <span class="nav-text">局部参数映射列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Iris数据集前人分析-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">Iris数据集前人分析$^1$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验结果分析"><span class="nav-number">1.5.</span> <span class="nav-text">实验结果分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.6.</span> <span class="nav-text">引用</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-236-二叉树的最近公共祖先"><span class="nav-number">1.</span> <span class="nav-text">LeetCode-236.二叉树的最近公共祖先</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">1.1.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -629,61 +558,6 @@ window.addEventListener('pjax:success', () => {
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
@@ -698,7 +572,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'JayLoveLei.github.io',
       owner       : 'JayLoveLei',
       admin       : ['germey'],
-      id          : '6236da720c336639180ebdf5f6e925f0',
+      id          : '6eaf87e7ba32cd8208e78460a12adcbb',
         language: 'zh-CN',
       distractionFreeMode: true
     });
