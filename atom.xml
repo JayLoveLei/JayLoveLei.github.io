@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-17T11:44:53.223Z</updated>
+  <updated>2020-06-18T16:54:39.364Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-347.前K个高频元素</title>
+    <link href="http://yoursite.com/2020/06/19/LeetCode-347/"/>
+    <id>http://yoursite.com/2020/06/19/LeetCode-347/</id>
+    <published>2020-06-18T16:50:09.000Z</published>
+    <updated>2020-06-18T16:54:39.364Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-347-前K个高频元素"><a href="#LeetCode-347-前K个高频元素" class="headerlink" title="LeetCode-347.前K个高频元素"></a>LeetCode-347.前K个高频元素</h2><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2</span><br><span class="line">输出: [1,2]</span><br><span class="line"></span><br><span class="line">输入: nums &#x3D; [1], k &#x3D; 1</span><br><span class="line">输出: [1]</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ol><li>你可以假设给定的 k 总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。</li><li>你的算法的时间复杂度必须优于 O(n log n) , n 是数组的大小。</li><li>题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的。</li><li>你可以按任意顺序返回答案。</li></ol><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>我们可以使用一个HashMap在O(n)的时间复杂度里统计各个数字出现的次数</li><li>再使用一个大小为k的堆来保存频率最高的K个元素，复杂度为O(nlogK)</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">topKFrequent</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap;</span><br><span class="line">        <span class="keyword">auto</span> cmp = [&amp;m](<span class="keyword">int</span> &amp;a,<span class="keyword">int</span> &amp;b)&#123; <span class="keyword">return</span> m[a] &gt; m[b];&#125;;</span><br><span class="line">        make_heap(heap.<span class="built_in">begin</span>(),heap.<span class="built_in">end</span>(),cmp);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!m.count(num))</span><br><span class="line">                m[num] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ++m[num];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> iter = m.<span class="built_in">begin</span>();iter != m.<span class="built_in">end</span>();++iter)&#123;</span><br><span class="line">            heap.push_back(iter-&gt;first);</span><br><span class="line">            push_heap(heap.<span class="built_in">begin</span>(),heap.<span class="built_in">end</span>(),cmp);</span><br><span class="line">            <span class="keyword">if</span>(heap.<span class="built_in">size</span>() &gt; k)&#123;</span><br><span class="line">                pop_heap(heap.<span class="built_in">begin</span>(),heap.<span class="built_in">end</span>(),cmp);</span><br><span class="line">                heap.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> heap;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-347-前K个高频元素&quot;&gt;&lt;a href=&quot;#LeetCode-347-前K个高频元素&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-347.前K个高频元素&quot;&gt;&lt;/a&gt;LeetCode-347.前K个高频元素&lt;/h2&gt;&lt;p&gt;给定一个非空的整数数组，返回其中出现频率前 k 高的元素。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: nums &amp;#x3D; [1,1,1,2,2,3], k &amp;#x3D; 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: [1,2]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: nums &amp;#x3D; [1], k &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: [1]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;你可以假设给定的 k 总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。&lt;/li&gt;
+&lt;li&gt;你的算法的时间复杂度必须优于 O(n log n) , n 是数组的大小。&lt;/li&gt;
+&lt;li&gt;题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的。&lt;/li&gt;
+&lt;li&gt;你可以按任意顺序返回答案。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="哈希表" scheme="http://yoursite.com/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+      <category term="堆" scheme="http://yoursite.com/tags/%E5%A0%86/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-62.不同路径</title>
@@ -688,52 +721,6 @@
     
     
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实践论学习报告</title>
-    <link href="http://yoursite.com/2020/05/30/ShiJianLunDiaoYan/"/>
-    <id>http://yoursite.com/2020/05/30/ShiJianLunDiaoYan/</id>
-    <published>2020-05-30T12:58:21.000Z</published>
-    <updated>2020-05-30T13:32:51.690Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="实践论学习报告"><a href="#实践论学习报告" class="headerlink" title="实践论学习报告"></a>实践论学习报告</h2><p>实践论学习报告会结合我在Introduction，Related Work和论文评审三个部分的实际工作展开。</p><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>《实践论》中对认识的两个阶段是这么描述的：</p><ul><li>认识的感性阶段：看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系（在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论）</li><li>认知的理性阶段：概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。（在这个阶段中，使用判断和推理的方法， 就可产生出合乎论理的结论来）</li></ul><p>在写作Introduction的过程中，我重复了很多遍，主要的原因是对问题依然停留在感性的认识上。我一直没有思考“可理解性”到底是什么背景下的问题，什么是可理解性，它为什么重要，我们为什么要解决可理解性问题，那么多降维方法都不能提供很好的可理解性为什么还流行？直到我认真的开始分析的写作逻辑，我对这些问题才开始有理性上的认识。当然，我的运气很好，我第一篇认真分析的论文，就和我的工作十分相关，因此在分析理解作者表述的过程中，让我对问题的背景也有更深刻的认识。并且我通过对作者写作逻辑的模仿，把我的“可解释性”科学问题的定义，分解成以下调研任务:</p><ol><li>可视分析背景的调研。</li><li>调研可视分析的目的，主要技术，需要解决的问题。</li><li>可视分析的数据模型阶段，存在哪些问题，对可视分析造成了什么影响？</li><li>增强数据模型的可解释性是否有利于解决这些问题？</li><li>有哪些工作尝试解决数据模型的可解释性问题？</li><li>解决可解释性问题需要克服那些挑战？</li></ol><p>做这些调研分析，是为了支持我以下的写作目的：</p><ol><li>可视分析主要解决什么问题，使用了那些技术（DR）？</li><li>DR作用于可视分析的流程中的那些阶段？（数据模型，可视化）</li><li>在数据模型阶段里，存在哪些可解释性的问题，可解释性问题对可视分析造成了什么影响？</li><li>有哪些相关工作尝试去解决数据模型的可解释性问题，他们的工作还存在那些问题？</li><li>我们要解决可解释性问题，需要克服那些挑战？</li><li>为了解决这些挑战，我们如何设计我们的技术方案?</li></ol><a id="more"></a><h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><p>《实践论》中对认识是这么描述的，“认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。 第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。 只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据这样的材料造出正确的概念和论理来。”，而相关工作就是对认识的总结和提炼。</p><p>我在这里讲一下如何学习别人相关工作的写作吧。相关工作的学习在我看来有两种层次（两种层次根据你的需求来定）。第一种层次：这篇论文和你的工作直接相关，你读他的相关工作，主要目的是检查自己调研的文献是否有缺失，自己对相关工作的分类是否不够客观。在这个层次，我们需要快速的检索我们所需的内容，不需要花太多的时间去分析，理解，重构。第二种层次：这篇论文可能和你的工作并不直接相关，但是这篇论文逻辑很清晰，甚至你可以在这篇论文上找到你写作逻辑上的问题的标准答案。例如在我的论文的相关工作部分，降维技术和可解释性这部分的写作是比较困难的。困难体现在，一方面我要讲清楚降维技术，另一方面我又要紧紧围绕可解释性来描述。这对于不擅长写作的我来说是几乎无计可施的，因此我参考了Visual Interaction with Dimensionality Reduction: A Structured Literature Analysis论文的Related Work2.2节（Surveys of DR and Interaction Techniques）。通过名字可知，在这段内容里作者结合了降维技术和交互，那么我完全可以提炼出作者的写作逻辑，模仿作者的写法，写我的降维技术和可解释性部分的相关工作。</p><p>我简单的总结一下我在提炼作者的写作逻辑时，得到的有价值的经验吧：</p><ol><li>相关工作的写作一定要回答清楚以下问题：<ol><li>那些工作跟你的核心问题相关？</li><li>这些工作分别有哪些主要类型？</li><li>这些工作跟你的工作的联系和区别是什么？为什么不能解决你的问题？</li></ol></li><li>大到相关工作中的不同章节，小到相关工作中的每一个分类，我们都应该按照What，Why，How来对应。（这里Why和What可以交换顺序，亦或是多个What解决同一个How，这都是可行的）。所以我们在分析自己写的相关工作时，需要评审自己写的每一句话所起的作用，从而检查自己是否漏了What，Why，How中的某一个。</li></ol><h3 id="论文评审"><a href="#论文评审" class="headerlink" title="论文评审"></a>论文评审</h3><p>《实践论》中对检验知识（真理）是这么描述的“抓着了世界的规律性的认识，必须把它再回到改造世界的实践中去，再用到生产的实践、革命的阶级斗争和民族斗争的实践以及科学实验的实践中去。这就是检验理论和发展理论的过程，是整个认识过程的继续。理论的东西之是否符合于客观真理性这个问题，在前面说的由感性到理性之认识运动中是没有完全解决的，也不能完全解决的。要完全地解决这个问题，只有把理性的认识再回到社会实践中去， 应用理论于实践，看它是否能够达到预想的目的。许多自然科学理论之所以被称为真理，不但在于自然科学家们创立这些学说的时候，而且在于为尔后的科学实践所证实的时候。”</p><p>对论文评审的过程，其实就是检验自己的科研基础，写作逻辑知识的过程。我的实际评审过程是这样的，把论文中的每一个部分都按句进行分割。然后对每一个部分进行以下分析：</p><ol><li>第一轮，先从句子的语义上，了解作者要讲什么？<ol><li>如果能够理解清楚，那么接着分析下一句。</li><li>如果不能够理解，标注这一句话，再分析下一句。</li></ol></li><li>第二轮，结合上下文（前后句子），分析上一轮中所有不能理解的句子<ol><li>如果都能够理解，那么分析下一部分</li><li>如果不能理解，那么进行第三轮</li></ol></li><li>第三轮，给每一个句子标注他的成分（背景，问题，相关工作，挑战，技术方案，贡献），并整理每个句子之间的写作逻辑（What，Why，How）<ol><li>如果出现了成分的缺失，记录下来，这是论文写作上的错误</li><li>如果出现了写作逻辑的缺失，记录下来，这时论文表达不够清晰</li></ol></li></ol><p>我主要在Introduction和Related Work部分挖掘可能存在的问题（主要原因是，我写作精力大部分也花在这两块上）。对于Method，User Study和Case Study，我主要看作者能不能解决问题，有没有偷换概念，细节上就没有那么关注了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;实践论学习报告&quot;&gt;&lt;a href=&quot;#实践论学习报告&quot; class=&quot;headerlink&quot; title=&quot;实践论学习报告&quot;&gt;&lt;/a&gt;实践论学习报告&lt;/h2&gt;&lt;p&gt;实践论学习报告会结合我在Introduction，Related Work和论文评审三个部分的实际工作展开。&lt;/p&gt;
-&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;《实践论》中对认识的两个阶段是这么描述的：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;认识的感性阶段：看到过程中各个事物的现象方面，看到各个事物的片面，看到各个事物之间的外部联系（在这个阶段中，人们还不能造成深刻的概念，作出合乎论理（即合乎逻辑）的结论）&lt;/li&gt;
-&lt;li&gt;认知的理性阶段：概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。（在这个阶段中，使用判断和推理的方法， 就可产生出合乎论理的结论来）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在写作Introduction的过程中，我重复了很多遍，主要的原因是对问题依然停留在感性的认识上。我一直没有思考“可理解性”到底是什么背景下的问题，什么是可理解性，它为什么重要，我们为什么要解决可理解性问题，那么多降维方法都不能提供很好的可理解性为什么还流行？直到我认真的开始分析的写作逻辑，我对这些问题才开始有理性上的认识。当然，我的运气很好，我第一篇认真分析的论文，就和我的工作十分相关，因此在分析理解作者表述的过程中，让我对问题的背景也有更深刻的认识。并且我通过对作者写作逻辑的模仿，把我的“可解释性”科学问题的定义，分解成以下调研任务:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;可视分析背景的调研。&lt;/li&gt;
-&lt;li&gt;调研可视分析的目的，主要技术，需要解决的问题。&lt;/li&gt;
-&lt;li&gt;可视分析的数据模型阶段，存在哪些问题，对可视分析造成了什么影响？&lt;/li&gt;
-&lt;li&gt;增强数据模型的可解释性是否有利于解决这些问题？&lt;/li&gt;
-&lt;li&gt;有哪些工作尝试解决数据模型的可解释性问题？&lt;/li&gt;
-&lt;li&gt;解决可解释性问题需要克服那些挑战？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;做这些调研分析，是为了支持我以下的写作目的：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;可视分析主要解决什么问题，使用了那些技术（DR）？&lt;/li&gt;
-&lt;li&gt;DR作用于可视分析的流程中的那些阶段？（数据模型，可视化）&lt;/li&gt;
-&lt;li&gt;在数据模型阶段里，存在哪些可解释性的问题，可解释性问题对可视分析造成了什么影响？&lt;/li&gt;
-&lt;li&gt;有哪些相关工作尝试去解决数据模型的可解释性问题，他们的工作还存在那些问题？&lt;/li&gt;
-&lt;li&gt;我们要解决可解释性问题，需要克服那些挑战？&lt;/li&gt;
-&lt;li&gt;为了解决这些挑战，我们如何设计我们的技术方案?&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="实践论" scheme="http://yoursite.com/tags/%E5%AE%9E%E8%B7%B5%E8%AE%BA/"/>
     
   </entry>
   
