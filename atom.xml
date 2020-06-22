@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-21T04:33:21.089Z</updated>
+  <updated>2020-06-22T13:42:22.155Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,136 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Programming in Lua：Chapter 1.Getting Started</title>
+    <link href="http://yoursite.com/2020/06/22/Programming-in-Lua-1/"/>
+    <id>http://yoursite.com/2020/06/22/Programming-in-Lua-1/</id>
+    <published>2020-06-22T13:38:43.000Z</published>
+    <updated>2020-06-22T13:42:22.155Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Programming-in-Lua：Chapter-1-Getting-Started"><a href="#Programming-in-Lua：Chapter-1-Getting-Started" class="headerlink" title="Programming in Lua：Chapter 1. Getting Started"></a>Programming in Lua：Chapter 1. Getting Started</h2><ul><li><p>Lua使用块（Chunks）作为代码执行的单位，一个Chunks可以是交互模式中的一行代码或者是一个函数</p></li><li><p>使用Chunks的方法：</p><ul><li>在交互模式中，可以使用<code>% lua -i prog​</code></li><li>或者可以使用dofile()导入别的lua文件</li></ul></li><li><p>Lua中的标识符可以是字母，数字和下划线开头，不能以数字开头</p></li><li><p>以下是Lua中的保留字，不能作为标识符：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">and      break     do        else      elseif</span><br><span class="line">end      false     for       function  goto</span><br><span class="line">if       in        local     nil       not</span><br><span class="line">or       repeat    return    then      true</span><br><span class="line">until    while</span><br></pre></td></tr></table></figure></li><li><p>注释的两种方式：</p><ul><li>以<code>--</code>开始的那一整行</li><li>以<code>--[[</code>开始直至<code>]]</code>或<code>--]]</code>结束的一整段</li></ul></li><li><p>Coding的语法喝JavaScript一致，即不需要强制添加分号，但是可以使用分号作为分隔符</p></li><li><p>全局变量不需要声明，访问未初始化的全局变量不会报错，会得到一个nil（null）值</p></li><li><p>声明但未初始化的变量和值为nil的变量存储在相同区域，不会被GC管理</p></li><li><p>Lua有8种基本类型：</p><ul><li>nil（空类型）：对全局变量分配nil使gc回收它的内存</li><li>boolean（true/false）:<ul><li>在Lua中任何值都可以表示条件，false和nil都视为false，其他值都视为true。</li><li><strong>注意数字0和空字符串也视为true！！！</strong></li><li>逻辑运算符：所有的值都会想条件控制一样被划分成true和false<ul><li>and（与操作）：如果第一个操作数为false，则返回第一个操作数，否则返回第二个操作数 （假如第一个操作数为假，那么我们返回这个操作数就可以判假，反之我们需要判断第二个操作数）</li><li>or（或操作） ：如果第一个操作数为true,  则返回第一个操作数，否则返回第二个操作数（假如第一个操作数为真，那么我们返回这个操作数就可以判真，反之我们需要判断第二个操作数）</li><li>not（非操作）：返回一个boolean值，这个值为操作数的boolean值取反</li><li>and 和 or都满足短路原则</li><li>赋默认值 x = x or y (假如x未定义，则会把默认值y赋给x)</li><li>三目运算符 a ? b : c == a and b or c （当且仅当b不为false时）</li></ul></li></ul></li><li>number (浮点数)</li><li>string （字符串）</li><li>userdata （用户数据 io.stdin）：允许将任意C数据结构存储在Lua中</li><li>function (函数)</li><li>table (数据表)</li><li>thread （线程）</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Programming-in-Lua：Chapter-1-Getting-Started&quot;&gt;&lt;a href=&quot;#Programming-in-Lua：Chapter-1-Getting-Started&quot; class=&quot;headerlink&quot; title=&quot;Prog
+      
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://yoursite.com/categories/Lua/"/>
+    
+    
+      <category term="第一章" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Programming in Lua：Chapter 3.Numbers</title>
+    <link href="http://yoursite.com/2020/06/22/Programming-in-Lua-3/"/>
+    <id>http://yoursite.com/2020/06/22/Programming-in-Lua-3/</id>
+    <published>2020-06-22T13:38:37.000Z</published>
+    <updated>2020-06-22T13:42:32.688Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Programming-in-Lua：Chapter-3-Numbers"><a href="#Programming-in-Lua：Chapter-3-Numbers" class="headerlink" title="Programming in Lua：Chapter 3. Numbers"></a>Programming in Lua：Chapter 3. Numbers</h2><ul><li><p>Number定义：</p><ul><li>在5.2版本之前，Lua使用双精度浮点格式表示Number</li><li>从5.3版本开始，使用64位整数（integer）和双精度浮点数（float）来表示Number</li><li>对于受限平台，可以把Lua 5.3编译成Small Lua，它可以使用32位整数和单精度浮点数</li></ul></li><li><p>Number比较：</p><ul><li>尽管具有浮点数和整数两种Number表示形式，但是它们的类型都是Number，且它们之间是可以相互转换的，例如1 == 1.0 —&gt; true</li><li>在需要区分整数和浮点数的场景，可以使用math.type()接口（整形返回integer，浮点数返回float）</li></ul></li><li><p>Number的十六进制：</p><ul><li>使用“0x”前缀来支持十六进制常量。并且支持浮点十六进制,十六进制的数保持了浮点值的所有精度，且转换速度比十进制快</li><li><p>可以使用string.format结合”%a”来表示十六进制的数</p><ul><li><p>> string.format(“%a”, 419)         —&gt; 0x1.a3p+8 </p></li><li><p>>  string.format(“%a”, 0.1)         —&gt; 0x1.999999999999ap-4</p></li></ul></li></ul></li><li><p>Number提供的算术运算：</p><ul><li>加法，减法，乘法，除法，取反，取模</li><li>整数除法: //，将结果向负无穷大舍入</li><li>幂运算：^</li></ul></li><li><p>Number的关系运算符：</p><ul><li>>  , &lt; , &gt;=, &lt;=</li><li>相等运算符: ==</li><li>不等云运算法: ~=</li></ul></li><li><p>Number的舍入函数：</p><ul><li>floor：趋向负无穷大舍入</li><li>ceil：趋向正无穷大舍入</li><li>modf：四舍五入</li></ul></li><li><p>Number的转换：</p><ul><li>整形 —》 浮点数：整形 + 0.0 就会转换成浮点数</li><li>浮点数 —》 整形： <ul><li>浮点数和 0 或运算就会转换成整形（只有在浮点数的值精确表示为整数的情况下才可以执行这种转换，即这个浮点数没有小数部分且它在整数范围之内）</li><li>math.tointeger（x），如果x不能转换成整数，返回nil</li></ul></li></ul></li><li><p>Number中的运算符优先级，从上到下（高 —》 低）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">^</span><br><span class="line">unary operators (- # ~ not)</span><br><span class="line">* &#x2F; &#x2F;&#x2F; %</span><br><span class="line">+ -</span><br><span class="line">.. (concatentation)</span><br><span class="line">&lt;&lt; &gt;&gt; (bitwise shifts)</span><br><span class="line">&amp; (bitwise AND)</span><br><span class="line">~ (bitwise exclusive OR)</span><br><span class="line">| (bitwise OR)</span><br><span class="line">&lt; &gt; &lt;&#x3D; &gt;&#x3D; ~&#x3D; &#x3D;&#x3D;</span><br><span class="line">and</span><br><span class="line">or</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Programming-in-Lua：Chapter-3-Numbers&quot;&gt;&lt;a href=&quot;#Programming-in-Lua：Chapter-3-Numbers&quot; class=&quot;headerlink&quot; title=&quot;Programming in Lua：C
+      
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://yoursite.com/categories/Lua/"/>
+    
+    
+      <category term="第三章" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Programming in Lua：Chapter 4.Strings</title>
+    <link href="http://yoursite.com/2020/06/22/Programming-in-Lua-4/"/>
+    <id>http://yoursite.com/2020/06/22/Programming-in-Lua-4/</id>
+    <published>2020-06-22T13:38:34.000Z</published>
+    <updated>2020-06-22T13:41:04.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Programming-in-Lua：Chapter-4-Strings"><a href="#Programming-in-Lua：Chapter-4-Strings" class="headerlink" title="Programming in Lua：Chapter 4. Strings"></a>Programming in Lua：Chapter 4. Strings</h2><ul><li>Lua中的String是不可修改的</li><li>Lua中的String如同其他对象（table，function）一样由Lua的GC管理内存，因此我们不必担心字符串的分配和释放。</li><li>#string获取string的长度</li><li>我们可以使用串联运算符”..”来串联两个字符串（例如，”Result is “.. 3 —》 “Result is 3”），并且串联运算符不会修改已有的字符串，而是创建并返回新一个的字符串。</li><li>多行的字符串：<ul><li>“[[“和”]]”之间的多行文本会被认为是一个String</li><li>我们也可以使用”[==(=个数自定)[“和”]==]”来表示一个长字符串</li><li>换行使用“\z”</li></ul></li><li>Lua在运行时提供数字和字符串之间的自动转换，字符串数被认为是浮点数</li><li>使用tonumber显示的转换string：<ul><li>tonumber(num,jinzhi)，jinzhi可以是2~36之间的任何基数</li></ul></li><li>String 库函数：<ul><li>string.len(s) 等价与#s</li><li>string.rep(s, n) 重复字符串s，n次</li><li>string.lower(s)返回一个副本，其中的大写字母都变为小写字母</li><li>string.upper(s)返回一个副本，其中的消息字母都变为大写字母</li><li>string.sub(s，i，j)，返回s中的第i个字符到第j个字符之间（包括i，j）字符串的副本（我们也可以使用负索引，该索引从字符串的末尾开始计数）</li><li>string.char(nums,…)，它接受一个或多个整数输入，并且将每个整数转换为一个字符</li><li>string.byte(s，i)，它返回s中第i个字符的内部数字表示形式。</li><li>string.byte(s，i，j)，它返回s中第i个字符到第j个字符之间的内部数字表示形式（包括i，j）</li><li>string.format 使用规则和C中的Printf类似</li><li>string.find（stra，strb），返回strb字符串在stra中的起始和终止位置，如果不存在，则返回il</li><li>string.gsub(str，a，b)，将str中的a全部替换成b。返回两个值，第一个值是替换后生成的副本，第二个值是替换发生的次数</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Programming-in-Lua：Chapter-4-Strings&quot;&gt;&lt;a href=&quot;#Programming-in-Lua：Chapter-4-Strings&quot; class=&quot;headerlink&quot; title=&quot;Programming in Lua：C
+      
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://yoursite.com/categories/Lua/"/>
+    
+    
+      <category term="第四章" scheme="http://yoursite.com/tags/%E7%AC%AC%E5%9B%9B%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Programming in Lua：Chapter 6.Functions</title>
+    <link href="http://yoursite.com/2020/06/22/Programming-in-Lua-6/"/>
+    <id>http://yoursite.com/2020/06/22/Programming-in-Lua-6/</id>
+    <published>2020-06-22T13:38:32.000Z</published>
+    <updated>2020-06-22T13:42:12.210Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Programming-in-Lua：Chapter-6-Functions"><a href="#Programming-in-Lua：Chapter-6-Functions" class="headerlink" title="Programming in Lua：Chapter 6. Functions"></a>Programming in Lua：Chapter 6. Functions</h2><ul><li><p>o:foo(x) 表示调用对象o的foo函数</p></li><li><p>function 支持多个返回值，当调用位置是Table的末尾时，返回所有返回值，其他位置只返回第一个返回值，并丢弃其他的返回值</p></li><li><p>return function() 这种形式会返回所有的返回值</p></li><li><p>return (function()) 这种形式只会返回第一个返回值</p></li><li><p>function可以支持可变参数：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> <span class="params">(...)</span></span></span><br><span class="line">    <span class="keyword">local</span> s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, v <span class="keyword">in</span> <span class="built_in">ipairs</span>&#123;...&#125; <span class="keyword">do</span></span><br><span class="line">        s = s + v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">12</span>)) <span class="comment">--&gt; 54</span></span><br></pre></td></tr></table></figure></li><li><p>table.unpack()：获取一个列表，并且把列表中的所有元素作为结果返回</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unpack</span> <span class="params">(t, i, n)</span></span></span><br><span class="line">    i = i <span class="keyword">or</span> <span class="number">1</span></span><br><span class="line">    n = n <span class="keyword">or</span> #t</span><br><span class="line">    <span class="keyword">if</span> i &lt;= n <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> t[i], <span class="built_in">unpack</span>(t, i + <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></li><li><p>如果在function的尾部调用另一个function，那么这个函数调用的底层实现时goto（即不再保存当前函数的堆栈信息，也不会再返回当前函数的现场，所以尾调用不会出现程序栈溢出的问题）</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\\这些都不是尾调用，因为需要处理g(x)返回的值，<span class="keyword">goto</span>是不会回来处理值的（没有保存堆栈信息），所以不能使用<span class="keyword">goto</span></span><br><span class="line"><span class="keyword">return</span> g(x) + <span class="number">1</span> <span class="comment">-- must do the addition</span></span><br><span class="line"><span class="keyword">return</span> x <span class="keyword">or</span> g(x) <span class="comment">-- must adjust to 1 result</span></span><br><span class="line"><span class="keyword">return</span> (g(x)) <span class="comment">-- must adjust to 1 result</span></span><br><span class="line">\\这是尾调用，尽管参数是表达式，但是不需要返回来处理返回值，可以用<span class="keyword">goto</span></span><br><span class="line"><span class="keyword">return</span> x[i].foo(x[j] + a*b, i + j)</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Programming-in-Lua：Chapter-6-Functions&quot;&gt;&lt;a href=&quot;#Programming-in-Lua：Chapter-6-Functions&quot; class=&quot;headerlink&quot; title=&quot;Programming in L
+      
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://yoursite.com/categories/Lua/"/>
+    
+    
+      <category term="第六章" scheme="http://yoursite.com/tags/%E7%AC%AC%E5%85%AD%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Programming in Lua：Chapter 5.Tables</title>
+    <link href="http://yoursite.com/2020/06/22/Programming-in-Lua-5/"/>
+    <id>http://yoursite.com/2020/06/22/Programming-in-Lua-5/</id>
+    <published>2020-06-22T13:38:20.000Z</published>
+    <updated>2020-06-22T13:41:42.331Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Programming-in-Lua：Chapter-5-Tables"><a href="#Programming-in-Lua：Chapter-5-Tables" class="headerlink" title="Programming in Lua：Chapter 5. Tables"></a>Programming in Lua：Chapter 5. Tables</h2><ul><li><p>Lua中Table可以作为数组ArrayList，集合Set，记录Dict等数据结构的载体</p></li><li><p>Table的本质是一个Dict，其关键字可以使数字，字符串等任何Lua中的值（除了nil）</p></li><li><p>Lua中的Table本质上是一个对象，可以视为一个动态分配的对象，因此程序只能操纵它们的引用（或指针）</p></li><li><p>Lua永远不会再后台隐藏或创建新的Table</p></li><li><p>创建一个Table的最简单形式就是 “a = {}”  </p></li><li><p>Table的两种构造函数形式：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">polyline = &#123;</span><br><span class="line">    \\列表形式</span><br><span class="line">    color=<span class="string">"blue"</span>,</span><br><span class="line">    thickness=<span class="number">2</span>,</span><br><span class="line">    npoints=<span class="number">4</span>,</span><br><span class="line">    \\记录形式</span><br><span class="line">    &#123;x=<span class="number">0</span>, y=<span class="number">0</span>&#125;, <span class="comment">-- polyline[1]</span></span><br><span class="line">    &#123;x=<span class="number">-10</span>, y=<span class="number">0</span>&#125;, <span class="comment">-- polyline[2]</span></span><br><span class="line">    &#123;x=<span class="number">-10</span>, y=<span class="number">1</span>&#125;, <span class="comment">-- polyline[3]</span></span><br><span class="line">    &#123;x=<span class="number">0</span>, y=<span class="number">1</span>&#125; <span class="comment">-- polyline[4]</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li><li><p>当我们需要一个Array时，我们仅使用带有整数键的Table</p></li><li><p>当一个Array使用连续的整数键（1…n），且中间没有中断，那么这种结构被称为序列（sequence），可以使用#来获取sequence的长度</p></li><li><p>没有内容的字段和空字段没有区别，因此<code>a = {10, 20, 30, nil, nil}</code>的长度为3</p></li><li><p>我们可以使用pairs()遍历Table中的所有键值对，遍历顺序不是固定的（可以理解为C++中的 unordered_map<T1, t2>）</T1,></p></li><li><pre><code class="lang-lua">\\这种判断包是否能使用的方法导入了6个表，效率很低zip = company and company.director and company.director.address and company.director.address.zipcode\\这种判断包能否使用的方法导入了3个表，效率高zip = (((company or {}).director or {}).address or {}).zipcode<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* Table的内置函数：</span><br><span class="line"></span><br><span class="line">  * Table.insert(t,loc,data)：把data插入到表t的第i个位置上，并把后续元素向后迁移</span><br><span class="line"></span><br><span class="line">  * Table.insert(t, data)：把数据插入到表t的末尾</span><br><span class="line"></span><br><span class="line">  * Table.remove(t, loc)：把表t中第i个位置的数据返回并删除，最后把后续元素向前迁移</span><br><span class="line"></span><br><span class="line">  * Table.move(t, s, e ,p)：把表t中从第s个位置（包括s）到第e个位置（包括e）之间的元素位移到第t个位置</span><br></pre></td></tr></table></figure>  //要将元素插入Table的开头  table.move(a, 1, #a, 2)  a[1] = newElement  //删除Table开头的元素  table.move(a, 2, #a, 1)  a[#a] = nil</code></pre></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Programming-in-Lua：Chapter-5-Tables&quot;&gt;&lt;a href=&quot;#Programming-in-Lua：Chapter-5-Tables&quot; class=&quot;headerlink&quot; title=&quot;Programming in Lua：Cha
+      
+    
+    </summary>
+    
+    
+      <category term="Lua" scheme="http://yoursite.com/categories/Lua/"/>
+    
+    
+      <category term="第五章" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%BA%94%E7%AB%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-75.颜色分类</title>
@@ -585,161 +715,9 @@
       <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
     
-  </entry>
-  
-  <entry>
-    <title>LeetCode-64.最小路径和</title>
-    <link href="http://yoursite.com/2020/06/07/LeetCode-64/"/>
-    <id>http://yoursite.com/2020/06/07/LeetCode-64/</id>
-    <published>2020-06-07T02:59:18.000Z</published>
-    <updated>2020-06-07T03:06:21.728Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-64-最小路径和"><a href="#LeetCode-64-最小路径和" class="headerlink" title="LeetCode-64.最小路径和"></a>LeetCode-64.最小路径和</h2><p>给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p><p><strong>说明：</strong>每次只能向下或者向右移动一步。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [1,3,1],</span><br><span class="line">  [1,5,1],</span><br><span class="line">  [4,2,1]</span><br><span class="line">]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 因为路径 1→3→1→1→1 的总和最小。</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>因为每次只能向下或者向右移动一步，所以我们可以使用动态规划来解决这个问题</li><li>我们使用数组$grid[i][j]$来记录第i行第j列那个数的代价，数组$ans[i][j]$来记录第i行第j列那个数的路径总和，由1可知$ans[i][j] = min(ans[i-1][j] +grid[i][j],ans[i][j-1] + grid[i][j])$</li><li>从数组左上角往右下角迭代（先迭代列，再迭代行）执行2即可得到最终结果。</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minPathSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(grid.empty() || grid[<span class="number">0</span>].empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i,j,row = grid.<span class="built_in">size</span>(),col = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">ans</span><span class="params">(row,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(col,<span class="number">1e8</span>))</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != row;++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(j = <span class="number">0</span>;j != col;++j)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!i &amp;&amp; !j)</span><br><span class="line">                    ans[i][j] = grid[i][j];</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">0</span>)</span><br><span class="line">                    ans[i][j] = <span class="built_in">min</span>(ans[i][j],ans[i<span class="number">-1</span>][j] + grid[i][j]);</span><br><span class="line">                <span class="keyword">if</span>(j &gt; <span class="number">0</span>)</span><br><span class="line">                    ans[i][j] = <span class="built_in">min</span>(ans[i][j],ans[i][j<span class="number">-1</span>] + grid[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans[row<span class="number">-1</span>][col<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-64-最小路径和&quot;&gt;&lt;a href=&quot;#LeetCode-64-最小路径和&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-64.最小路径和&quot;&gt;&lt;/a&gt;LeetCode-64.最小路径和&lt;/h2&gt;&lt;p&gt;给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;每次只能向下或者向右移动一步。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,3,1],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1,5,1],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [4,2,1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 因为路径 1→3→1→1→1 的总和最小。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-96.不同的二叉搜索树</title>
-    <link href="http://yoursite.com/2020/06/06/LeetCode-96/"/>
-    <id>http://yoursite.com/2020/06/06/LeetCode-96/</id>
-    <published>2020-06-06T10:16:27.000Z</published>
-    <updated>2020-06-06T10:28:19.689Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-96-不同的二叉搜索树"><a href="#LeetCode-96-不同的二叉搜索树" class="headerlink" title="LeetCode-96.不同的二叉搜索树"></a>LeetCode-96.不同的二叉搜索树</h2><p>给定一个整数 n，求以 1 … n 为节点组成的二叉搜索树有多少种？</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入: 3</span><br><span class="line">输出: 5</span><br><span class="line">解释:</span><br><span class="line">给定 n &#x3D; 3, 一共有 5 种不同结构的二叉搜索树:</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       &#x2F;     &#x2F;      &#x2F; \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    &#x2F;     &#x2F;       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>假设$F(n)$为n个节点构成的二叉搜索树的个数，那么我们可以发现$F(n) = \sum_{i}^{n}(F(i-1) * F(n-i))$</li><li>从语义上来说就是选择1~n中的每一个节点作为根节点来生成二叉搜索树，而二叉树的个数=左子树的个数*右子树的个数</li><li>左右子树肯定比n小，欧盟从我们在计算$F(n)$之前就已经知道左右子树的个数</li><li>算法复杂度为$O(n^2)$，空间复杂度为$O(n)$</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numTrees</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">ans</span><span class="params">(n+<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        ans[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i,j,count;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt;= n;++i)&#123;</span><br><span class="line">            count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(j = <span class="number">1</span>;j &lt;= i;++j)&#123;</span><br><span class="line">                count += ans[j<span class="number">-1</span>] * ans[i-j];</span><br><span class="line">            &#125;</span><br><span class="line">            ans[i] = count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-96-不同的二叉搜索树&quot;&gt;&lt;a href=&quot;#LeetCode-96-不同的二叉搜索树&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-96.不同的二叉搜索树&quot;&gt;&lt;/a&gt;LeetCode-96.不同的二叉搜索树&lt;/h2&gt;&lt;p&gt;给定一个整数 n，求以 1 … n 为节点组成的二叉搜索树有多少种？&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: 3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;给定 n &amp;#x3D; 3, 一共有 5 种不同结构的二叉搜索树:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   1         3     3      2      1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    \       &amp;#x2F;     &amp;#x2F;      &amp;#x2F; \      \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     3     2     1      1   3      2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#x2F;     &amp;#x2F;       \                 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   2     1         2                 3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-287.寻找重复数</title>
-    <link href="http://yoursite.com/2020/06/05/LeetCode-287/"/>
-    <id>http://yoursite.com/2020/06/05/LeetCode-287/</id>
-    <published>2020-06-05T04:52:32.000Z</published>
-    <updated>2020-06-06T10:19:11.221Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-287-寻找重复数"><a href="#LeetCode-287-寻找重复数" class="headerlink" title="LeetCode-287.寻找重复数"></a>LeetCode-287.寻找重复数</h2><p>给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,4,2,2]</span><br><span class="line">输出: 2</span><br><span class="line"></span><br><span class="line">输入: [3,1,3,4,2]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure><p><strong>说明：</strong></p><ol><li>不能更改原数组（假设数组是只读的）。</li><li>只能使用额外的 O(1) 的空间。</li><li>时间复杂度小于 O(n2) 。</li><li>数组中只有一个重复的数字，但它可能不止重复出现一次。</li></ol><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li><p>我们使$cnt[i]$表示$nums[]$数组中小于等于$i$的数有多少个,假设我们重复的数是$target$，那么$[1,target-1]$的所有数满足$cnt[i] \le i,[targer,n]$里的所有数满足$cnt[i]&gt;i$，具有单调性。</p></li><li><p>我们使用二分查找在$[1,n]$之间找到这个$target$即可</p></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low,high,middle,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        low = <span class="number">1</span>,high = len<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> count,i,ans;</span><br><span class="line">        <span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">            middle = (low+high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>,count = <span class="number">0</span>;i != len;++i)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] &lt;= middle)</span><br><span class="line">                    ++count;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(count &lt;= middle)&#123;</span><br><span class="line">                low = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                ans = middle;</span><br><span class="line">                high = middle <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-287-寻找重复数&quot;&gt;&lt;a href=&quot;#LeetCode-287-寻找重复数&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-287.寻找重复数&quot;&gt;&lt;/a&gt;LeetCode-287.寻找重复数&lt;/h2&gt;&lt;p&gt;给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: [1,3,4,2,2]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: [3,1,3,4,2]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;不能更改原数组（假设数组是只读的）。&lt;/li&gt;
-&lt;li&gt;只能使用额外的 O(1) 的空间。&lt;/li&gt;
-&lt;li&gt;时间复杂度小于 O(n2) 。&lt;/li&gt;
-&lt;li&gt;数组中只有一个重复的数字，但它可能不止重复出现一次。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="二分查找" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-105.从前序和中序遍历序列构造二叉树</title>
-    <link href="http://yoursite.com/2020/06/04/LeetCode-105/"/>
-    <id>http://yoursite.com/2020/06/04/LeetCode-105/</id>
-    <published>2020-06-04T04:04:08.000Z</published>
-    <updated>2020-06-04T04:09:40.645Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-105-从前序和中序遍历序列构造二叉树"><a href="#LeetCode-105-从前序和中序遍历序列构造二叉树" class="headerlink" title="LeetCode-105.从前序和中序遍历序列构造二叉树"></a>LeetCode-105.从前序和中序遍历序列构造二叉树</h2><p>根据一棵树的前序遍历与中序遍历构造二叉树。</p><p><strong>注意:</strong><br>你可以假设树中没有重复的元素。</p><p>例如，给出</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前序遍历 preorder &#x3D; [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder &#x3D; [9,3,15,20,7]</span><br></pre></td></tr></table></figure><p>返回如下的二叉树：</p><pre><code>    3   / \  9  20    /  \   15   7</code></pre><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>通过前序遍历，我们能找到根节点</li><li>通过根节点和中序遍历，我们能之后左子树有几个节点</li><li>然后我们可以把前序遍历和中序遍历分成左子树和右子树两部分，然后递归1~3</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">buildTree</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; preorder, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func(preorder,<span class="number">0</span>,preorder.<span class="built_in">size</span>(),inorder,<span class="number">0</span>,inorder.<span class="built_in">size</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">TreeNode* <span class="title">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;preorder,<span class="keyword">int</span> ps,<span class="keyword">int</span> pe,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;inorder,<span class="keyword">int</span> is,<span class="keyword">int</span> ie)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps &gt;= pe)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        TreeNode *root = <span class="keyword">new</span> TreeNode(preorder[ps]);</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i = is;i != ie;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(inorder[i] == preorder[ps])</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i -= is;</span><br><span class="line">        root-&gt;left = func(preorder,ps+<span class="number">1</span>,ps+i+<span class="number">1</span>,inorder,is,is+i);</span><br><span class="line">        root-&gt;right = func(preorder,ps+i+<span class="number">1</span>,pe,inorder,is+i+<span class="number">1</span>,ie);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-105-从前序和中序遍历序列构造二叉树&quot;&gt;&lt;a href=&quot;#LeetCode-105-从前序和中序遍历序列构造二叉树&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-105.从前序和中序遍历序列构造二叉树&quot;&gt;&lt;/a&gt;LeetCode-105.从前序和中序遍历序列构造二叉树&lt;/h2&gt;&lt;p&gt;根据一棵树的前序遍历与中序遍历构造二叉树。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意:&lt;/strong&gt;&lt;br&gt;你可以假设树中没有重复的元素。&lt;/p&gt;
-&lt;p&gt;例如，给出&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;前序遍历 preorder &amp;#x3D; [3,9,20,15,7]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;中序遍历 inorder &amp;#x3D; [9,3,15,20,7]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;返回如下的二叉树：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    3
-   / \
-  9  20
-    /  \
-   15   7
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
-    
-      <category term="深度优先搜索" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-208.实现Trie（前缀树）</title>
-    <link href="http://yoursite.com/2020/06/04/LeetCode-208/"/>
-    <id>http://yoursite.com/2020/06/04/LeetCode-208/</id>
-    <published>2020-06-03T16:16:25.000Z</published>
-    <updated>2020-06-04T04:07:45.739Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-208-实现Trie（前缀树）"><a href="#LeetCode-208-实现Trie（前缀树）" class="headerlink" title="LeetCode-208.实现Trie（前缀树）"></a>LeetCode-208.实现Trie（前缀树）</h2><p>实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Trie trie &#x3D; new Trie();</span><br><span class="line"></span><br><span class="line">trie.insert(&quot;apple&quot;);</span><br><span class="line">trie.search(&quot;apple&quot;);   &#x2F;&#x2F; 返回 true</span><br><span class="line">trie.search(&quot;app&quot;);     &#x2F;&#x2F; 返回 false</span><br><span class="line">trie.startsWith(&quot;app&quot;); &#x2F;&#x2F; 返回 true</span><br><span class="line">trie.insert(&quot;app&quot;);   </span><br><span class="line">trie.search(&quot;app&quot;);     &#x2F;&#x2F; 返回 true</span><br></pre></td></tr></table></figure><p><strong>说明:</strong></p><ul><li>你可以假设所有的输入都是由小写字母 a-z 构成的。</li><li>保证所有输入均为非空字符串。</li></ul><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>Trie 树是一个有根的树，其结点具有以下字段：</p><ul><li>最多 RR 个指向子结点的链接，其中每个链接对应字母表数据集中的一个字母。</li><li>本文中假定 RR 为 26，小写拉丁字母的数量。</li><li>布尔字段，以指定节点是对应键的结尾还是只是键前缀。</li></ul><p><img src="/2020/06/04/LeetCode-208/Trim" alt="Trim树"></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    Trie *nodes[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">bool</span> isEnd;</span><br><span class="line">    Trie() &#123;</span><br><span class="line">        <span class="built_in">memset</span>(nodes, <span class="number">0</span>, <span class="keyword">sizeof</span>(Trie*)*<span class="number">26</span>);</span><br><span class="line">        isEnd = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~Trie()&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i != <span class="number">26</span>;++i)</span><br><span class="line">            <span class="keyword">if</span>(nodes[i])</span><br><span class="line">                <span class="keyword">delete</span> nodes[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Inserts a word into the trie. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="built_in">string</span> <span class="keyword">word</span>)</span> </span>&#123;</span><br><span class="line">        Trie *node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c : <span class="keyword">word</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!node-&gt;nodes[c-<span class="string">'a'</span>])</span><br><span class="line">                node-&gt;nodes[c-<span class="string">'a'</span>] = <span class="keyword">new</span> Trie();</span><br><span class="line">            node = node-&gt;nodes[c-<span class="string">'a'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        node-&gt;isEnd = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns if the word is in the trie. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="built_in">string</span> <span class="keyword">word</span>)</span> </span>&#123;</span><br><span class="line">        Trie *node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c : <span class="keyword">word</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!node-&gt;nodes[c-<span class="string">'a'</span>])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            node = node-&gt;nodes[c-<span class="string">'a'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node-&gt;isEnd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns if there is any word in the trie that starts with the given prefix. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">startsWith</span><span class="params">(<span class="built_in">string</span> prefix)</span> </span>&#123;</span><br><span class="line">        Trie *node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c : prefix)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!node-&gt;nodes[c-<span class="string">'a'</span>])</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            node = node-&gt;nodes[c-<span class="string">'a'</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Trie object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Trie* obj = new Trie();</span></span><br><span class="line"><span class="comment"> * obj-&gt;insert(word);</span></span><br><span class="line"><span class="comment"> * bool param_2 = obj-&gt;search(word);</span></span><br><span class="line"><span class="comment"> * bool param_3 = obj-&gt;startsWith(prefix);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-208-实现Trie（前缀树）&quot;&gt;&lt;a href=&quot;#LeetCode-208-实现Trie（前缀树）&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-208.实现Trie（前缀树）&quot;&gt;&lt;/a&gt;LeetCode-208.实现Trie（前缀树）&lt;/h2&gt;&lt;p&gt;实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例:&quot;&gt;&lt;/a&gt;示例:&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Trie trie &amp;#x3D; new Trie();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.insert(&amp;quot;apple&amp;quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.search(&amp;quot;apple&amp;quot;);   &amp;#x2F;&amp;#x2F; 返回 true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.search(&amp;quot;app&amp;quot;);     &amp;#x2F;&amp;#x2F; 返回 false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.startsWith(&amp;quot;app&amp;quot;); &amp;#x2F;&amp;#x2F; 返回 true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.insert(&amp;quot;app&amp;quot;);   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;trie.search(&amp;quot;app&amp;quot;);     &amp;#x2F;&amp;#x2F; 返回 true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;你可以假设所有的输入都是由小写字母 a-z 构成的。&lt;/li&gt;
-&lt;li&gt;保证所有输入均为非空字符串。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="字典树" scheme="http://yoursite.com/tags/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
