@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-23T13:48:01.142Z</updated>
+  <updated>2020-06-25T15:23:40.953Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-394.字符串解码</title>
+    <link href="http://yoursite.com/2020/06/25/LeetCode-394/"/>
+    <id>http://yoursite.com/2020/06/25/LeetCode-394/</id>
+    <published>2020-06-25T15:10:32.000Z</published>
+    <updated>2020-06-25T15:23:40.953Z</updated>
+    
+    <content type="html"><![CDATA[<p>给定一个经过编码的字符串，返回它解码后的字符串。</p><p>编码规则为: <code>k[encoded_string]</code>，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。</p><p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。</p><p>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 <code>3a</code> 或 <code>2[4]</code> 的输入。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：s &#x3D; &quot;3[a]2[bc]&quot;</span><br><span class="line">输出：&quot;aaabcbc&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;3[a2[c]]&quot;</span><br><span class="line">输出：&quot;accaccacc&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;2[abc]3[cd]ef&quot;</span><br><span class="line">输出：&quot;abcabccdcdcdef&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;abc3[cd]xyz&quot;</span><br><span class="line">输出：&quot;abccdcdcdxyz&quot;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>我们可以使用递归的思想来完成这道题<ul><li>对于不重复的部分，我们把字符直接加入输出中</li><li>对于重复的部分，我们把重复部分的字符放入待处理字符串中，并递归处理待处理字符串</li><li>最后把递归返回结果加入输出中</li></ul></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">decodeString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> ans = <span class="string">""</span>,substr = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>,k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!count &amp;&amp; <span class="string">'0'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">                k = k * <span class="number">10</span> + (c - <span class="string">'0'</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">'['</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(count)</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                ++count;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">']'</span>)&#123;</span><br><span class="line">                --count;</span><br><span class="line">                <span class="keyword">if</span>(!count)&#123;</span><br><span class="line">                    substr = decodeString(substr);</span><br><span class="line">                    <span class="keyword">while</span>(k)&#123;</span><br><span class="line">                        ans += substr;</span><br><span class="line">                        --k;</span><br><span class="line">                    &#125;</span><br><span class="line">                    substr.<span class="built_in">clear</span>();</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(count)&#123;</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    ans.push_back(c);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给定一个经过编码的字符串，返回它解码后的字符串。&lt;/p&gt;
+&lt;p&gt;编码规则为: &lt;code&gt;k[encoded_string]&lt;/code&gt;，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。&lt;/p&gt;
+&lt;p&gt;你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。&lt;/p&gt;
+&lt;p&gt;此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 &lt;code&gt;3a&lt;/code&gt; 或 &lt;code&gt;2[4]&lt;/code&gt; 的输入。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;3[a]2[bc]&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;aaabcbc&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;3[a2[c]]&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;accaccacc&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;2[abc]3[cd]ef&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;abcabccdcdcdef&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;abc3[cd]xyz&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;abccdcdcdxyz&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-309.最佳买卖股票时机含冷冻期</title>
@@ -694,38 +723,6 @@
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="双指针" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-236.二叉树的最近公共祖先</title>
-    <link href="http://yoursite.com/2020/06/10/LeetCode-236/"/>
-    <id>http://yoursite.com/2020/06/10/LeetCode-236/</id>
-    <published>2020-06-10T06:16:52.000Z</published>
-    <updated>2020-06-10T07:34:53.537Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-236-二叉树的最近公共祖先"><a href="#LeetCode-236-二叉树的最近公共祖先" class="headerlink" title="LeetCode-236.二叉树的最近公共祖先"></a>LeetCode-236.二叉树的最近公共祖先</h2><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p><p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p><p>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]</p><p><img src="/2020/06/10/LeetCode-236/binarytree.png" alt="img"></p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 1</span><br><span class="line">输出: 3</span><br><span class="line">解释: 节点 5 和节点 1 的最近公共祖先是节点 3。</span><br><span class="line"></span><br><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 4</span><br><span class="line">输出: 5</span><br><span class="line">解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。</span><br></pre></td></tr></table></figure><p><strong>说明:</strong></p><ol><li>所有节点的值都是唯一的。</li><li>p、q 为不同节点且均存在于给定的二叉树中。</li></ol><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol><li>p，q两点只有以下几种分布：<ol><li>p或者q点其中一个是父节点：<ol><li>另一个在其左子树中</li><li>另一个在其右子树中</li></ol></li><li>p或者q中一个在左子树中，另一个在右子树中</li></ol></li><li>因此我们遍历时只要注意这两种情况即可</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeNode *ans;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        func(root,p,q);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">func</span><span class="params">(TreeNode *root,TreeNode *&amp;p,TreeNode *&amp;q)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">bool</span> lb,rb;</span><br><span class="line">        lb = func(root-&gt;left,p,q);</span><br><span class="line">        rb = func(root-&gt;right,p,q);</span><br><span class="line">        <span class="keyword">if</span>((lb &amp;&amp; rb) || ((root == p || root == q) &amp;&amp; (lb || rb)))&#123;</span><br><span class="line">            ans = root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lb || rb || root == p || root == q;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-236-二叉树的最近公共祖先&quot;&gt;&lt;a href=&quot;#LeetCode-236-二叉树的最近公共祖先&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-236.二叉树的最近公共祖先&quot;&gt;&lt;/a&gt;LeetCode-236.二叉树的最近公共祖先&lt;/h2&gt;&lt;p&gt;给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。&lt;/p&gt;
-&lt;p&gt;百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（&lt;strong&gt;一个节点也可以是它自己的祖先&lt;/strong&gt;）。”&lt;/p&gt;
-&lt;p&gt;例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/06/10/LeetCode-236/binarytree.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: root &amp;#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &amp;#x3D; 5, q &amp;#x3D; 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 节点 5 和节点 1 的最近公共祖先是节点 3。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: root &amp;#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &amp;#x3D; 5, q &amp;#x3D; 4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;所有节点的值都是唯一的。&lt;/li&gt;
-&lt;li&gt;p、q 为不同节点且均存在于给定的二叉树中。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
     
   </entry>
   
