@@ -215,7 +215,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-29 22:07:32 / 修改时间：22:13:05" itemprop="dateCreated datePublished" datetime="2020-06-29T22:07:32+08:00">2020-06-29</time>
+              <time title="创建时间：2020-06-29 22:07:32 / 修改时间：22:20:32" itemprop="dateCreated datePublished" datetime="2020-06-29T22:07:32+08:00">2020-06-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,12 +243,109 @@
 <p><strong>进阶:</strong></p>
 <p>你是否可以在 <strong>O(1)</strong> 时间复杂度内完成这两种操作？</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">LRUCache cache &#x3D; new LRUCache( 2 &#x2F;* 缓存容量 *&#x2F; );</span><br><span class="line"></span><br><span class="line">cache.put(1, 1);</span><br><span class="line">cache.put(2, 2);</span><br><span class="line">cache.get(1);       &#x2F;&#x2F; 返回  1</span><br><span class="line">cache.put(3, 3);    &#x2F;&#x2F; 该操作会使得关键字 2 作废</span><br><span class="line">cache.get(2);       &#x2F;&#x2F; 返回 -1 (未找到)</span><br><span class="line">cache.put(4, 4);    &#x2F;&#x2F; 该操作会使得关键字 1 作废</span><br><span class="line">cache.get(1);       &#x2F;&#x2F; 返回 -1 (未找到)</span><br><span class="line">cache.get(3);       &#x2F;&#x2F; 返回  3</span><br><span class="line">cache.get(4);       &#x2F;&#x2F; 返回  4</span><br></pre></td></tr></table></figure>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>使用List存储数据，这样插入删除数据的代价为<code>O(1)</code></li>
-<li>使用Hash存储数据的Key，这样查找数据的代价为<code>O(1)</code></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">list</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; cache;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="built_in">list</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;::iterator&gt; m;</span><br><span class="line">    <span class="keyword">int</span> m_capacity;</span><br><span class="line">    LRUCache(<span class="keyword">int</span> capacity) &#123;</span><br><span class="line">        m_capacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.count(key))&#123;</span><br><span class="line">            <span class="keyword">auto</span> tmp = *m[key];</span><br><span class="line">            cache.erase(m[key]);</span><br><span class="line">            cache.push_back(tmp);</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">            <span class="keyword">return</span> tmp.second;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.count(key))&#123;</span><br><span class="line">            <span class="keyword">auto</span> tmp = *m[key];</span><br><span class="line">            cache.erase(m[key]);</span><br><span class="line">            tmp.second = value;</span><br><span class="line">            cache.push_back(tmp);</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cache.push_back(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(key,value));</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">            <span class="keyword">if</span>(cache.<span class="built_in">size</span>() &gt; m_capacity)&#123;</span><br><span class="line">                <span class="keyword">auto</span> tmp = cache.<span class="built_in">begin</span>();</span><br><span class="line">                m.erase(tmp-&gt;first);</span><br><span class="line">                cache.pop_front();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/29/LeetCode-146/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/PaperExam-SwissRoll-2020-06-28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/28/PaperExam-SwissRoll-2020-06-28/" class="post-title-link" itemprop="url">SwissRoll数据ISOMAP投影解释</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-28 21:06:49" itemprop="dateCreated datePublished" datetime="2020-06-28T21:06:49+08:00">2020-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-29 22:20:46" itemprop="dateModified" datetime="2020-06-29T22:20:46+08:00">2020-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">论文实验</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Boston房价数据t-SNE投影解释"><a href="#Boston房价数据t-SNE投影解释" class="headerlink" title="Boston房价数据t-SNE投影解释"></a>Boston房价数据t-SNE投影解释</h2><h3 id="数据介绍"><a href="#数据介绍" class="headerlink" title="数据介绍"></a>数据介绍</h3><ul>
+<li><p>SwissRoll数据是一个三维数据集，其中包含一个内嵌在三维空间中的二维平面流形</p>
+<p><img src="/2020/06/28/PaperExam-SwissRoll-2020-06-28/SwissRoll.jpg" alt="img"></p>
+</li>
+</ul>
+<h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul>
+<li>解释SwissRoll数据的ISOMAP投影</li>
+</ul>
+<h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul>
+<li>使用ISOMAP将SwissRoll数据降维到2维可视空间，并使用散点图可视化</li>
+</ul>
+<h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul>
+<li>对于投影中近线性分布的布局，我们的算法能否表达特征的方向和相关性</li>
+<li>对于投影中非线性分布的布局，我们的分片算法能否将其划分成多个近线性的片段，并在每个近线性分片上描述特征的方向和相关性</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/28/PaperExam-SwissRoll-2020-06-28/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -998,125 +1095,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/Programming-in-Lua-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HaowenZhou">
-      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/22/Programming-in-Lua-1/" class="post-title-link" itemprop="url">Programming in Lua：Chapter 1.Getting Started</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-22 21:38:43 / 修改时间：21:42:22" itemprop="dateCreated datePublished" datetime="2020-06-22T21:38:43+08:00">2020-06-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Programming-in-Lua：Chapter-1-Getting-Started"><a href="#Programming-in-Lua：Chapter-1-Getting-Started" class="headerlink" title="Programming in Lua：Chapter 1. Getting Started"></a>Programming in Lua：Chapter 1. Getting Started</h2><ul>
-<li><p>Lua使用块（Chunks）作为代码执行的单位，一个Chunks可以是交互模式中的一行代码或者是一个函数</p>
-</li>
-<li><p>使用Chunks的方法：</p>
-<ul>
-<li>在交互模式中，可以使用<code>% lua -i prog​</code></li>
-<li>或者可以使用dofile()导入别的lua文件</li>
-</ul>
-</li>
-<li><p>Lua中的标识符可以是字母，数字和下划线开头，不能以数字开头</p>
-</li>
-<li><p>以下是Lua中的保留字，不能作为标识符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">and      break     do        else      elseif</span><br><span class="line">end      false     for       function  goto</span><br><span class="line">if       in        local     nil       not</span><br><span class="line">or       repeat    return    then      true</span><br><span class="line">until    while</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注释的两种方式：</p>
-<ul>
-<li>以<code>--</code>开始的那一整行</li>
-<li>以<code>--[[</code>开始直至<code>]]</code>或<code>--]]</code>结束的一整段</li>
-</ul>
-</li>
-<li><p>Coding的语法喝JavaScript一致，即不需要强制添加分号，但是可以使用分号作为分隔符</p>
-</li>
-<li><p>全局变量不需要声明，访问未初始化的全局变量不会报错，会得到一个nil（null）值</p>
-</li>
-<li><p>声明但未初始化的变量和值为nil的变量存储在相同区域，不会被GC管理</p>
-</li>
-<li><p>Lua有8种基本类型：</p>
-<ul>
-<li>nil（空类型）：对全局变量分配nil使gc回收它的内存</li>
-<li>boolean（true/false）:<ul>
-<li>在Lua中任何值都可以表示条件，false和nil都视为false，其他值都视为true。</li>
-<li><strong>注意数字0和空字符串也视为true！！！</strong></li>
-<li>逻辑运算符：所有的值都会想条件控制一样被划分成true和false<ul>
-<li>and（与操作）：如果第一个操作数为false，则返回第一个操作数，否则返回第二个操作数 （假如第一个操作数为假，那么我们返回这个操作数就可以判假，反之我们需要判断第二个操作数）</li>
-<li>or（或操作） ：如果第一个操作数为true,  则返回第一个操作数，否则返回第二个操作数（假如第一个操作数为真，那么我们返回这个操作数就可以判真，反之我们需要判断第二个操作数）</li>
-<li>not（非操作）：返回一个boolean值，这个值为操作数的boolean值取反</li>
-<li>and 和 or都满足短路原则</li>
-<li>赋默认值 x = x or y (假如x未定义，则会把默认值y赋给x)</li>
-<li>三目运算符 a ? b : c == a and b or c （当且仅当b不为false时）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>number (浮点数)</li>
-<li>string （字符串）</li>
-<li>userdata （用户数据 io.stdin）：允许将任意C数据结构存储在Lua中</li>
-<li>function (函数)</li>
-<li>table (数据表)</li>
-<li>thread （线程）</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1186,7 +1164,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

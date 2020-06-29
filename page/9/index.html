@@ -190,6 +190,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/GPt-SNE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/27/GPt-SNE/" class="post-title-link" itemprop="url">GPt-SNE论文分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-27 18:22:38" itemprop="dateCreated datePublished" datetime="2020-04-27T18:22:38+08:00">2020-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-12 17:22:14" itemprop="dateModified" datetime="2020-05-12T17:22:14+08:00">2020-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">数据可视化</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="GPt-SNE-论文分析"><a href="#GPt-SNE-论文分析" class="headerlink" title="GPt-SNE 论文分析"></a>GPt-SNE 论文分析</h2><p>作者：Andrew Lensen</p>
+<p>期刊：IEEE Transactions on Cybernetics</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>首先直接指出目前的可视化的作用和目前可视化方法的痛点<ul>
+<li>痛点：<ul>
+<li>最先进的可视化方法往往是黑盒方法，无法洞察可视化如何编码数据的原始特征</li>
+<li>其他方法如Autoencoder和pt-SNE使用复杂神经网络，对人来说依然难以理解</li>
+</ul>
+</li>
+<li>分析：直接指出可视化的痛点，也是一种很好的表达，观点看起来很清晰，之前自己的写作顾虑太多，应该就事论事。其实作者的观点和我是一致的，但是我一没讲清楚，二是不够自信，过多的自我怀疑对工作毫无益处。</li>
+</ul>
+</li>
+<li>接着指出有良好可解释性的线性方法，在降维上固有的局限性：<ul>
+<li>痛点：线性方法仅通过对原始特征的线性组合来编码可视化</li>
+<li>分析：还是不够自信吧，我们写的太拘谨了，其实我自己写作的时候，就一直在思考为什么不去直接指出线性方法的局限性，我觉得要多坚持自己的想法。</li>
+</ul>
+</li>
+<li>然后介绍基于树的GP（genetic programming）方法，该方法常用于FC（feature construction）中的降维，并且是公认可解释的。最后明确指出，GP方法还并未被用于生成可解释的降维模型即可解释的的可视化。<ul>
+<li>分析：觉得自己调研的不够充分，毕竟我都没收集到GP方法。论文写法上来说，我觉得简单直接，我在写作中也要以他为模板，即使技术方案简单也没什么好扭捏的。</li>
+</ul>
+</li>
+<li>接着给出了他们之前的工作GP-MaL（该工作使用GP方法进行降维），并指出了之前工作存在的一些问题。<ul>
+<li>分析：这样写，一方面阐述了作者在GP方法上是有底蕴的，让人更相信作者的表达。我觉得我在写作的时候可以多引用作者的论文和表达，体现出我在该研究方向上的理解。</li>
+</ul>
+</li>
+<li>然后给出了论文的技术方案：多目标GP方法。<ul>
+<li>分析：Introduction通过前两段才讲清楚问题，但是并没有让人觉得冗余。而我总是追求一句话讲清楚，为了达到这个目标，就在非线性方法的问题和线性方法的问题中做取舍，最后不伦不类，要多反思，不能僵化自己的思维。</li>
+</ul>
+</li>
+<li>最后总结了论文的贡献：<ul>
+<li>贡献：<ul>
+<li>Propose a holistic set of functions and terminals for creating powerful and interpretable models for visualisation; </li>
+<li>Design a multi-objective approach to allow for the evolution of a solution front containing visualisations representing different levels of quality and complexity; </li>
+<li>Compare the quality and interpretability of the evolved visualisations with those produced by state-of-the-art visualisation methods on a range of datasets; </li>
+<li>Perform an in-depth analysis of the trade-off between visualisation quality and tree complexity to demonstrate the unique advantages of the proposed approach.</li>
+</ul>
+</li>
+<li>分析：我觉得贡献部分写的很平实，我在写贡献部分的时候也要平实，不要故弄玄虚。</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/27/GPt-SNE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/26/LeetCode-23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +458,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">81</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -527,6 +648,61 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
