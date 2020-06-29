@@ -190,6 +190,223 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/LeetCode-146/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/29/LeetCode-146/" class="post-title-link" itemprop="url">LeetCode-146.LRU缓存机制</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-29 22:07:32 / 修改时间：22:13:05" itemprop="dateCreated datePublished" datetime="2020-06-29T22:07:32+08:00">2020-06-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>运用你所掌握的数据结构，设计和实现一个<code>LRU (最近最少使用) 缓存机制</code>。它应该支持以下操作： 获取数据 <code>get</code> 和 写入数据 <code>put</code> 。</p>
+<p>获取数据 <code>get(key)</code> - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。<br>写入数据 <code>put(key, value)</code> - 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+<p><strong>进阶:</strong></p>
+<p>你是否可以在 <strong>O(1)</strong> 时间复杂度内完成这两种操作？</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">LRUCache cache &#x3D; new LRUCache( 2 &#x2F;* 缓存容量 *&#x2F; );</span><br><span class="line"></span><br><span class="line">cache.put(1, 1);</span><br><span class="line">cache.put(2, 2);</span><br><span class="line">cache.get(1);       &#x2F;&#x2F; 返回  1</span><br><span class="line">cache.put(3, 3);    &#x2F;&#x2F; 该操作会使得关键字 2 作废</span><br><span class="line">cache.get(2);       &#x2F;&#x2F; 返回 -1 (未找到)</span><br><span class="line">cache.put(4, 4);    &#x2F;&#x2F; 该操作会使得关键字 1 作废</span><br><span class="line">cache.get(1);       &#x2F;&#x2F; 返回 -1 (未找到)</span><br><span class="line">cache.get(3);       &#x2F;&#x2F; 返回  3</span><br><span class="line">cache.get(4);       &#x2F;&#x2F; 返回  4</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>使用List存储数据，这样插入删除数据的代价为<code>O(1)</code></li>
+<li>使用Hash存储数据的Key，这样查找数据的代价为<code>O(1)</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">list</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; cache;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="built_in">list</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;::iterator&gt; m;</span><br><span class="line">    <span class="keyword">int</span> m_capacity;</span><br><span class="line">    LRUCache(<span class="keyword">int</span> capacity) &#123;</span><br><span class="line">        m_capacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.count(key))&#123;</span><br><span class="line">            <span class="keyword">auto</span> tmp = *m[key];</span><br><span class="line">            cache.erase(m[key]);</span><br><span class="line">            cache.push_back(tmp);</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">            <span class="keyword">return</span> tmp.second;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.count(key))&#123;</span><br><span class="line">            <span class="keyword">auto</span> tmp = *m[key];</span><br><span class="line">            cache.erase(m[key]);</span><br><span class="line">            tmp.second = value;</span><br><span class="line">            cache.push_back(tmp);</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cache.push_back(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(key,value));</span><br><span class="line">            m[key] = --cache.<span class="built_in">end</span>();</span><br><span class="line">            <span class="keyword">if</span>(cache.<span class="built_in">size</span>() &gt; m_capacity)&#123;</span><br><span class="line">                <span class="keyword">auto</span> tmp = cache.<span class="built_in">begin</span>();</span><br><span class="line">                m.erase(tmp-&gt;first);</span><br><span class="line">                cache.pop_front();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/LeetCode-621/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/28/LeetCode-621/" class="post-title-link" itemprop="url">LeetCode-621. 任务调度器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-28 20:59:21 / 修改时间：21:03:57" itemprop="dateCreated datePublished" datetime="2020-06-28T20:59:21+08:00">2020-06-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="LeetCode-621-任务调度器"><a href="#LeetCode-621-任务调度器" class="headerlink" title="LeetCode-621. 任务调度器"></a>LeetCode-621. 任务调度器</h2><p>给定一个用字符数组表示的 CPU 需要执行的任务列表。其中包含使用大写的 A - Z 字母表示的26 种不同种类的任务。任务可以以任意顺序执行，并且每个任务都可以在 1 个单位时间内执行完。CPU 在任何一个单位时间内都可以执行一个任务，或者在待命状态。</p>
+<p>然而，两个<strong>相同种类</strong>的任务之间必须有长度为 <strong>n</strong> 的冷却时间，因此至少有连续 n 个单位时间内 CPU 在执行不同的任务，或者在待命状态。</p>
+<p>你需要计算完成所有任务所需要的<strong>最短时间</strong>。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：tasks &#x3D; [&quot;A&quot;,&quot;A&quot;,&quot;A&quot;,&quot;B&quot;,&quot;B&quot;,&quot;B&quot;], n &#x3D; 2</span><br><span class="line">输出：8</span><br><span class="line">解释：A -&gt; B -&gt; (待命) -&gt; A -&gt; B -&gt; (待命) -&gt; A -&gt; B.</span><br><span class="line">     在本示例中，两个相同类型任务之间必须间隔长度为 n &#x3D; 2 的冷却时间，而执行一个任务只需要一个单位时间，所以中间出现了（待命）状态。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li>任务的总个数为 [1, 10000]。</li>
+<li>n 的取值范围为 [0, 100]。</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/28/LeetCode-621/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/PaperExam-Boston-2020-06-27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HaowenZhou">
+      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/27/PaperExam-Boston-2020-06-27/" class="post-title-link" itemprop="url">PaperExam-Boston-2020/06/27</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-27 22:24:47" itemprop="dateCreated datePublished" datetime="2020-06-27T22:24:47+08:00">2020-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/LeetCode-142/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -900,323 +1117,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/Programming-in-Lua-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HaowenZhou">
-      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/22/Programming-in-Lua-3/" class="post-title-link" itemprop="url">Programming in Lua：Chapter 3.Numbers</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-22 21:38:37 / 修改时间：21:42:32" itemprop="dateCreated datePublished" datetime="2020-06-22T21:38:37+08:00">2020-06-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Programming-in-Lua：Chapter-3-Numbers"><a href="#Programming-in-Lua：Chapter-3-Numbers" class="headerlink" title="Programming in Lua：Chapter 3. Numbers"></a>Programming in Lua：Chapter 3. Numbers</h2><ul>
-<li><p>Number定义：</p>
-<ul>
-<li>在5.2版本之前，Lua使用双精度浮点格式表示Number</li>
-<li>从5.3版本开始，使用64位整数（integer）和双精度浮点数（float）来表示Number</li>
-<li>对于受限平台，可以把Lua 5.3编译成Small Lua，它可以使用32位整数和单精度浮点数</li>
-</ul>
-</li>
-<li><p>Number比较：</p>
-<ul>
-<li>尽管具有浮点数和整数两种Number表示形式，但是它们的类型都是Number，且它们之间是可以相互转换的，例如1 == 1.0 —&gt; true</li>
-<li>在需要区分整数和浮点数的场景，可以使用math.type()接口（整形返回integer，浮点数返回float）</li>
-</ul>
-</li>
-<li><p>Number的十六进制：</p>
-<ul>
-<li>使用“0x”前缀来支持十六进制常量。并且支持浮点十六进制,十六进制的数保持了浮点值的所有精度，且转换速度比十进制快</li>
-<li><p>可以使用string.format结合”%a”来表示十六进制的数</p>
-<ul>
-<li><p>> string.format(“%a”, 419)         —&gt; 0x1.a3p+8 </p>
-</li>
-<li><p>>  string.format(“%a”, 0.1)         —&gt; 0x1.999999999999ap-4</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Number提供的算术运算：</p>
-<ul>
-<li>加法，减法，乘法，除法，取反，取模</li>
-<li>整数除法: //，将结果向负无穷大舍入</li>
-<li>幂运算：^</li>
-</ul>
-</li>
-<li><p>Number的关系运算符：</p>
-<ul>
-<li>>  , &lt; , &gt;=, &lt;=</li>
-<li>相等运算符: ==</li>
-<li>不等云运算法: ~=</li>
-</ul>
-</li>
-<li><p>Number的舍入函数：</p>
-<ul>
-<li>floor：趋向负无穷大舍入</li>
-<li>ceil：趋向正无穷大舍入</li>
-<li>modf：四舍五入</li>
-</ul>
-</li>
-<li><p>Number的转换：</p>
-<ul>
-<li>整形 —》 浮点数：整形 + 0.0 就会转换成浮点数</li>
-<li>浮点数 —》 整形： <ul>
-<li>浮点数和 0 或运算就会转换成整形（只有在浮点数的值精确表示为整数的情况下才可以执行这种转换，即这个浮点数没有小数部分且它在整数范围之内）</li>
-<li>math.tointeger（x），如果x不能转换成整数，返回nil</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Number中的运算符优先级，从上到下（高 —》 低）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">^</span><br><span class="line">unary operators (- # ~ not)</span><br><span class="line">* &#x2F; &#x2F;&#x2F; %</span><br><span class="line">+ -</span><br><span class="line">.. (concatentation)</span><br><span class="line">&lt;&lt; &gt;&gt; (bitwise shifts)</span><br><span class="line">&amp; (bitwise AND)</span><br><span class="line">~ (bitwise exclusive OR)</span><br><span class="line">| (bitwise OR)</span><br><span class="line">&lt; &gt; &lt;&#x3D; &gt;&#x3D; ~&#x3D; &#x3D;&#x3D;</span><br><span class="line">and</span><br><span class="line">or</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/Programming-in-Lua-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HaowenZhou">
-      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/22/Programming-in-Lua-4/" class="post-title-link" itemprop="url">Programming in Lua：Chapter 4.Strings</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-22 21:38:34 / 修改时间：21:41:04" itemprop="dateCreated datePublished" datetime="2020-06-22T21:38:34+08:00">2020-06-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Programming-in-Lua：Chapter-4-Strings"><a href="#Programming-in-Lua：Chapter-4-Strings" class="headerlink" title="Programming in Lua：Chapter 4. Strings"></a>Programming in Lua：Chapter 4. Strings</h2><ul>
-<li>Lua中的String是不可修改的</li>
-<li>Lua中的String如同其他对象（table，function）一样由Lua的GC管理内存，因此我们不必担心字符串的分配和释放。</li>
-<li>#string获取string的长度</li>
-<li>我们可以使用串联运算符”..”来串联两个字符串（例如，”Result is “.. 3 —》 “Result is 3”），并且串联运算符不会修改已有的字符串，而是创建并返回新一个的字符串。</li>
-<li>多行的字符串：<ul>
-<li>“[[“和”]]”之间的多行文本会被认为是一个String</li>
-<li>我们也可以使用”[==(=个数自定)[“和”]==]”来表示一个长字符串</li>
-<li>换行使用“\z”</li>
-</ul>
-</li>
-<li>Lua在运行时提供数字和字符串之间的自动转换，字符串数被认为是浮点数</li>
-<li>使用tonumber显示的转换string：<ul>
-<li>tonumber(num,jinzhi)，jinzhi可以是2~36之间的任何基数</li>
-</ul>
-</li>
-<li>String 库函数：<ul>
-<li>string.len(s) 等价与#s</li>
-<li>string.rep(s, n) 重复字符串s，n次</li>
-<li>string.lower(s)返回一个副本，其中的大写字母都变为小写字母</li>
-<li>string.upper(s)返回一个副本，其中的消息字母都变为大写字母</li>
-<li>string.sub(s，i，j)，返回s中的第i个字符到第j个字符之间（包括i，j）字符串的副本（我们也可以使用负索引，该索引从字符串的末尾开始计数）</li>
-<li>string.char(nums,…)，它接受一个或多个整数输入，并且将每个整数转换为一个字符</li>
-<li>string.byte(s，i)，它返回s中第i个字符的内部数字表示形式。</li>
-<li>string.byte(s，i，j)，它返回s中第i个字符到第j个字符之间的内部数字表示形式（包括i，j）</li>
-<li>string.format 使用规则和C中的Printf类似</li>
-<li>string.find（stra，strb），返回strb字符串在stra中的起始和终止位置，如果不存在，则返回il</li>
-<li>string.gsub(str，a，b)，将str中的a全部替换成b。返回两个值，第一个值是替换后生成的副本，第二个值是替换发生的次数</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/Programming-in-Lua-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="HaowenZhou">
-      <meta itemprop="description" content="技术栈包括：游戏客户端开发, 后端开发, 数据可视化">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/22/Programming-in-Lua-6/" class="post-title-link" itemprop="url">Programming in Lua：Chapter 6.Functions</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-22 21:38:32 / 修改时间：21:59:15" itemprop="dateCreated datePublished" datetime="2020-06-22T21:38:32+08:00">2020-06-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Programming-in-Lua：Chapter-6-Functions"><a href="#Programming-in-Lua：Chapter-6-Functions" class="headerlink" title="Programming in Lua：Chapter 6. Functions"></a>Programming in Lua：Chapter 6. Functions</h2><ul>
-<li><p>o:foo(x) 表示调用对象o的foo函数</p>
-</li>
-<li><p>function 支持多个返回值，当调用位置是Table的末尾时，返回所有返回值，其他位置只返回第一个返回值，并丢弃其他的返回值</p>
-</li>
-<li><p>return function() 这种形式会返回所有的返回值</p>
-</li>
-<li><p>return (function()) 这种形式只会返回第一个返回值</p>
-</li>
-<li><p>function可以支持可变参数：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> <span class="params">(...)</span></span></span><br><span class="line">    <span class="keyword">local</span> s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, v <span class="keyword">in</span> <span class="built_in">ipairs</span>&#123;...&#125; <span class="keyword">do</span></span><br><span class="line">        s = s + v</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">12</span>)) <span class="comment">--&gt; 54</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>table.unpack()：获取一个列表，并且把列表中的所有元素作为结果返回</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unpack</span> <span class="params">(t, i, n)</span></span></span><br><span class="line">    i = i <span class="keyword">or</span> <span class="number">1</span></span><br><span class="line">    n = n <span class="keyword">or</span> #t</span><br><span class="line">    <span class="keyword">if</span> i &lt;= n <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">return</span> t[i], <span class="built_in">unpack</span>(t, i + <span class="number">1</span>, n)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果在function的尾部调用另一个function，那么这个函数调用的底层实现时goto（即不再保存当前函数的堆栈信息，也不会再返回当前函数的现场，所以尾调用不会出现程序栈溢出的问题）</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//这些都不是尾调用，因为需要处理g(x)返回的值，<span class="keyword">goto</span>是不会回来处理值的（没有保存堆栈信息），所以不能使用<span class="keyword">goto</span></span><br><span class="line"><span class="keyword">return</span> g(x) + <span class="number">1</span> <span class="comment">-- must do the addition</span></span><br><span class="line"><span class="keyword">return</span> x <span class="keyword">or</span> g(x) <span class="comment">-- must adjust to 1 result</span></span><br><span class="line"><span class="keyword">return</span> (g(x)) <span class="comment">-- must adjust to 1 result</span></span><br><span class="line">//这是尾调用，尽管参数是表达式，但是不需要返回来处理返回值，可以用<span class="keyword">goto</span></span><br><span class="line"><span class="keyword">return</span> x[i].foo(x[j] + a*b, i + j)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1282,7 +1186,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1295,7 +1199,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
