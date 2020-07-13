@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-11T06:08:04.109Z</updated>
+  <updated>2020-07-13T13:41:33.292Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-31. 下一个排列</title>
+    <link href="http://yoursite.com/2020/07/13/LeetCode-31/"/>
+    <id>http://yoursite.com/2020/07/13/LeetCode-31/</id>
+    <published>2020-07-13T13:36:58.000Z</published>
+    <updated>2020-07-13T13:41:33.292Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-31-下一个排列"><a href="#LeetCode-31-下一个排列" class="headerlink" title="LeetCode-31. 下一个排列"></a>LeetCode-31. 下一个排列</h2><p>实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。</p><p>如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。</p><p>必须<strong>原地</strong>修改，只允许使用额外常数空间。</p><p>以下是一些例子，输入位于左侧列，其相应输出位于右侧列。<br><code>1,2,3 → 1,3,2</code><br><code>3,2,1 → 1,2,3</code><br><code>1,1,5 → 1,5,1</code></p><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>从后向前找到第一个比后边元素小的数（变化的位数越靠后，增长的变化越小）</li><li>该元素后边的数组都是单调递减的，因此我们从后向前遍历，找到第一个比该元素大的元素，并交换他们的位置（找到变化最少的下一位）</li><li>最后把后边的数组倒置（从小到大是最小的排列）</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i,j,len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len &lt; <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = len<span class="number">-1</span>;i != <span class="number">0</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i<span class="number">-1</span>] &lt; nums[i])</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i)&#123;</span><br><span class="line">            --i;</span><br><span class="line">            <span class="keyword">for</span>(j = len - <span class="number">1</span>;j &gt; i;--j)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] &lt; nums[j])</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(nums,i,j);</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i,j = len<span class="number">-1</span>;i &lt; j;++i,--j)&#123;</span><br><span class="line">            swap(nums,i,j);</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-31-下一个排列&quot;&gt;&lt;a href=&quot;#LeetCode-31-下一个排列&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-31. 下一个排列&quot;&gt;&lt;/a&gt;LeetCode-31. 下一个排列&lt;/h2&gt;&lt;p&gt;实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。&lt;/p&gt;
+&lt;p&gt;如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。&lt;/p&gt;
+&lt;p&gt;必须&lt;strong&gt;原地&lt;/strong&gt;修改，只允许使用额外常数空间。&lt;/p&gt;
+&lt;p&gt;以下是一些例子，输入位于左侧列，其相应输出位于右侧列。&lt;br&gt;&lt;code&gt;1,2,3 → 1,3,2&lt;/code&gt;&lt;br&gt;&lt;code&gt;3,2,1 → 1,2,3&lt;/code&gt;&lt;br&gt;&lt;code&gt;1,1,5 → 1,5,1&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-34. 在排序数组中查找元素的第一个和最后一个位置</title>
+    <link href="http://yoursite.com/2020/07/13/LeetCode-34/"/>
+    <id>http://yoursite.com/2020/07/13/LeetCode-34/</id>
+    <published>2020-07-13T13:33:20.000Z</published>
+    <updated>2020-07-13T13:36:23.840Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-34-在排序数组中查找元素的第一个和最后一个位置"><a href="#LeetCode-34-在排序数组中查找元素的第一个和最后一个位置" class="headerlink" title="LeetCode-34. 在排序数组中查找元素的第一个和最后一个位置"></a>LeetCode-34. 在排序数组中查找元素的第一个和最后一个位置</h2><p>给定一个按照升序排列的整数数组 <code>nums</code>，和一个目标值 <code>target</code>。找出给定目标值在数组中的开始位置和结束位置。</p><p>你的算法时间复杂度必须是 O(log n) 级别。</p><p>如果数组中不存在目标值，返回 <code>[-1, -1]</code>。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: nums &#x3D; [5,7,7,8,8,10], target &#x3D; 8</span><br><span class="line">输出: [3,4]</span><br><span class="line"></span><br><span class="line">输入: nums &#x3D; [5,7,7,8,8,10], target &#x3D; 6</span><br><span class="line">输出: [-1,-1]</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>首先是常规的二分查找</li><li>其次在找到target值后，要判断是否还要继续查找（通过判断左边或者右边是否还有target值）</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> target,<span class="keyword">bool</span> big)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>, high = nums.<span class="built_in">size</span>(),middle;</span><br><span class="line">        <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">            middle = (low+high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[middle] &gt; target)&#123;</span><br><span class="line">                high = middle;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[middle] &lt; target)&#123;</span><br><span class="line">                low = middle+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(big)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(middle + <span class="number">1</span> &lt; high &amp;&amp; nums[middle+<span class="number">1</span>] == target)</span><br><span class="line">                        low = middle + <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="keyword">return</span> middle;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(middle - <span class="number">1</span> &gt;= low &amp;&amp; nums[middle<span class="number">-1</span>] == target)</span><br><span class="line">                        high = middle;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="keyword">return</span> middle;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(low &lt; nums.<span class="built_in">size</span>() &amp;&amp; nums[low] == target)</span><br><span class="line">            <span class="keyword">return</span> low;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">searchRange</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans = &#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty())</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        ans[<span class="number">0</span>] = fun(nums,target,<span class="literal">false</span>);</span><br><span class="line">        ans[<span class="number">1</span>] = fun(nums,target,<span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-34-在排序数组中查找元素的第一个和最后一个位置&quot;&gt;&lt;a href=&quot;#LeetCode-34-在排序数组中查找元素的第一个和最后一个位置&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-34. 在排序数组中查找元素的第一个和最后一个位置&quot;&gt;&lt;/a&gt;LeetCode-34. 在排序数组中查找元素的第一个和最后一个位置&lt;/h2&gt;&lt;p&gt;给定一个按照升序排列的整数数组 &lt;code&gt;nums&lt;/code&gt;，和一个目标值 &lt;code&gt;target&lt;/code&gt;。找出给定目标值在数组中的开始位置和结束位置。&lt;/p&gt;
+&lt;p&gt;你的算法时间复杂度必须是 O(log n) 级别。&lt;/p&gt;
+&lt;p&gt;如果数组中不存在目标值，返回 &lt;code&gt;[-1, -1]&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: nums &amp;#x3D; [5,7,7,8,8,10], target &amp;#x3D; 8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: [3,4]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: nums &amp;#x3D; [5,7,7,8,8,10], target &amp;#x3D; 6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: [-1,-1]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="二分查找" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode-152.乘积最大子数组</title>
+    <link href="http://yoursite.com/2020/07/13/LeetCode-152/"/>
+    <id>http://yoursite.com/2020/07/13/LeetCode-152/</id>
+    <published>2020-07-13T13:29:38.000Z</published>
+    <updated>2020-07-13T13:32:39.065Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LeetCode-152-乘积最大子数组"><a href="#LeetCode-152-乘积最大子数组" class="headerlink" title="LeetCode-152.乘积最大子数组"></a>LeetCode-152.乘积最大子数组</h2><p>给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: [2,3,-2,4]</span><br><span class="line">输出: 6</span><br><span class="line">解释: 子数组 [2,3] 有最大乘积 6。</span><br><span class="line"></span><br><span class="line">输入: [-2,0,-1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h4><ul><li>思想如同LeetCode-53题</li><li>但是要注意正值用最大值，负值用最小值</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">        <span class="keyword">int</span> tleft,fleft;</span><br><span class="line">        <span class="keyword">int</span> tright,fright;</span><br><span class="line">        <span class="keyword">int</span> tmiddle,fmiddle;</span><br><span class="line">        <span class="keyword">int</span> sum;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function">Node <span class="title">Combine</span><span class="params">(Node &amp;a,Node &amp;b)</span></span>&#123;</span><br><span class="line">        Node ans;</span><br><span class="line">        <span class="keyword">int</span> n1,n2,n3,n4;</span><br><span class="line">        n1 = a.sum * b.tleft,n2 = a.sum * b.fleft;</span><br><span class="line">        ans.tleft = <span class="built_in">max</span>(a.tleft,<span class="built_in">max</span>(n1,n2));</span><br><span class="line">        ans.fleft = <span class="built_in">min</span>(a.fleft,<span class="built_in">min</span>(n1,n2));</span><br><span class="line">        n1 = a.tright * b.sum,n2 = a.fright * b.sum;</span><br><span class="line">        ans.tright = <span class="built_in">max</span>(b.tright,<span class="built_in">max</span>(n1,n2));</span><br><span class="line">        ans.fright = <span class="built_in">min</span>(b.fright,<span class="built_in">min</span>(n1,n2));</span><br><span class="line">        n1 = a.tright * b.tleft,n2 = a.tright * b.fleft,n3 = a.fright * b.tleft,n4 = a.fright * b.fleft;</span><br><span class="line">        ans.tmiddle = <span class="built_in">max</span>(a.tmiddle,<span class="built_in">max</span>(b.tmiddle,<span class="built_in">max</span>(n1,<span class="built_in">max</span>(n2,<span class="built_in">max</span>(n3,n4)))));</span><br><span class="line">        ans.fmiddle = <span class="built_in">min</span>(a.fmiddle,<span class="built_in">min</span>(b.fmiddle,<span class="built_in">min</span>(n1,<span class="built_in">min</span>(n2,<span class="built_in">min</span>(n3,n4)))));</span><br><span class="line">        ans.sum = a.sum * b.sum;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Node <span class="title">func</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> start, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start == <span class="built_in">end</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;nums[start],nums[start],nums[start],nums[start],nums[start],nums[start],nums[start]&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> middle = (start+<span class="built_in">end</span>)/<span class="number">2</span>;</span><br><span class="line">        Node &amp;&amp;a = func(nums,start,middle);</span><br><span class="line">        Node &amp;&amp;b = func(nums,middle+<span class="number">1</span>,<span class="built_in">end</span>);</span><br><span class="line">        <span class="keyword">return</span> Combine(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><ul><li>思想如同LeetCode-53题</li><li>但是要注意正值用最大值，负值用最小值</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        Node &amp;&amp;ans = func(nums,<span class="number">0</span>,nums.<span class="built_in">size</span>()<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(ans.tleft,<span class="built_in">max</span>(ans.fleft,<span class="built_in">max</span>(ans.tright,<span class="built_in">max</span>(ans.fright,<span class="built_in">max</span>(ans.tmiddle,<span class="built_in">max</span>(ans.fmiddle,ans.sum))))));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(!len)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        vector&lt;int&gt; T(len,0),F(len,0);</span><br><span class="line">        <span class="keyword">int</span> i,ans = nums[<span class="number">0</span>];</span><br><span class="line">        T[<span class="number">0</span>] = nums[<span class="number">0</span>] &gt; <span class="number">0</span> ? nums[<span class="number">0</span>] : <span class="number">0</span>;</span><br><span class="line">        F[<span class="number">0</span>] = nums[<span class="number">0</span>] &lt; <span class="number">0</span> ? nums[<span class="number">0</span>] : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">1</span>;i != len;++i)&#123;</span><br><span class="line">            T[i] = <span class="built_in">max</span>(nums[i],<span class="built_in">max</span>(T[i<span class="number">-1</span>] * nums[i],F[i<span class="number">-1</span>] * nums[i]));</span><br><span class="line">            F[i] = <span class="built_in">min</span>(nums[i],<span class="built_in">min</span>(T[i<span class="number">-1</span>] * nums[i],F[i<span class="number">-1</span>] * nums[i]));</span><br><span class="line">            ans = <span class="built_in">max</span>(ans,T[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-152-乘积最大子数组&quot;&gt;&lt;a href=&quot;#LeetCode-152-乘积最大子数组&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-152.乘积最大子数组&quot;&gt;&lt;/a&gt;LeetCode-152.乘积最大子数组&lt;/h2&gt;&lt;p&gt;给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。&lt;/p&gt;
+&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: [2,3,-2,4]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 子数组 [2,3] 有最大乘积 6。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: [-2,0,-1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: 0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="分治" scheme="http://yoursite.com/tags/%E5%88%86%E6%B2%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-322.零钱兑换</title>
@@ -536,205 +616,6 @@
       <category term="双指针" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
       <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Boston房价数据t-SNE投影解释</title>
-    <link href="http://yoursite.com/2020/06/26/PaperExam-Boston-2020-06-26/"/>
-    <id>http://yoursite.com/2020/06/26/PaperExam-Boston-2020-06-26/</id>
-    <published>2020-06-26T13:25:50.000Z</published>
-    <updated>2020-06-26T14:55:33.493Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Boston房价数据t-SNE投影解释"><a href="#Boston房价数据t-SNE投影解释" class="headerlink" title="Boston房价数据t-SNE投影解释"></a>Boston房价数据t-SNE投影解释</h2><h3 id="数据介绍"><a href="#数据介绍" class="headerlink" title="数据介绍"></a>数据介绍</h3><ul><li>波士顿房价数据集是统计的20世纪70年代中期波士顿郊区房价的中位数，统计了当时教区部分的犯罪率、房产税等共计13个指标，统计出房价，试图能找到那些指标与房价的关系。</li></ul><div class="table-container"><table><thead><tr><th>No</th><th>属性</th><th>数据类型</th><th>字段描述</th></tr></thead><tbody><tr><td>1</td><td>CRIM</td><td>Float</td><td>城镇人均犯罪率</td></tr><tr><td>2</td><td>ZN</td><td>Float</td><td>占地面积超过2.5万平方英尺的住宅用地比例</td></tr><tr><td>3</td><td>INDUS</td><td>Float</td><td>城镇非零售业务地区的比例</td></tr><tr><td>4</td><td>CHAS</td><td>Integer</td><td>查尔斯河虚拟变量 (= 1 如果土地在河边；否则是0)</td></tr><tr><td>5</td><td>NOX</td><td>Float</td><td>一氧化氮浓度（每1000万份）</td></tr><tr><td>6</td><td>RM</td><td>Float</td><td>平均每居民房数</td></tr><tr><td>7</td><td>AGE</td><td>Float</td><td>在1940年之前建成的所有者占用单位的比例</td></tr><tr><td>8</td><td>DIS</td><td>Float</td><td>与五个波士顿就业中心的加权距离</td></tr><tr><td>9</td><td>RAD</td><td>Integer</td><td>辐射状公路的可达性指数</td></tr><tr><td>10</td><td>TAX</td><td>Float</td><td>每10,000美元的全额物业税率</td></tr><tr><td>11</td><td>PTRATIO</td><td>Float</td><td>城镇师生比例</td></tr><tr><td>12</td><td>B</td><td>Float</td><td>1000（Bk - 0.63）^ 2其中Bk是城镇黑人的比例</td></tr><tr><td>13</td><td>LSTAT</td><td>Float</td><td>人口中地位较低人群的百分数</td></tr><tr><td>14</td><td>MEDV</td><td>Float</td><td>（目标变量/类别属性）以1000美元计算的自有住房的中位数</td></tr></tbody></table></div><h3 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h3><ul><li>解释Boston房价数据的非线性投影</li></ul><h3 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h3><ul><li>使用t-SNE将Boston房价数据降维到2维可视空间，并使用散点图可视化</li></ul><h3 id="如何验证"><a href="#如何验证" class="headerlink" title="如何验证"></a>如何验证</h3><ul><li>使用分片算法将投影分片，并从原始特征在投影上的方向和原始特征和投影的相关性两方面解释非线性投影的布局</li></ul><a id="more"></a><h3 id="实验分析"><a href="#实验分析" class="headerlink" title="实验分析"></a>实验分析</h3><h4 id="分片数量为1时"><a href="#分片数量为1时" class="headerlink" title="分片数量为1时"></a>分片数量为1时</h4><ul><li><p>我们生成整个非线性投影的线性近似，该线性近似中9,10,12特征和投影之间具有较高的相关性</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626214332499.png" alt="image-20200626214332499"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1-Boston-Div1010-特征相关性图</center> </li><li><p><strong>9号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内9号特征的值从左下到右上存在增长的趋势，并且和9号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626214902709.png" alt="image-20200626214902709"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2-Boston-Div1010-9-非线性投影（星坐标，热力）图</center> </li><li><p><strong>10号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内110号特征的值从左到右存在增长的趋势，并且和10号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626215126919.png" alt="image-20200626215126919"></p></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图3-Boston-Div1010-10-非线性投影（星坐标，热力）图</center> <ul><li><p><strong>12号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内12号特征的值从右下到左上存在增长的趋势，并且和12号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626215400233.png" alt="image-20200626215400233"></p></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图4-Boston-Div1010-12-非线性投影（星坐标，热力）图</center> <h4 id="分片数量为2时"><a href="#分片数量为2时" class="headerlink" title="分片数量为2时"></a>分片数量为2时</h4><ul><li><p>分片拓扑关系图如下</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626215656377.png" alt="image-20200626215656377"></p></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图5-Boston-Div2-拓扑关系图</center> <ul><li><p>分片原始特征相关性河流图如下</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626215955601.png" alt="image-20200626215955601"></p></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图6-Boston-Div2-河流图</center> <ul><li><p>我们观察到1009和1008之间的12号特征相关性变化很大，我们对此进行深入分析</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626220442329.png" alt="image-20200626220442329"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图6-Boston-Div2-河流图</center> <ul><li><p><strong>1009分片的12号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内12号特征值的分布没有明显的模式</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626220706588.png" alt="image-20200626220706588"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图7-Boston-Div1009-12-非线性投影（星坐标，热力）图</center> </li><li><p><strong>1008分片的12号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内12号特征的值从下到上存在增长的趋势，并且和12号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626221026553.png" alt="image-20200626221026553"></p></li></ul></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图8-Boston-Div1008-12-非线性投影（星坐标，热力）图</center> <h4 id="分片数量为3时"><a href="#分片数量为3时" class="headerlink" title="分片数量为3时"></a>分片数量为3时</h4><ul><li><p>分片拓扑关系图</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626221735990.png" alt="image-20200626221735990"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图9-Boston-Div3-拓扑关系图</center> </li><li><p>分片原始特征相关性河流图如下</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626222126025.png" alt="image-20200626222126025"></p></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图10-Boston-Div3-河流图</center> <ul><li><p>我们观察到1009和（699,1004）之间的1号特征相关性变化很大，我们对此进行深入分析</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626222330613.png" alt="image-20200626222330613"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图10-Boston-Div3-河流图</center> <ul><li><p><strong>1009分片的1号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内1号特征值的分布在整体上没有呈现出模式，仅在右下部分呈现出变化，因此相关性较低</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626222512376.png" alt="image-20200626222512376"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图11-Boston-Div1009-1-非线性投影（星坐标，热力）图</center> </li><li><p><strong>699分片的1号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内1号特征的值从右到左存在增长的趋势，并且和1号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626222652345.png" alt="image-20200626222652345"></p><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图12-Boston-Div699-1-非线性投影（星坐标，热力）图</center> </li><li><p><strong>1004分片的1号特征</strong>在非线性投影中的方向以及在非线性投影中的热力分布如下，分片内1号特征的值从左下到右上存在增长的趋势，并且和1号特征的方向一致</p><p><img src="/2020/06/26/PaperExam-Boston-2020-06-26/image-20200626222759426.png" alt="image-20200626222759426"></p></li></ul></li></ul><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图13-Boston-Div1004-1-非线性投影（星坐标，热力）图</center> <h3 id="实验结论"><a href="#实验结论" class="headerlink" title="实验结论"></a>实验结论</h3><ul><li>通过实验：<ul><li>我们的算法能从原始特征在非线性投影上的方向和原始特征和非线性投影的相关性两方面解释非线性投影的布局</li><li>使用我们的分片算法将非线性投影划分成多个近线性的片段，能够更准确的解释非线性投影的布局</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Boston房价数据t-SNE投影解释&quot;&gt;&lt;a href=&quot;#Boston房价数据t-SNE投影解释&quot; class=&quot;headerlink&quot; title=&quot;Boston房价数据t-SNE投影解释&quot;&gt;&lt;/a&gt;Boston房价数据t-SNE投影解释&lt;/h2&gt;&lt;h3 id=&quot;数据介绍&quot;&gt;&lt;a href=&quot;#数据介绍&quot; class=&quot;headerlink&quot; title=&quot;数据介绍&quot;&gt;&lt;/a&gt;数据介绍&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;波士顿房价数据集是统计的20世纪70年代中期波士顿郊区房价的中位数，统计了当时教区部分的犯罪率、房产税等共计13个指标，统计出房价，试图能找到那些指标与房价的关系。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;table-container&quot;&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;No&lt;/th&gt;
-&lt;th&gt;属性&lt;/th&gt;
-&lt;th&gt;数据类型&lt;/th&gt;
-&lt;th&gt;字段描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;CRIM&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;城镇人均犯罪率&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;ZN&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;占地面积超过2.5万平方英尺的住宅用地比例&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;INDUS&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;城镇非零售业务地区的比例&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;CHAS&lt;/td&gt;
-&lt;td&gt;Integer&lt;/td&gt;
-&lt;td&gt;查尔斯河虚拟变量 (= 1 如果土地在河边；否则是0)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;NOX&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;一氧化氮浓度（每1000万份）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;RM&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;平均每居民房数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;AGE&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;在1940年之前建成的所有者占用单位的比例&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;DIS&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;与五个波士顿就业中心的加权距离&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;RAD&lt;/td&gt;
-&lt;td&gt;Integer&lt;/td&gt;
-&lt;td&gt;辐射状公路的可达性指数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;TAX&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;每10,000美元的全额物业税率&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;PTRATIO&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;城镇师生比例&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;td&gt;B&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;1000（Bk - 0.63）^ 2其中Bk是城镇黑人的比例&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;13&lt;/td&gt;
-&lt;td&gt;LSTAT&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;人口中地位较低人群的百分数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;MEDV&lt;/td&gt;
-&lt;td&gt;Float&lt;/td&gt;
-&lt;td&gt;（目标变量/类别属性）以1000美元计算的自有住房的中位数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;解释Boston房价数据的非线性投影&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;实验设计&quot;&gt;&lt;a href=&quot;#实验设计&quot; class=&quot;headerlink&quot; title=&quot;实验设计&quot;&gt;&lt;/a&gt;实验设计&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用t-SNE将Boston房价数据降维到2维可视空间，并使用散点图可视化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;如何验证&quot;&gt;&lt;a href=&quot;#如何验证&quot; class=&quot;headerlink&quot; title=&quot;如何验证&quot;&gt;&lt;/a&gt;如何验证&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用分片算法将投影分片，并从原始特征在投影上的方向和原始特征和投影的相关性两方面解释非线性投影的布局&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="论文实验" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-      <category term="局部线性近似" scheme="http://yoursite.com/tags/%E5%B1%80%E9%83%A8%E7%BA%BF%E6%80%A7%E8%BF%91%E4%BC%BC/"/>
-    
-      <category term="Boston" scheme="http://yoursite.com/tags/Boston/"/>
-    
-      <category term="t-SNE" scheme="http://yoursite.com/tags/t-SNE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-207.课程表</title>
-    <link href="http://yoursite.com/2020/06/26/LeetCode-207/"/>
-    <id>http://yoursite.com/2020/06/26/LeetCode-207/</id>
-    <published>2020-06-26T11:39:46.000Z</published>
-    <updated>2020-06-26T11:49:51.120Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="LeetCode-207-课程表"><a href="#LeetCode-207-课程表" class="headerlink" title="LeetCode-207.课程表"></a>LeetCode-207.课程表</h2><p>你这个学期必须选修 <code>numCourse</code> 门课程，记为 0 到 <code>numCourse-1</code> 。</p><p>在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：<code>[0,1]</code></p><p>给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: 2, [[1,0]] </span><br><span class="line">输出: true</span><br><span class="line">解释: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0。所以这是可能的。</span><br><span class="line"></span><br><span class="line">输入: 2, [[1,0],[0,1]]</span><br><span class="line">输出: false</span><br><span class="line">解释: 总共有 2 门课程。学习课程 1 之前，你需要先完成课程 0；并且学习课程 0 之前，你还应先完成课程 1。这是不可能的。</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ol><li>输入的先决条件是由 <code>边缘列表</code> 表示的图形，而不是 <code>邻接矩阵</code> 。详情请参见<a href="https://blog.csdn.net/woaidapaopao/article/details/51732947" target="_blank" rel="noopener">图的表示法</a>。</li><li>你可以假定输入的先决条件中没有重复的边。</li><li>1 &lt;= numCourses &lt;= 10^5</li></ol><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li><p>本题可约化为： 课程安排图是否是 <code>有向无环图(DAG)</code>。即课程间规定了前置条件，但不能构成任何环路，否则课程前置条件将不成立。</p></li><li><p>思路是通过 <code>拓扑排序</code> 判断此课程安排图是否是 <code>有向无环图(DAG)</code> 。 拓扑排序原理： 对 DAG 的顶点进行排序，使得对每一条有向边 (u, v)，均有 u（在排序记录中）比 v 先出现。亦可理解为对某点 v 而言，只有当 v 的所有源点均出现了，v 才能出现。</p></li><li><p>通过课程前置条件列表 <code>prerequisites</code> 可以得到课程安排图的 <code>邻接表 adjacency</code>，以降低算法时间复杂度。</p></li><li><p>算法流程:</p><ul><li>统计课程安排图中每个节点的入度，生成 入度表 <code>indegrees</code>。<br>借助一个队列 <code>queue</code>，将所有入度为 0 的节点入队。</li><li>当 <code>queue</code> 非空时，依次将队首节点出队，在课程安排图中删除此节点 pre：<ul><li>并不是真正从邻接表中删除此节点 pre，而是将此节点对应所有邻接节点 cur 的入度 −1，即 <code>indegrees[cur] -= 1</code>。</li><li>当入度 −1后邻接节点 cur 的入度为 0，说明 cur 所有的前驱节点已经被 “删除”，此时将 cur 入队。</li></ul></li><li>在每次 <code>pre</code> 出队时，执行 <code>numCourses--</code>；<ul><li>若整个课程安排图是有向无环图（即可以安排），则所有节点一定都入队并出队过，即完成拓扑排序。换个角度说，若课程安排图中存在环，一定有节点的入度始终不为 0。</li><li>因此，拓扑排序出队次数等于课程个数，返回 <code>numCourses == 0</code> 判断课程是否可以成功安排。</li></ul></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canFinish</span><span class="params">(<span class="keyword">int</span> numCourses, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; prerequisites)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">incount</span><span class="params">(numCourses, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">connect</span><span class="params">(numCourses, <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;())</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> tmp : prerequisites)&#123;</span><br><span class="line">            ++incount[tmp[<span class="number">0</span>]];</span><br><span class="line">            <span class="built_in">connect</span>[tmp[<span class="number">1</span>]].insert(tmp[<span class="number">0</span>]);        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i != numCourses;++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!incount[i])</span><br><span class="line">                q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">            <span class="keyword">auto</span> num = q.front();</span><br><span class="line">            q.pop();</span><br><span class="line">            --numCourses;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> loc : <span class="built_in">connect</span>[num])&#123;</span><br><span class="line">                <span class="keyword">if</span>(!--incount[loc])&#123;</span><br><span class="line">                    q.push(loc);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> !numCourses;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;LeetCode-207-课程表&quot;&gt;&lt;a href=&quot;#LeetCode-207-课程表&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-207.课程表&quot;&gt;&lt;/a&gt;LeetCode-207.课程表&lt;/h2&gt;&lt;p&gt;你这个学期必须选修 &lt;code&gt;numCourse&lt;/code&gt; 门课程，记为 0 到 &lt;code&gt;numCourse-1&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们：&lt;code&gt;[0,1]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;给定课程总量以及它们的先决条件，请你判断是否可能完成所有课程的学习？&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入: 2, [[1,0]] &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0。所以这是可能的。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入: 2, [[1,0],[0,1]]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;解释: 总共有 2 门课程。学习课程 1 之前，你需要先完成课程 0；并且学习课程 0 之前，你还应先完成课程 1。这是不可能的。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;输入的先决条件是由 &lt;code&gt;边缘列表&lt;/code&gt; 表示的图形，而不是 &lt;code&gt;邻接矩阵&lt;/code&gt; 。详情请参见&lt;a href=&quot;https://blog.csdn.net/woaidapaopao/article/details/51732947&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图的表示法&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;你可以假定输入的先决条件中没有重复的边。&lt;/li&gt;
-&lt;li&gt;1 &amp;lt;= numCourses &amp;lt;= 10^5&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="图" scheme="http://yoursite.com/tags/%E5%9B%BE/"/>
-    
-      <category term="拓扑排序" scheme="http://yoursite.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode-394.字符串解码</title>
-    <link href="http://yoursite.com/2020/06/25/LeetCode-394/"/>
-    <id>http://yoursite.com/2020/06/25/LeetCode-394/</id>
-    <published>2020-06-25T15:10:32.000Z</published>
-    <updated>2020-06-25T15:23:40.953Z</updated>
-    
-    <content type="html"><![CDATA[<p>给定一个经过编码的字符串，返回它解码后的字符串。</p><p>编码规则为: <code>k[encoded_string]</code>，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。</p><p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。</p><p>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 <code>3a</code> 或 <code>2[4]</code> 的输入。</p><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：s &#x3D; &quot;3[a]2[bc]&quot;</span><br><span class="line">输出：&quot;aaabcbc&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;3[a2[c]]&quot;</span><br><span class="line">输出：&quot;accaccacc&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;2[abc]3[cd]ef&quot;</span><br><span class="line">输出：&quot;abcabccdcdcdef&quot;</span><br><span class="line"></span><br><span class="line">输入：s &#x3D; &quot;abc3[cd]xyz&quot;</span><br><span class="line">输出：&quot;abccdcdcdxyz&quot;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul><li>我们可以使用递归的思想来完成这道题<ul><li>对于不重复的部分，我们把字符直接加入输出中</li><li>对于重复的部分，我们把重复部分的字符放入待处理字符串中，并递归处理待处理字符串</li><li>最后把递归返回结果加入输出中</li></ul></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">decodeString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> ans = <span class="string">""</span>,substr = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>,k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c : s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!count &amp;&amp; <span class="string">'0'</span> &lt;= c &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">                k = k * <span class="number">10</span> + (c - <span class="string">'0'</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">'['</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(count)</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                ++count;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">']'</span>)&#123;</span><br><span class="line">                --count;</span><br><span class="line">                <span class="keyword">if</span>(!count)&#123;</span><br><span class="line">                    substr = decodeString(substr);</span><br><span class="line">                    <span class="keyword">while</span>(k)&#123;</span><br><span class="line">                        ans += substr;</span><br><span class="line">                        --k;</span><br><span class="line">                    &#125;</span><br><span class="line">                    substr.<span class="built_in">clear</span>();</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(count)&#123;</span><br><span class="line">                    substr.push_back(c);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    ans.push_back(c);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;给定一个经过编码的字符串，返回它解码后的字符串。&lt;/p&gt;
-&lt;p&gt;编码规则为: &lt;code&gt;k[encoded_string]&lt;/code&gt;，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。&lt;/p&gt;
-&lt;p&gt;你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。&lt;/p&gt;
-&lt;p&gt;此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 &lt;code&gt;3a&lt;/code&gt; 或 &lt;code&gt;2[4]&lt;/code&gt; 的输入。&lt;/p&gt;
-&lt;h3 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;3[a]2[bc]&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;aaabcbc&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;3[a2[c]]&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;accaccacc&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;2[abc]3[cd]ef&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;abcabccdcdcdef&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输入：s &amp;#x3D; &amp;quot;abc3[cd]xyz&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;输出：&amp;quot;abccdcdcdxyz&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
